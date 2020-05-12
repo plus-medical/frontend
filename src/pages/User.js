@@ -76,7 +76,7 @@ export default function User() {
             <select name='status'>
               <option value='1'>activo</option>
               <option value='2'>Inactivo</option>
-          </select>
+            </select>
           <button>
             guardar
           </button>
