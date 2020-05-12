@@ -21,6 +21,9 @@ export default function Login() {
       <button aria-label="recuperar contraseña">
         <a href="/">olvido su contraseña</a>
       </button>
+      <button aria-label="recuperar contraseña">
+        <a href="/users">usuarios</a>
+      </button>
     </section>
   )
 }
