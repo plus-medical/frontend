@@ -5,7 +5,7 @@ export default function Users() {
     <section className='users'>
       <div className='users-input'>
         <input
-          type='users-input__text'
+          type='search'
           placeholder='buscar usuario'
           aria-label='busqueda de usuarios'
         />

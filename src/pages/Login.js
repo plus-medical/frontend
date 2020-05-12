@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Login() {
   return (
-    <section className="login">
+    <form className="login">
       <input
-        type="text"
+        type="mail"
         aria-label="Numero de identicacion"
         placeholder="Numero de Identificacion"
       />
@@ -24,6 +24,6 @@ export default function Login() {
       <button aria-label="recuperar contraseña">
         <a href="/users">usuarios</a>
       </button>
-    </section>
+    </form>
   )
 }
