@@ -9,7 +9,8 @@
     "build": "webpack --config webpack.config.js --mode production",
     "lint": "standard",
     "lint:fix": "standard --fix",
-    "start": "serve ./dist -s -p ${PORT:-4000}"
+    "start": "serve ./dist -s -p ${PORT:-4000}",
+    "test": "echo \"Error: no test specified\" && exit 1" 
   },
   "repository": {
     "type": "git",
