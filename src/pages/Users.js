@@ -2,11 +2,15 @@ import React from 'react'
 
 export default function Users() {
   return (
-    <div className='Users'>
-      <div className='input'>
-        <input type='text'></input>
+    <section className='users'>
+      <div className='users-input'>
+        <input
+          type='users-input__text'
+          placeholder='buscar usuario'
+          aria-label='busqueda de usuarios'
+        />
       </div>
-      <div className='item'>
+      <div className='item' aria-label='usuario'>
         <div className='item-name'>
           <h5>name</h5>
         </div>
@@ -17,6 +21,6 @@ export default function Users() {
           <h6>Profile</h6>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
