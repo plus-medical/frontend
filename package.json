@@ -10,7 +10,7 @@
     "lint": "standard",
     "lint:fix": "standard --fix",
     "start": "serve ./dist -s -p ${PORT:-4000}",
-    "test": "lint" 
+    "test": "lint"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,6 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "serve": "^9.1.0"
-    
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -75,8 +74,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run lint"
+      "pre-commit": "npm run lint:fix",
+      "pre-push": "npm run lint:fix"
     }
   }
 }

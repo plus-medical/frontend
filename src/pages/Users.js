@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Users() {
+export default function Users () {
   return (
     <section className='users'>
       <div className='users-input'>

@@ -8,14 +8,18 @@ export default function Home () {
         <Link to='/login'>Login</Link>
       </button>
       <button>
+        <Link to='dashboard'>Dashboard</Link>
+      </button>
+      <button>
         <Link to='/users'>users</Link>
       </button>
       <button>
         <Link to='/user'>user</Link>
       </button>
       <button>
-        <Link to='/exams'>exam</Link>
+        <Link to='/exams'>exams</Link>
       </button>
+
     </div>
   )
 }

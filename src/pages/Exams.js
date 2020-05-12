@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Exams() {
+export default function Exams () {
   return (
     <section className='exams'>
       <form className='input'>
