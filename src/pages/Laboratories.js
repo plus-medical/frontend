@@ -33,7 +33,7 @@ export const Laboratories = () => {
       </section>
       <section>
         <Link to='/laboratory'>
-          <button className='button'>Crear examen</button>
+          <button className='button'>Crear Laboratory</button>
         </Link>
       </section>
     </>
