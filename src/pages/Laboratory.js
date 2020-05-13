@@ -15,7 +15,7 @@ export const Laboratory = () => {
         </select>
         <button className='Button'>Guardar</button>
         <Link to='/dashboard'>
-          <button className='Button'>Cancelar </button>
+          <button className='Button'>Cancelar</button>
         </Link>
       </form>
     </section>
