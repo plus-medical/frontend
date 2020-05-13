@@ -13,9 +13,13 @@ export const Laboratory = () => {
           <option value='1'>Activo</option>
           <option value='2'>Inactivo</option>
         </select>
-        <button className='Button'>Guardar</button>
+        <button className='Button'>
+          Guardar
+        </button>
         <Link to='/dashboard'>
-          <button className='Button'>Cancelar</button>
+          <button className='Button'>
+            Cancelar
+          </button>
         </Link>
       </form>
     </section>
