@@ -24,6 +24,7 @@ export default function Home () {
       </button>
       <button>
         <Link to='/clinichistory'> historia clinica</Link>
+        <Link to='/patient'>Doctor - Search patient</Link>
       </button>
     </div>
   )
