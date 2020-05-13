@@ -19,6 +19,9 @@ export default function Home () {
       <button>
         <Link to='/exams'>exams</Link>
       </button>
+      <button>
+        <Link to='/patient'>Doctor - Search patient</Link>
+      </button>
 
     </div>
   )
