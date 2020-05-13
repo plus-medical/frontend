@@ -26,6 +26,9 @@ export default function Home () {
         <Link to='/clinichistory'> historia clinica</Link>
         <Link to='/patient'>Doctor - Search patient</Link>
       </button>
+      <button>
+        <Link to='/detailpatientexam'> detalle exament </Link>
+      </button>
     </div>
   )
 }
