@@ -12,6 +12,8 @@ import { Laboratories } from './pages/Laboratories'
 import UserProfile from './pages/UserProfile'
 import Clinichistory from './pages/Clinichistory'
 import Detailpatientexam from './pages/Detailpatientexam'
+import { Laboratory } from './pages/Laboratory'
+import { Patient } from './pages/Patient'
 
 export const App = () => {
   return (
@@ -28,6 +30,8 @@ export const App = () => {
         <Route exact path='/userprofile' component={UserProfile} />
         <Route exact path='/clinichistory' component={Clinichistory} />
         <Route exact path='/detailexam' component={Detailpatientexam} />
+        <Route exact path='/laboratory' component={Laboratory} />
+        <Route exact path='/patient' component={Patient} />
       </Switch>
     </BrowserRouter>
   )
