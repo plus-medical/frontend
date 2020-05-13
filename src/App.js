@@ -11,6 +11,7 @@ import { Exam } from './pages/Exam'
 import { Laboratories } from './pages/Laboratories'
 import UserProfile from './pages/UserProfile'
 import { Laboratory } from './pages/Laboratory'
+import { Patient } from './pages/Patient'
 
 
 export const App = () => {
@@ -27,6 +28,7 @@ export const App = () => {
         <Route exact path='/laboratories' component={Laboratories} />
         <Route exact path='/userprofile' component={UserProfile} />
         <Route exact path='/laboratory' component={Laboratory} />
+        <Route exact path='/patient' component={Patient} />
       </Switch>
     </BrowserRouter>
   )

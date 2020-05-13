@@ -22,6 +22,9 @@ export default function Home () {
       <button>
         <Link to='/userprofile'>user Profile</Link>
       </button>
+      <button>
+        <Link to='/patient'>Doctor - Search patient</Link>
+      </button>
     </div>
   )
 }
