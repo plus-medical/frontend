@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Laboratories } from './Laboratories'
 
 export default function Home () {
   return (
