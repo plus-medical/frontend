@@ -22,6 +22,9 @@ export default function Home () {
       <button>
         <Link to='/userprofile'>user Profile</Link>
       </button>
+      <button>
+        <Link to='/clinichistory'> historia clinica</Link>
+      </button>
     </div>
   )
 }
