@@ -10,6 +10,8 @@ import Exams from './pages/Exams'
 import { Exam } from './pages/Exam'
 import { Laboratories } from './pages/Laboratories'
 import UserProfile from './pages/UserProfile'
+import { Laboratory } from './pages/Laboratory'
+
 
 export const App = () => {
   return (
@@ -24,6 +26,7 @@ export const App = () => {
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/laboratories' component={Laboratories} />
         <Route exact path='/userprofile' component={UserProfile} />
+        <Route exact path='/laboratory' component={Laboratory} />
       </Switch>
     </BrowserRouter>
   )
