@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ButtonPrincipal } from '../components/molecules/buttons'
+import { CircleButton } from '../components/molecules/buttons'
+import { Item } from '../components/molecules/item'
 
 export default function Home () {
   return (
@@ -122,7 +123,8 @@ export default function Home () {
       <button>
         <Link to='/detailpatientexam'> detalle exament </Link>
       </button>
-      <ButtonPrincipal />
+      <Item />
+      <CircleButton />
     </div>
   )
 }
