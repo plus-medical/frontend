@@ -1,5 +1,19 @@
 @import '../../atoms/Global.scss';
 
+
+.button_principal{
+  background-color: $secundary-color-3;
+  border: 1px solid $secundary-color-1;
+  border-radius:  0 12px; 
+  padding: 7px 15px;
+  font-size: 1em;
+  color: #333;
+  font-weight: 700;
+  margin: 3px;
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+
 .CircleButton{
   background-color: #0094A7;
   border-radius:50%;
@@ -10,3 +24,4 @@
   margin:30px;
   box-shadow: 0px 0px 2px 13px rgba(0,0,0,0.10);
 }
+
