@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function UserProfile () {
   return (
-    <section className='User'>
+    <section className='userprofile'>
       <div className='user__header'>
         <form>
           <img src='' alt='' />
