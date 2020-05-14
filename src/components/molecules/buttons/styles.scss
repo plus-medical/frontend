@@ -1,37 +1,14 @@
 @import '../../atoms/Global.scss';
 
 .button_principal{
-  background-color: $secundary-color;
-  border-radius:
+  background-color: $secundary-color-3;
+  border: 1px solid $secundary-color-1;
+  border-radius:  0 12px; 
+  padding: 7px 15px;
+  font-size: 1em;
+  color: #333;
+  font-weight: 700;
+  margin: 3px;
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
 }
 
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="274px" height="52px" viewBox="0 0 274 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>button</title>
-    <defs>
-        <path d="M32,247 L366,247 C374.836556,247 382,254.163444 382,263 L382,569 L382,569 L48,569 C39.163444,569 32,561.836556 32,553 L32,247 L32,247 Z" id="path-1"></path>
-        <filter x="-4.0%" y="-3.1%" width="108.0%" height="108.7%" filterUnits="objectBoundingBox" id="filter-2">
-            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="login" transform="translate(-70.000000, -477.000000)">
-            <rect fill="#163172" x="0" y="0" width="414" height="736"></rect>
-            <g id="container">
-                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                <use fill="#1E56A0" fill-rule="evenodd" xlink:href="#path-1"></use>
-            </g>
-            <g id="button" transform="translate(70.000000, 477.000000)">
-                <g>
-                    <path d="M0,0 L266,0 C270.418278,-8.11624501e-16 274,3.581722 274,8 L274,52 L274,52 L8,52 C3.581722,52 5.41083001e-16,48.418278 0,44 L0,0 L0,0 Z" id="Rectangle" fill="#46D3ED"></path>
-                    <text id="Label" font-family="Helvetica" font-size="19" font-weight="normal" letter-spacing="0.186607154" fill="#000000">
-                        <tspan x="111.505811" y="34">Iniciar </tspan>
-                        <tspan x="109.479241" y="57">sesión</tspan>
-                    </text>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>

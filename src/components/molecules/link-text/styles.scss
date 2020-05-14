@@ -1,0 +1,8 @@
+@import '../../atoms/Global.scss';
+
+.link-text{
+    text-decoration: none;
+    color: $secundary-color-3;
+    font-size: 0.8em;
+    cursor: pointer;
+}

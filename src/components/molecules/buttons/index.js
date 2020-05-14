@@ -1,10 +1,10 @@
 import React from 'react'
 import './styles.scss'
 
-export function ButtonPrincipal () {
+export function ButtonPrincipal ({ text }) {
   return (
     <button className='button_principal'>
-      prueba
+      {text}
     </button>
   )
 }
