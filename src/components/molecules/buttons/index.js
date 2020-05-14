@@ -1,10 +1,10 @@
 import React from 'react'
 import './styles.scss'
 
-export function ButtonPrincipal () {
+export function CircleButton () {
   return (
-    <button className='button_principal'>
-      prueba
+    <button className='CircleButton'>
+      +
     </button>
   )
 }
