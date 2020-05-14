@@ -9,6 +9,5 @@ export function NameSearch () {
 
 export function DescriptionSearch () {
   return (
-    <h6 className='descriptionSearch'>Profile</h6>  )
+    <h6 className='descriptionSearch'>Profile</h6>)
 }
-

@@ -6,5 +6,3 @@ export function DocumentSearch () {
     <label className='DocumentSearch'>1234322</label>
   )
 }
-
-
