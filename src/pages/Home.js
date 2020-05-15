@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FooterMobile } from '../components/organims/footer'
 
-export default function Home () {
+export function Home () {
   return (
     <div className='home'>
       <h1>Plus Medical - Frontend</h1>
@@ -121,6 +122,7 @@ export default function Home () {
       <button>
         <Link to='/detailpatientexam'> detalle exament </Link>
       </button>
+      <FooterMobile />
     </div>
   )
 }

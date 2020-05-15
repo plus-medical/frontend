@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Clinichistory () {
+export function Clinichistory () {
   return (
     <form className='clinichistory'>
       <input
