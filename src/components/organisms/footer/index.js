@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './styles.scss'
 
 import { Box } from '../../atoms/shapes'
@@ -15,24 +15,24 @@ import {
 export function FooterMobile () {
   const MENUITEM = [
     {
-      name: 'inicio',
+      name: 'Inicio',
       icon: <FaHome />,
-      link: './login'
+      link: './'
     },
     {
-      name: 'tablero',
+      name: 'Tablero',
       icon: <FaRegListAlt />,
-      link: './login'
+      link: './dashboard'
     },
     {
-      name: 'notificaciones',
+      name: 'Notificaciones',
       icon: <FaBell />,
       link: './login'
     },
     {
-      name: 'perfil',
+      name: 'Perfil',
       icon: <FaUser />,
-      link: './login'
+      link: './userprofile'
     }
   ]
 
@@ -44,12 +44,12 @@ export function FooterMobile () {
           {MENUITEM.map((item) => {
             return (
               <li key={item.name}>
-                <Link to={item.link} className='footerMobile_icons__item'>
+                <NavLink to={item.link} exact activeClassName='active' className='footerMobile_icons__item'>
                   <div className='footerMobile_icons_item__img'>
                     {item.icon}
                   </div>
                   <TextMenu data={item.name} />
-                </Link>
+                </NavLink>
               </li>
             )
           })}
