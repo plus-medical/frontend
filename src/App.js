@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom'
 
+import { LayoutMobile } from './components/templates/layout'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
 import { Dashboard } from './pages/Dashboard'
@@ -22,21 +23,23 @@ import { Patient } from './pages/Patient'
 export const App = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/users' component={Users} />
-        <Route exact path='/user' component={User} />
-        <Route exact path='/exams' component={Exams} />
-        <Route exact path='/exam' component={Exam} />
-        <Route exact path='/dashboard' component={Dashboard} />
-        <Route exact path='/laboratories' component={Laboratories} />
-        <Route exact path='/userprofile' component={UserProfile} />
-        <Route exact path='/clinichistory' component={Clinichistory} />
-        <Route exact path='/detailexam' component={Detailpatientexam} />
-        <Route exact path='/laboratory' component={Laboratory} />
-        <Route exact path='/patient' component={Patient} />
-      </Switch>
+      <LayoutMobile>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/users' component={Users} />
+          <Route exact path='/user' component={User} />
+          <Route exact path='/exams' component={Exams} />
+          <Route exact path='/exam' component={Exam} />
+          <Route exact path='/dashboard' component={Dashboard} />
+          <Route exact path='/laboratories' component={Laboratories} />
+          <Route exact path='/userprofile' component={UserProfile} />
+          <Route exact path='/clinichistory' component={Clinichistory} />
+          <Route exact path='/detailexam' component={Detailpatientexam} />
+          <Route exact path='/laboratory' component={Laboratory} />
+          <Route exact path='/patient' component={Patient} />
+        </Switch>
+      </LayoutMobile>
     </BrowserRouter>
   )
 }

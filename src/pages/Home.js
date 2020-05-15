@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FooterMobile } from '../components/organims/footer'
-import { Header } from '../components/organims/header'
 
 export function Home () {
   return (
     <div className='home'>
-      <Header />
       <h1>Plus Medical - Frontend</h1>
       <h2>General</h2>
       <ul>
@@ -124,7 +121,6 @@ export function Home () {
       <button>
         <Link to='/detailpatientexam'> detalle exament </Link>
       </button>
-      <FooterMobile />
     </div>
   )
 }

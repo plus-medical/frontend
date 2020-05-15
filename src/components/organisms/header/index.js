@@ -9,7 +9,7 @@ import {
   FaSearch
 } from 'react-icons/fa'
 
-export function Header () {
+export function HeaderMobile () {
   return (
     <header className='headerMobile'>
       <Box />
