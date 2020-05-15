@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useHistory } from 'react-router-dom'
 import './styles.scss'
 
 import { Box } from '../../atoms/shapes/index'
@@ -10,17 +10,21 @@ import {
 } from 'react-icons/fa'
 
 export function HeaderMobile () {
+  const location = useLocation()
+  const history = useHistory()
   return (
     <header className='headerMobile'>
       <Box />
       <ul className='headerMobile__content'>
         <li>
-          <Link>
-            <FaArrowLeft />
-          </Link>
+          <button onClick={() => history.goBack()}>
+            <a>
+              <FaArrowLeft />
+            </a>
+          </button>
         </li>
         <li>
-          <p>porfa</p>
+          <p>{location.pathname}</p>
         </li>
         <li>
           <Link to='/'>
