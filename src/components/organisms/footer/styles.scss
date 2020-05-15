@@ -1,0 +1,31 @@
+@import '../../atoms/Global.scss';
+
+.footerMobile{
+  position: fixed;
+  bottom:0;
+}
+
+.footerMobile__icons{
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat( 4, minmax(80px, 1fr) );
+  width: 100%;
+  top: 15px;
+}
+
+.footerMobile__icons li a.active{
+  color:$primary-color-2;
+  box-shadow: 4px 4px 5px -6px rgba(0,0,0,0.46);
+}
+
+.footerMobile_icons__item{
+  display: grid;
+  grid-template-rows: 70% 30%;
+  justify-content: center;
+  color:#5d5b5b;
+  text-decoration:none;
+}
+.footerMobile_icons_item__img {
+  display: grid;
+  justify-content: center;
+}

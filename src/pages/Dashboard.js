@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Dashboard = () => {
+export function Dashboard () {
   return (
     <>
       <h2>Darshboard Admin</h2>

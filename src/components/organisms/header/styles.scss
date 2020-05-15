@@ -1,0 +1,24 @@
+@import '../../atoms/Global.scss';
+
+.headerMobile{
+  position: relative;
+}
+
+.headerMobile__content{
+  position: absolute;
+  top:15px;
+  display:grid;
+  grid-template-columns: 10% 75% 15%;
+  width:100%;
+}
+
+.headerMobile__content li{
+  display: grid;
+  justify-content: center;
+  color:$primary-color-2;
+}
+
+.headerMobile__content li a{
+  color:$primary-color-2;
+  text-decoration: none;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Patient = () => {
+export function Patient () {
   return (
     <section className='patient'>
       <div className='patient-search'>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-export const Laboratory = () => {
+
+export function Laboratory () {
   return (
     <section className='Laboratory'>
       <form>

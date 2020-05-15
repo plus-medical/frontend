@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UserProfile () {
+export function UserProfile () {
   return (
     <section className='userprofile'>
       <div className='user__header'>

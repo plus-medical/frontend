@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Exam = () => {
+export function Exam () {
   return (
     <form>
       <input placeholder='Nombre del examen' />

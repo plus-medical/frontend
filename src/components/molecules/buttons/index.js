@@ -16,3 +16,11 @@ export function CircleButton () {
     </button>
   )
 }
+
+export function MenuButton () {
+  return (
+    <button className='MenuButton'>
+      +
+    </button>
+  )
+}
