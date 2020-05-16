@@ -2,39 +2,54 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.scss'
 
+import { FaUsers, FaFileAlt, FaFlask, FaGreaterThan } from 'react-icons/fa'
+
 export function Dashboard () {
   return (
     <>
-      <h2>Darshboard Admin</h2>
-      <section>
-        <div>
-          <button className='dashboard-item'>
-            <Link to='/users'>Usuarios</Link>
-          </button>
-        </div>
-        <div>
-          <button className='dashboard-item'>
-            <Link to='/exams'>Examenes</Link>
-          </button>
-        </div>
-        <div>
-          <button className='dashboard-item'>
-            <Link to='/laboratories'>Laboratorios</Link>
-          </button>
-        </div>
-        <h2>Darshboard Patient</h2>
 
+      <section className='dashboard'>
+
+        <Link to='/users'>
+          <div className='dashboard-item'>
+            <div className='dashboard-item__img'>
+              <FaUsers />
+            </div>
+            <div className='dashboard-item__txt'>
+              Usuarios
+            </div>
+            <div className='dashboard-item__togo'>
+              <FaGreaterThan />
+            </div>
+          </div>
+        </Link>
+        <Link to='/exams'>
+          <div className='dashboard-item'>
+            <div className='dashboard-item__img'>
+              <FaFileAlt className='dasboard_item__icon' />
+            </div>
+            <div className='dashboard-item__txt'>
+              Exámenes
+            </div>
+            <div className='dashboard-item__togo'>
+              <FaGreaterThan />
+            </div>
+          </div>
+        </Link>
+        <Link to='/laboratories'>
+          <div className='dashboard-item'>
+            <div className='dashboard-item__img'>
+              <FaFlask className='dasboard_item__icon' />
+            </div>
+            <div className='dashboard-item__txt'>
+              Laboratorios
+            </div>
+            <div className='dashboard-item__togo'>
+              <FaGreaterThan />
+            </div>
+          </div>
+        </Link>
       </section>
-      <div>
-        <button className='button'>
-          <Link to='/exams'>Medical Consults</Link>
-        </button>
-      </div>
-      <div>
-        <button className='button'>
-          <Link to='/consults'>Examenes</Link>
-        </button>
-      </div>
     </>
   )
 }
