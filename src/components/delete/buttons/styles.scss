@@ -1,0 +1,12 @@
+@import '../../atoms/Global.scss';
+
+.CircleButton{
+  background-color: #0094A7;
+  border-radius:50%;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 24px;
+  margin:30px;
+  box-shadow: 0px 0px 2px 13px rgba(0,0,0,0.10);
+}

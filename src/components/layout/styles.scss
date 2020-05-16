@@ -1,0 +1,12 @@
+@import '../styles/Global.scss';
+
+.App{
+    position: relative;
+}
+
+main{
+    padding: $top-menu;
+    color: $font-color;
+    margin-top: $height-principal;
+    padding-bottom: $height-secondary;
+}
