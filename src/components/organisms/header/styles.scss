@@ -1,7 +1,9 @@
 @import '../../atoms/Global.scss';
 
 .headerMobile{
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .headerMobile__content{

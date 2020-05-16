@@ -1,0 +1,16 @@
+@import '../../atoms/Global.scss';
+
+.App{
+    position: relative;
+    display: flex;
+}
+
+main{
+    background-color: #EBF5FB;
+    flex: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    color:  #17202a;
+    margin-top: 50px;
+    padding-bottom: 70px;
+}

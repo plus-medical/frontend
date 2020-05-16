@@ -2,7 +2,11 @@
 
 .footerMobile{
   position: fixed;
-  bottom:0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px;
+  border-top-color: $border-box-color;
+  border-top-style: solid;
 }
 
 .footerMobile__icons{
