@@ -2,9 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './styles.scss'
 
-import { Box } from '../../atoms/shapes'
-import { TextMenu } from '../../atoms/texts'
-
 import {
   FaHome,
   FaRegListAlt,
@@ -38,7 +35,7 @@ export function FooterMobile () {
 
   return (
     <footer className='footerMobile'>
-      <Box className='footerMobile__container' />
+      <div className='footerMobile__container box' />
       <nav>
         <ul className='footerMobile__icons'>
           {MENUITEM.map((item) => {
@@ -48,7 +45,7 @@ export function FooterMobile () {
                   <div className='footerMobile_icons_item__img'>
                     {item.icon}
                   </div>
-                  <TextMenu data={item.name} />
+                  <label className='TextMenu'>{item.name}</label>
                 </NavLink>
               </li>
             )

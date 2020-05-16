@@ -2,8 +2,6 @@ import React from 'react'
 import { Link, useLocation, useHistory } from 'react-router-dom'
 import './styles.scss'
 
-import { Box } from '../../atoms/shapes/index'
-
 import {
   FaArrowLeft,
   FaSearch
@@ -14,7 +12,7 @@ export function HeaderMobile () {
   const history = useHistory()
   return (
     <header className='headerMobile'>
-      <Box />
+      <div className='box' />
       <ul className='headerMobile__content'>
         <li>
           <button onClick={() => history.goBack()}>

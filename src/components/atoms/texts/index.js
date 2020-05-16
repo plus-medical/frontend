@@ -7,8 +7,8 @@ export function DocumentSearch () {
   )
 }
 
-export function TextMenu ({ data }) {
-  return (
-    <label className='TextMenu'>{data}</label>
-  )
-}
+// export function TextMenu ({ data }) {
+//   return (
+//     <label className='TextMenu'>{data}</label>
+//   )
+// }

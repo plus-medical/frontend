@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
-import { FooterMobile } from '../../organisms/footer'
-import { HeaderMobile } from '../../organisms/header'
+import { FooterMobile } from '../footer'
+import { HeaderMobile } from '../header'
 
 export function LayoutMobile ({ children }) {
   return (
