@@ -1,14 +1,17 @@
-@import '../../atoms/Global.scss';
+@import '../styles/Global.scss';
 
 .headerMobile{
   position: fixed;
   top: 0;
   width: 100%;
+  border-bottom: 1px;
+  border-bottom-color: $border-box-color;
+  border-bottom-style: solid;
 }
 
 .headerMobile__content{
   position: absolute;
-  top:15px;
+  top:$top-menu;
   display:grid;
   grid-template-columns: 10% 75% 15%;
   width:100%;
@@ -23,4 +26,11 @@
 .headerMobile__content li a{
   color:$primary-color-2;
   text-decoration: none;
+  font-size: $border-principal;
+}
+
+.headerMobile__container{
+  background-color: $background-color;
+  width:100%;
+  height:$height-principal;
 }

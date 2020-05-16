@@ -6,9 +6,3 @@ export function DocumentSearch () {
     <label className='DocumentSearch'>1234322</label>
   )
 }
-
-export function TextMenu ({ data }) {
-  return (
-    <label className='TextMenu'>{data}</label>
-  )
-}

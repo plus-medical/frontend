@@ -1,0 +1,55 @@
+@import '../../components/styles/Global.scss';
+
+.login{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  min-height: 376px;
+  background-color: $primary-color-1;
+  padding:$padding-principal 0;
+}
+
+.login__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $primary-color-2;
+  width: calc(100% - 15%);
+  border-radius: 0 $border-principal;
+  padding: $padding-secondary;
+  margin: $border-principal 0;
+  box-shadow: 3px 3px 7px 3px rgba(0,0,0,0.3);
+}
+
+.login__input{
+  display: block;
+  background-color: $background-color;
+  width: 100%;
+  border-radius: 0 $border-principal;
+  padding: $padding-principal $border-principal;
+  border: $top-border solid $primary-color-3;
+  margin-bottom: $padding-secondary;
+  font-size: $font-size-principal;
+}
+
+.login__button{
+  background-color: $secondary-color-3;
+  border: 1px solid $secondary-color-1;
+  border-radius:  0 $border-principal;
+  padding: 7px $border-principal;
+  font-size: $font-size-principal;
+  color: $font-color;
+  font-weight: 700;
+  margin: 3px;
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.login__link{
+    text-decoration: none;
+    color: $background-color;
+    font-size: $font-size-secondary;
+    cursor: pointer;
+}

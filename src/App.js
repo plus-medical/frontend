@@ -5,10 +5,10 @@ import {
   Route
 } from 'react-router-dom'
 
-import { LayoutMobile } from './components/templates/layout'
+import { LayoutMobile } from './components/layout'
 import { Home } from './pages/Home'
-import { Login } from './pages/Login'
-import { Dashboard } from './pages/Dashboard'
+import { Login } from './pages/Login/index'
+import { Dashboard } from './pages/Dashboard/index'
 import { Users } from './pages/Users'
 import { User } from './pages/User'
 import { Exams } from './pages/Exams'

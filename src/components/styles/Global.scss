@@ -11,7 +11,7 @@ html {
   ul { list-style: none; }
   button { background: transparent; border: 0; outline: 0 }
   body {
-    display: flex; 
+    display: flex;
     background: $background-color;
     flex-direction: column;
     margin: 0 auto;
@@ -22,16 +22,7 @@ html {
   #app {
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     flex:1;
+    background-color: $background-color-main; 
   }
   
-  .container-login{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: calc(100vh - 100px);
-    min-height: 376px;
-    background-color: $primary-color-1;
-    padding:10px 0;
-    
-  }
+ 
