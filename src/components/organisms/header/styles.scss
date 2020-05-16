@@ -4,6 +4,9 @@
   position: fixed;
   top: 0;
   width: 100%;
+  border-bottom: 1px;
+  border-bottom-color: $border-box-color;
+  border-bottom-style: solid;
 }
 
 .headerMobile__content{

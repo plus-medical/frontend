@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './styles.scss'
 
 export function Dashboard () {
   return (
@@ -7,17 +8,17 @@ export function Dashboard () {
       <h2>Darshboard Admin</h2>
       <section>
         <div>
-          <button className='button'>
+          <button className='dashboard-item'>
             <Link to='/users'>Usuarios</Link>
           </button>
         </div>
         <div>
-          <button className='button'>
+          <button className='dashboard-item'>
             <Link to='/exams'>Examenes</Link>
           </button>
         </div>
         <div>
-          <button className='button'>
+          <button className='dashboard-item'>
             <Link to='/laboratories'>Laboratorios</Link>
           </button>
         </div>
