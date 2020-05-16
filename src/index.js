@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
-import './components/atoms/Global.scss'
+import './components/styles/Global.scss'
 
 const container = document.getElementById('app')
 
