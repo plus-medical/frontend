@@ -35,17 +35,24 @@ export function FooterMobile () {
 
   return (
     <footer className='footerMobile'>
-      <div className='footerMobile__container box' />
+      <div className='footerMobile__container' />
       <nav>
         <ul className='footerMobile__icons'>
           {MENUITEM.map((item) => {
             return (
               <li key={item.name}>
-                <NavLink to={item.link} exact activeClassName='active' className='footerMobile_icons__item'>
-                  <div className='footerMobile_icons_item__img'>
+                <NavLink
+                  to={item.link}
+                  exact
+                  activeClassName='active'
+                  className='footerMobile__item'
+                >
+                  <div className='footerMobile__img'>
                     {item.icon}
                   </div>
-                  <label className='TextMenu'>{item.name}</label>
+                  <label className='footerMobile__description'>
+                    {item.name}
+                  </label>
                 </NavLink>
               </li>
             )

@@ -12,7 +12,7 @@ export function HeaderMobile () {
   const history = useHistory()
   return (
     <header className='headerMobile'>
-      <div className='box' />
+      <div className='headerMobile__container' />
       <ul className='headerMobile__content'>
         <li>
           <button onClick={() => history.goBack()}>

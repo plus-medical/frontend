@@ -6,11 +6,11 @@
 }
 
 main{
-    background-color: #EBF5FB;
+    background-color: $background-color-main;
     flex: 1;
     box-sizing: border-box;
-    padding: 10px;
-    color:  #17202a;
-    margin-top: 50px;
-    padding-bottom: 70px;
+    padding: $top-menu;
+    color: $font-color;
+    margin-top: $height-principal;
+    padding-bottom: $height-secondary;
 }
