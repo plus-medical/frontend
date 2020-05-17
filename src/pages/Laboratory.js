@@ -3,26 +3,27 @@ import { Link } from 'react-router-dom'
 
 export function Laboratory () {
   return (
-    <section className='Laboratory'>
-      <form>
-        <input type='text' placeholder='Laborotario' />
-        <input type='text' placeholder='NIT' />
-        <input type='text' placeholder='Dirección' />
-        <input type='text' placeholder='Email' />
-        <input type='text' placeholder='Teléfono' />
-        <select name='status'>
+
+    <form>
+      <div className='form-section'>
+        <div className='form-section__title'>Crear laboratorio</div>
+        <input className='form-input' type='text' placeholder='Laborotario' />
+        <input className='form-input' type='text' placeholder='NIT' />
+        <input className='form-input' type='text' placeholder='Dirección' />
+        <input className='form-input' type='text' placeholder='Email' />
+        <input className='form-input' type='text' placeholder='Teléfono' />
+        <select className='form-input' name='status'>
           <option value='1'>Activo</option>
           <option value='2'>Inactivo</option>
         </select>
-        <button className='Button'>
-          Guardar
-        </button>
-        <Link to='/dashboard'>
-          <button className='Button'>
-            Cancelar
-          </button>
-        </Link>
-      </form>
-    </section>
+        <div className='form-section__buttons'>
+          <Link to='/dashboard'>
+            <button className='form-button secondary'>Cancelar </button>
+          </Link>
+          <button className='form-button primary'>Guardar</button>
+        </div>
+      </div>
+    </form>
+
   )
 }
