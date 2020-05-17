@@ -1,11 +1,8 @@
 import React from 'react'
-import { Link, useLocation, useHistory } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import './styles.scss'
 
-import {
-  FaArrowLeft,
-  FaSearch
-} from 'react-icons/fa'
+import { FaArrowLeft } from 'react-icons/fa'
 
 export function HeaderMobile () {
   const location = useLocation()
@@ -23,11 +20,6 @@ export function HeaderMobile () {
         </li>
         <li>
           <p>{location.pathname}</p>
-        </li>
-        <li>
-          <Link to='/'>
-            <FaSearch />
-          </Link>
         </li>
       </ul>
     </header>

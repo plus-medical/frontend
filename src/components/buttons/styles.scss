@@ -1,4 +1,4 @@
-@import '../../atoms/Global.scss';
+@import '../styles/Global.scss';
 
 .CircleButton{
   background-color: #0094A7;
@@ -8,5 +8,11 @@
   color: white;
   font-size: 24px;
   margin:30px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
   box-shadow: 0px 0px 2px 13px rgba(0,0,0,0.10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

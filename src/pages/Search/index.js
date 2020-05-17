@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.scss'
 import { Item } from '../../components/Item/index'
+import { CircleButton } from '../../components/buttons/index'
 
 export function Users () {
   return (
@@ -27,7 +28,13 @@ export function Users () {
         <Item />
         <Item />
         <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
       </ul>
+      <CircleButton />
     </section>
   )
 }
