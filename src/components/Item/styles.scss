@@ -1,0 +1,43 @@
+@import '../styles/Global.scss';
+
+.Item{
+  display:grid;
+  grid-template-columns: 25% 71% 4%;
+  width: $size-card-width;
+  justify-content: center;
+  border-radius:0 20px 0 20px;
+  background-color:$background-color-card;
+  height: $size-img-height;
+}
+
+.Item__Image{
+  border-radius: 0px 15% 0px 15%;
+  height: $size-img-height;
+  object-fit: contain;
+}
+
+.Item__name{
+  font-size:$font-size-nameCard;
+  font-weight: bold;
+  margin:0px 0px 5px 0px;
+}
+
+.Item__dni{
+  font-size:$font-size-dni;
+  font-weight: 300;
+  margin:0px 0px;
+  color: $primary-color-1;
+}
+
+.Item__profile{
+  font-weight: 500;
+  font-size:$font-size-principal;
+  margin:5px 0px;
+}
+
+.Item__indicator{
+  height: $size-img-height;
+  background-color: $color-great;
+  border-radius: 0 15px 0 0;
+}
+
