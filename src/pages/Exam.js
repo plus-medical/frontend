@@ -4,20 +4,21 @@ import { Link } from 'react-router-dom'
 export function Exam () {
   return (
     <form>
-      <input placeholder='Nombre del examen' />
-      <div className='item-state'>
-        <select name='status'>
-          <option value='1'>Activo</option>
-          <option value='2'>Inactivo</option>
-        </select>
-      </div>
-      <div>
-        <button className='Button'>Guardar</button>
-      </div>
-      <div>
-        <Link to='/dashboard'>
-          <button className='Button'>Cancelar </button>
-        </Link>
+      <div className='form-section'>
+        <div className='form-section__title'>Crear Examen</div>
+        <input placeholder='Nombre del examen' className='form-input' />
+        <div className='item-state'>
+          <select className='form-select'>
+            <option value='1'>Activo</option>
+            <option value='2'>Inactivo</option>
+          </select>
+        </div>
+        <div className='form-section__buttons'>
+          <Link to='/dashboard'>
+            <button className='form-button secondary'>Cancelar </button>
+          </Link>
+          <button className='form-button primary'>Guardar</button>
+        </div>
       </div>
     </form>
   )
