@@ -12,7 +12,7 @@ export function Laboratory () {
         <input className='form-input' type='text' placeholder='Dirección' />
         <input className='form-input' type='text' placeholder='Email' />
         <input className='form-input' type='text' placeholder='Teléfono' />
-        <select className='form-input' name='status'>
+        <select className='form-select' name='status'>
           <option value='1'>Activo</option>
           <option value='2'>Inactivo</option>
         </select>

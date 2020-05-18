@@ -1,0 +1,16 @@
+@import '../../components/styles/Global.scss';
+
+.user-info{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+.user-info__data{
+    padding-left: 5px;
+}
+
+.user-gender{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0;
+}
