@@ -4,9 +4,9 @@ import './styles.scss'
 
 import { FaPlus } from 'react-icons/fa'
 
-export function CircleButton () {
+export function CircleButton ({ data }) {
   return (
-    <Link to='/user' className='CircleButton'>
+    <Link to={data} className='CircleButton'>
       <FaPlus />
     </Link>
   )

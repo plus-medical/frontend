@@ -22,7 +22,7 @@ export const Laboratories = () => {
         <Item data={link} />
         <Item data={link} />
       </ul>
-      <CircleButton />
+      <CircleButton data={link} />
     </section>
   )
 }

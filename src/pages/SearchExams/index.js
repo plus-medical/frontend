@@ -23,7 +23,7 @@ export function Exams () {
         <Item data={link} />
         <Item data={link} />
       </ul>
-      <CircleButton />
+      <CircleButton data={link} />
     </section>
   )
 }

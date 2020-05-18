@@ -1,7 +1,10 @@
 import React from 'react'
 import './style.scss'
 
+import { CircleButton } from '../../components/buttons/index'
+
 export function ClinicHistory () {
+  const link = '/medicalconsultation'
   return (
     <form>
       <div className='form-section'>
@@ -71,6 +74,7 @@ export function ClinicHistory () {
             aria-label='telefono del resposable'
           />
         </div>
+        <CircleButton data={link} />
       </div>
     </form>
   )
