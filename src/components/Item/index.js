@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.scss'
 
-export function Item () {
+export function Item ({ title }) {
+  console.log(title)
   return (
     <Link to='/user'>
       <li className='Item'>
