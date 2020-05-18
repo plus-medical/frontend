@@ -1,0 +1,15 @@
+.image-upload{
+    // max-width: 90px;
+    // max-height: 90px;
+    box-sizing: border-box;
+}
+
+.image-upload label>img{
+    width: 100%;
+}
+
+.image-upload > input {
+    visibility:hidden;
+    width:0;
+    height:0
+}
