@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './styles.scss'
 
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/logotipoBlue.png'
 
 export function Login () {
   const formLogin = useRef()

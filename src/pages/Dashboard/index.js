@@ -7,7 +7,6 @@ import { FaUsers, FaFileAlt, FaFlask, FaGreaterThan } from 'react-icons/fa'
 export function Dashboard () {
   return (
     <>
-
       <section className='dashboard'>
 
         <Link to='/users'>
