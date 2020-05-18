@@ -4,6 +4,7 @@ import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 
 export const Laboratories = () => {
+  const link = '/laboratory'
   return (
     <section className='laboratories'>
       <div className='laboratories__container'>
@@ -15,11 +16,11 @@ export const Laboratories = () => {
         />
       </div>
       <ul className='laboratories__list'>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
       </ul>
       <CircleButton />
     </section>

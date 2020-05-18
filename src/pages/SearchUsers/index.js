@@ -4,6 +4,7 @@ import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 
 export function Users () {
+  const link = '/user'
   return (
     <section className='users'>
       <div className='users__container'>
@@ -15,24 +16,20 @@ export function Users () {
         />
       </div>
       <ul className='users__list'>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
+        <Item data={link} />
       </ul>
       <CircleButton />
     </section>
