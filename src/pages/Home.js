@@ -73,7 +73,7 @@ export function Home () {
       <h2>Doctor</h2>
       <ul>
         <li>
-          <Link to='/patient'>
+          <Link to='/searchpatient'>
             <button>
               Buscar paciente
             </button>

@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Photo } from '../../components/photo'
 import './styles.scss'
+
 export function User () {
   return (
-
     <form>
       <div className='form-section'>
         <div className='user-info'>
