@@ -14,6 +14,7 @@ $background-color-form:#fff;
 $border-box-color: #D0D3D4;
 $font-color:#17202a;
 $font-disabled:#616871;
+$font-placeholder: #888;
 
 $color-great:#08A660;
 $color-nogreat:#A62611;
@@ -53,4 +54,4 @@ $button-font-color: #fff;
 
 //form
 $input-border-color: #979797;
-
+$input-border-color_onfocus: $primary-color-3;

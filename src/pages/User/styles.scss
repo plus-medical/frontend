@@ -4,13 +4,21 @@
     display: grid;
     grid-template-columns: 100px 1fr;
 }
-.user-info__data{
+.user-info__data,
+.user-info__dni{
     padding-left: 5px;
 }
 
+.user-info__data{
+    padding-top: 6px;
+}
+
+.user-info__dni{
+    padding-top: 1px;
+}
 .user-gender{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 10px 0;
+    margin: 10px 0 15px 0;
 }
