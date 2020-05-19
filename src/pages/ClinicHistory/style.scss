@@ -1,15 +1,19 @@
 @import '../../components/styles/Global.scss';
 
-.patient-info{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-}
 .patient-info__data{
     padding-left: 5px;
 }
 
 .patient-info__item{
-    text-align: right;
+    justify-content: center;
     padding-right:10px;
     font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.patient__blood{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    align-items:center;
 }
