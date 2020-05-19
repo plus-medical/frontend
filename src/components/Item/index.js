@@ -2,10 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.scss'
 
-export function Item ({ title }) {
-  console.log(title)
+export function Item ({ data }) {
   return (
-    <Link to='/user'>
+    <Link to={data}>
       <li className='Item'>
         <img
           className='Item__Image'

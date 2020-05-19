@@ -15,10 +15,11 @@ import { Exams } from './pages/SearchExams/index'
 import { Exam } from './pages/Exam'
 import { Laboratories } from './pages/SearchLaboratories/index'
 import { UserProfile } from './pages/UserProfile'
-import { Clinichistory } from './pages/Clinichistory'
-import { Detailpatientexam } from './pages/Detailpatientexam'
+import { SearchPatient } from './pages/SearchPatient/index'
+import { ClinicHistory } from './pages/ClinicHistory/index'
+import { MedicalConsultation } from './pages/MedicalConsultation/index'
+import { DetailPatientExam } from './pages/DetailPatientExam'
 import { Laboratory } from './pages/Laboratory'
-import { Patient } from './pages/Patient'
 
 export const App = () => {
   return (
@@ -34,10 +35,11 @@ export const App = () => {
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/laboratories' component={Laboratories} />
           <Route exact path='/userprofile' component={UserProfile} />
-          <Route exact path='/clinichistory' component={Clinichistory} />
-          <Route exact path='/detailexam' component={Detailpatientexam} />
+          <Route exact path='/searchpatient' component={SearchPatient} />
+          <Route exact path='/clinichistory' component={ClinicHistory} />
+          <Route exact path='/medicalconsultation' component={MedicalConsultation} />
+          <Route exact path='/detailexam' component={DetailPatientExam} />
           <Route exact path='/laboratory' component={Laboratory} />
-          <Route exact path='/patient' component={Patient} />
         </Switch>
       </LayoutMobile>
     </BrowserRouter>

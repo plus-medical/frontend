@@ -1,0 +1,12 @@
+@import '../../components/styles/Global.scss';
+
+.MedicalConsultation{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.MedicalConsultation__item{
+  text-align: right;
+  padding-right:10px;
+  font-weight: 700;
+}

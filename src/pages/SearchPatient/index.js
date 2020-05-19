@@ -1,28 +1,26 @@
 import React from 'react'
 import './style.scss'
 import { Item } from '../../components/Item/index'
-import { CircleButton } from '../../components/buttons/index'
 
-export const Laboratories = () => {
-  const link = '/laboratory'
+export const SearchPatient = () => {
+  const link = '/clinichistory'
   return (
-    <section className='laboratories'>
-      <div className='laboratories__container'>
+    <section className='patient'>
+      <div className='patient__container'>
         <input
           type='search'
           placeholder='buscar usuario'
           aria-label='busqueda de usuarios'
-          className='laboratories__input'
+          className='patient__input'
         />
       </div>
-      <ul className='laboratories__list'>
+      <ul className='patient__list'>
         <Item data={link} />
         <Item data={link} />
         <Item data={link} />
         <Item data={link} />
         <Item data={link} />
       </ul>
-      <CircleButton data={link} />
     </section>
   )
 }
