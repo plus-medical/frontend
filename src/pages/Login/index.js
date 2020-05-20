@@ -28,7 +28,7 @@ export function Login () {
         onSubmit={handleSubmit}
       >
         <input
-          className='login__input'
+          className='login__input login__input-user'
           name='DNI'
           type='tel'
           placeholder='Numero de Identificacion'
@@ -36,7 +36,7 @@ export function Login () {
           required
         />
         <input
-          className='login__input'
+          className='login__input login__input-psw'
           name='Psw'
           type='password'
           placeholder='Contraseña'

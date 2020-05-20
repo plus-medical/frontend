@@ -10,6 +10,18 @@
   height: $size-img-height;
 }
 
+.item__figure{
+  position: absolute;
+}
+
+.item__icon{
+  position: relative;
+  top: -25px;
+  right: -59px;
+  color: $background-color-card;
+  font-size: $border-search;
+}
+
 .Item__Image{
   border-radius: 0px 15% 0px 15%;
   height: $size-img-height;

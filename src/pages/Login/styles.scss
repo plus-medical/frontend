@@ -24,16 +24,39 @@
   box-shadow: 3px 3px 7px 3px rgba(0,0,0,0.3);
 }
 
+.login__user{
+  position: absolute;
+}
+
+.login__user-icon{
+  position: relative;
+  top: -58px;
+  left: -92px;
+}
+
 .login__input{
   display: block;
   background-color: $background-color;
   width: 100%;
   border-radius: 0 $border-principal;
-  padding: $padding-principal $border-principal;
+  padding: $padding-principal $padding-secondary;
   border: $top-border solid $primary-color-3;
   margin-bottom: $padding-secondary;
   font-size: $font-size-principal;
   outline: none;
+
+  background-repeat: no-repeat;
+  background-position: 4px center;
+  background-size: 15px;
+  background-position-x: 10px;
+}
+
+.login__input-user{
+  background-image: url(../../assets/images/user-solid.svg);
+}
+
+.login__input-psw{
+  background-image: url(../../assets/images/lock-solid.svg);
 }
 
 .login__button{

@@ -75,3 +75,4 @@ typings/
 yarn-error.log
 
 .now
+src/pages/Logged/index.js

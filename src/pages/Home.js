@@ -99,7 +99,9 @@ export function Home () {
           </Link>
         </li>
         <li>
-          Cargar Resultados
+          <Link to='/detailexam'>
+            Cargar Resultados
+          </Link>
         </li>
       </ul>
 

@@ -32,7 +32,6 @@ export const App = () => {
           <Route exact path='/user' component={User} />
           <Route exact path='/exams' component={Exams} />
           <Route exact path='/exam' component={Exam} />
-          <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/laboratories' component={Laboratories} />
           <Route exact path='/userprofile' component={UserProfile} />
           <Route exact path='/searchpatient' component={SearchPatient} />
@@ -40,6 +39,7 @@ export const App = () => {
           <Route exact path='/medicalconsultation' component={MedicalConsultation} />
           <Route exact path='/detailexam' component={DetailPatientExam} />
           <Route exact path='/laboratory' component={Laboratory} />
+          <Route exact path='/dashboard' component={Dashboard} />
         </Switch>
       </LayoutMobile>
     </BrowserRouter>
