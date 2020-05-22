@@ -9,51 +9,51 @@ export function MedicalConsultation () {
       <label className='MedicalConsultation__item'>Consulta</label>
       <input
         type='text'
-        placeholder='Razon de la consulta'
-        aria-label='Razon de la consulta'
+        placeholder='Razón de la consulta'
+        aria-label='Razón de la consulta'
         className='form-input'
       />
 
       <input
         type='text'
-        placeholder='exploración'
-        aria-label='exploración'
+        placeholder='Exploración'
+        aria-label='Exploración'
         className='form-input'
       />
       <input
         type='text'
-        placeholder='analisis'
-        aria-label='analisis'
+        placeholder='Análisis'
+        aria-label='Análisis'
         className='form-input'
       />
       <input
         type='text'
-        placeholder='diagnostico'
-        aria-label='diagnostico'
+        placeholder='Diagnóstico'
+        aria-label='Diagnóstico'
         className='form-input'
       />
       <input
         type='text'
-        placeholder='evolucion'
-        aria-label='evolucion'
+        placeholder='Evolución'
+        aria-label='Evolución'
         className='form-input'
       />
       <input
         type='text'
-        placeholder='orden medica'
-        aria-label='orden medica'
+        placeholder='Orden Médica'
+        aria-label='Orden Médica'
         className='form-input'
       />
       <input
         type='text'
-        placeholder='farmacologia'
-        aria-label='farmacologia'
+        placeholder='Farmacología'
+        aria-label='Farmacología'
         className='form-input'
       />
       <input
         type='search'
-        placeholder='busqueda de examenes'
-        aria-label='busqueda de examenes'
+        placeholder='Busqueda de Exámenes'
+        aria-label='Busqueda de Exámenes'
         className='form-input'
       />
 
