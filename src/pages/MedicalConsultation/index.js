@@ -2,8 +2,10 @@ import React from 'react'
 import './style.scss'
 
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
 export function MedicalConsultation () {
+  const { register, handleSubmit, watch, errors } = useForm()
   return (
     <form className='MedicalConsultation form-section'>
       <label className='MedicalConsultation__item'>Consulta</label>
