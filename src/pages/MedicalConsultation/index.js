@@ -1,12 +1,11 @@
 import React from 'react'
 import './style.scss'
-
-import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 
 export function MedicalConsultation () {
-  const { register, handleSubmit, errors } = useForm()
-  const onSubmit = data => console.log(data)
+  const { handleSubmit, register, errors } = useForm()
+  const onSubmit = values => console.log(values)
 
   return (
     <form
