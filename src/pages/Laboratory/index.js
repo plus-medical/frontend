@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
 export function Laboratory () {
+  const { register, handleSubmit } = useForm()
+  const onSubmit = data => console.log(data)
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className='form-section'>
         <div className='form-section__title'>Crear laboratorio</div>
         <div className='form-group'>
@@ -12,19 +15,21 @@ export function Laboratory () {
             className='form-input'
             type='text'
             aria-label='Nombre del laborotario'
-            autocomplete='off'
-            required
+            autoComplete='off'
+            name='laboratory-name'
+            ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-name'>Laboratorio</label>
         </div>
         <div className='form-group'>
           <input
-            id='laboratory-tin'
+            id='laboratory-NIT'
             className='form-input'
             type='text'
-            aria-label='nit'
-            autocomplete='off'
-            required
+            aria-label='NIT'
+            autoComplete='off'
+            name='laboratory-NIT'
+            ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-tin'>NIT</label>
         </div>
@@ -34,8 +39,9 @@ export function Laboratory () {
             className='form-input'
             type='text'
             aria-label='Dirección'
-            autocomplete='off'
-            required
+            autoComplete='off'
+            name='laboratory-address'
+            ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-address'>Dirección</label>
         </div>
@@ -45,8 +51,9 @@ export function Laboratory () {
             className='form-input'
             type='text'
             aria-label='Correo electrónico'
-            autocomplete='off'
-            required
+            autoComplete='off'
+            name='laboratory-email'
+            ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-email'>Correo electrónico</label>
         </div>
@@ -56,8 +63,9 @@ export function Laboratory () {
             className='form-input'
             type='text'
             aria-label='Teléfono'
-            autocomplete='off'
-            required
+            autoComplete='off'
+            name='labotary-phone'
+            ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-phone'>Teléfono</label>
         </div>
@@ -66,12 +74,13 @@ export function Laboratory () {
             id='laboratory-status'
             className='form-select'
             aria-label='Estado del laboratorio'
-            autocomplete='off'
-            required
+            autoComplete='off'
+            name='laboratory-status'
+            ref={register}
           >
             <option />
-            <option value='1'>Activo</option>
-            <option value='2'>Inactivo</option>
+            <option value='active'>Activo</option>
+            <option value='inactive'>Inactivo</option>
           </select>
           <label className='form-placeholder' htmlFor='laboratory-status'>Estado</label>
         </div>
@@ -79,7 +88,7 @@ export function Laboratory () {
           <Link to='/dashboard'>
             <button className='form-button secondary'>Cancelar </button>
           </Link>
-          <button className='form-button primary'>Guardar</button>
+          <button submit className='form-button primary'>Guardar</button>
         </div>
       </div>
     </form>
