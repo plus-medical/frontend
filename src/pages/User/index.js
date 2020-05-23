@@ -23,7 +23,7 @@ export function User () {
                 type='text'
                 aria-label='Nombre completo'
                 autoComplete='off'
-                name='firstName'
+                name='user_firstName'
                 ref={register({ required: true })}
               />
               {errors.firstName && <span className='form-input__error'>se requiere el nombre completo</span>}
@@ -36,7 +36,7 @@ export function User () {
                 type='text'
                 aria-label='Apellido'
                 autoComplete='off'
-                name='firstName'
+                name='user_lastName'
                 ref={register({ required: true })}
               />
               {errors.firstName && <span className='form-input__error'>se requiere el apellido</span>}
@@ -48,15 +48,15 @@ export function User () {
         <div className='user-info'>
           <div className='form-group'>
             <select
-              name='typeDNI'
+              name='user_typeDNI'
               id='typeDNI'
               className='form-select'
               ref={register({ required: true })}
             >
               <option />
-              <option value='1'>TI</option>
-              <option value='2'>CC</option>
-              <option value='3'>NIT</option>
+              <option value='TI'>TI</option>
+              <option value='CC'>CC</option>
+              <option value='NIT'>NIT</option>
             </select>
             {errors.typeDNI && <span className='form-input__error'>se requiere el tipo de documento</span>}
             <label className='form-placeholder' htmlFor='typeDNI'>Tipo</label>
@@ -70,7 +70,7 @@ export function User () {
                 aria-label='Numero de documento'
                 autoComplete='off'
                 ref={register({ required: true })}
-                name='DNI_number'
+                name='user_DNInumber'
               />
               {errors.DNI_number && <span className='form-input__error'>se requiere el apellido</span>}
               <label className='form-placeholder' htmlFor='dni'>Número de documento</label>
@@ -80,16 +80,16 @@ export function User () {
         <div className='form-group'>
 
           <select
-            name='rol'
+            name='user_rol'
             id='rol'
             className='form-select'
             ref={register({ required: true })}
           >
             <option />
-            <option value='1'>Paciente</option>
-            <option value='2'>Administrador</option>
-            <option value='3'>Doctor</option>
-            <option value='4'>Laboratorio</option>
+            <option value='patient'>Paciente</option>
+            <option value='manager'>Administrador</option>
+            <option value='doctor'>Doctor</option>
+            <option value='laboratory'>Laboratorio</option>
           </select>
           {errors.rol && <span className='form-input__error'>se requiere el rol</span>}
           <label className='form-placeholder' htmlFor='rol'>Rol</label>
@@ -104,7 +104,7 @@ export function User () {
             type='mail'
             aria-label='ingresar Correo electronico'
             autoComplete='off'
-            name='email'
+            name='user_email'
             ref={register({ required: true })}
           />
           {errors.email && <span className='form-input__error'>se requiere el correo electronico</span>}
@@ -116,7 +116,7 @@ export function User () {
             className='form-input'
             type='password'
             aria-label='contraseña generado'
-            name='psw'
+            name='user_psw'
             ref={register({ required: true })}
           />
           {errors.psw && <span className='form-input__error'>se requiere el contraseña</span>}
@@ -136,7 +136,7 @@ export function User () {
             className='form-input'
             type='date'
             autoComplete='off'
-            name='birthdate'
+            name='user_birthdate'
             ref={register({ required: true })}
           />
           {errors.birthdate && <span className='form-input__error'>se requiere el fecha de nacimiento</span>}
@@ -144,15 +144,15 @@ export function User () {
         </div>
         <div className='user-gender'>
           <div>
-            <input type='radio' id='male' name='gender' value='male' ref={register()} />
+            <input type='radio' id='male' name='user_gender' value='male' ref={register()} />
             <label htmlFor='male'>Male</label>
           </div>
           <div>
-            <input type='radio' id='female' name='gender' value='female' ref={register()} />
+            <input type='radio' id='female' name='user_gender' value='female' ref={register()} />
             <label htmlFor='female'>Female</label>
           </div>
           <div>
-            <input type='radio' id='other' name='gender' value='other' ref={register()} />
+            <input type='radio' id='other' name='user_gender' value='other' ref={register()} />
             <label htmlFor='other'>Other</label>
           </div>
         </div>
@@ -163,7 +163,7 @@ export function User () {
             id='direccion'
             aria-label='Direccion'
             ref={register}
-            name='address'
+            name='user_address'
           />
           <label className='form-placeholder' htmlFor='Dirección'>Dirección</label>
         </div>
@@ -174,7 +174,7 @@ export function User () {
             id='telefono'
             aria-label='telefono'
             ref={register({ pattern: /\(?([0-9]{3})\)?([ .-]?)?([0-9]{3})\2([0-9]{4})/ })}
-            name='number_phone'
+            name='user_phone'
           />
           {errors.number_phone && <span className='form-input__error'>se requiere digitar números</span>}
           <label className='form-placeholder' htmlFor='telefono'>Teléfono</label>
@@ -182,12 +182,12 @@ export function User () {
         <div className='form-group'>
           <select
             className='form-select'
-            name='status'
+            name='user_status'
             ref={register({ required: true })}
           >
             <option />
-            <option value='1'>activo</option>
-            <option value='2'>Inactivo</option>
+            <option value='active'>activo</option>
+            <option value='inactive'>Inactivo</option>
           </select>
           {errors.status && <span className='form-input__error'>se requiere seleccionar un estado</span>}
           <label className='form-placeholder' htmlFor='user-state'>Estado del usuario</label>

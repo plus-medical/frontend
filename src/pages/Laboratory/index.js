@@ -16,7 +16,7 @@ export function Laboratory () {
             type='text'
             aria-label='Nombre del laborotario'
             autoComplete='off'
-            name='laboratory-name'
+            name='laboratory_name'
             ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-name'>Laboratorio</label>
@@ -28,7 +28,7 @@ export function Laboratory () {
             type='text'
             aria-label='NIT'
             autoComplete='off'
-            name='laboratory-NIT'
+            name='laboratory_NIT'
             ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-tin'>NIT</label>
@@ -40,7 +40,7 @@ export function Laboratory () {
             type='text'
             aria-label='Dirección'
             autoComplete='off'
-            name='laboratory-address'
+            name='laboratory_address'
             ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-address'>Dirección</label>
@@ -52,7 +52,7 @@ export function Laboratory () {
             type='text'
             aria-label='Correo electrónico'
             autoComplete='off'
-            name='laboratory-email'
+            name='laboratory_email'
             ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-email'>Correo electrónico</label>
@@ -64,7 +64,7 @@ export function Laboratory () {
             type='text'
             aria-label='Teléfono'
             autoComplete='off'
-            name='labotary-phone'
+            name='laboratory_phone'
             ref={register}
           />
           <label className='form-placeholder' htmlFor='laboratory-phone'>Teléfono</label>
@@ -75,7 +75,7 @@ export function Laboratory () {
             className='form-select'
             aria-label='Estado del laboratorio'
             autoComplete='off'
-            name='laboratory-status'
+            name='laboratory_status'
             ref={register}
           >
             <option />
@@ -88,7 +88,7 @@ export function Laboratory () {
           <Link to='/dashboard'>
             <button className='form-button secondary'>Cancelar </button>
           </Link>
-          <button submit className='form-button primary'>Guardar</button>
+          <button submit='true' className='form-button primary'>Guardar</button>
         </div>
       </div>
     </form>

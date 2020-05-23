@@ -19,7 +19,7 @@ export function MedicalConsultation () {
         placeholder='Razón de la consulta'
         aria-label='Razón de la consulta'
         className='form-input'
-        name='reason_for_consultation'
+        name='consultation_reason'
         ref={register({ required: true })}
       />
       {errors.reason_for_consultation && <span>Campo requerido</span>}
@@ -29,7 +29,7 @@ export function MedicalConsultation () {
         placeholder='Exploración'
         aria-label='Exploración'
         className='form-input'
-        name='exploration'
+        name='consultation_exploration'
         ref={register({ required: true })}
       />
       {errors.exploration && <span>Campo requerido</span>}
@@ -39,7 +39,7 @@ export function MedicalConsultation () {
         placeholder='Análisis'
         aria-label='Análisis'
         className='form-input'
-        name='analysis'
+        name='consultation_analysis'
         ref={register({ required: true })}
       />
       {errors.analysis && <span>Campo requerido</span>}
@@ -49,7 +49,7 @@ export function MedicalConsultation () {
         placeholder='Diagnóstico'
         aria-label='Diagnóstico'
         className='form-input'
-        name='diagnosis'
+        name='consultation_diagnosis'
         ref={register({ required: true })}
       />
       {errors.diagnosis && <span>Campo requerido</span>}
@@ -59,7 +59,7 @@ export function MedicalConsultation () {
         placeholder='Evolución'
         aria-label='Evolución'
         className='form-input'
-        name='evolution'
+        name='consultation_evolution'
         ref={register({ required: true })}
       />
       {errors.evolution && <span>Campo requerido</span>}
@@ -69,7 +69,7 @@ export function MedicalConsultation () {
         placeholder='Orden Médica'
         aria-label='Orden Médica'
         className='form-input'
-        name='medical_order'
+        name='consultation_medicalorder'
         ref={register({ required: true })}
       />
       {errors.medical_order && <span>Campo requerido</span>}
@@ -79,7 +79,7 @@ export function MedicalConsultation () {
         placeholder='Farmacología'
         aria-label='Farmacología'
         className='form-input'
-        name='pharmacology'
+        name='consultation_pharmacology'
         ref={register({ required: true })}
       />
       {errors.pharmacology && <span>Campo requerido</span>}
@@ -89,7 +89,7 @@ export function MedicalConsultation () {
         placeholder='Busqueda de Exámenes'
         aria-label='Busqueda de Exámenes'
         className='form-input'
-        name='examination search'
+        name='consultation_examination'
         ref={register}
       />
 
@@ -97,7 +97,7 @@ export function MedicalConsultation () {
         <Link to='/'>
           <button className='form-button secondary'>Cancelar </button>
         </Link>
-        <button submit className='form-button primary'>Guardar</button>
+        <button submit='true' className='form-button primary'>Guardar</button>
       </div>
     </form>
   )

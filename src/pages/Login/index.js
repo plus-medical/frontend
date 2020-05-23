@@ -18,7 +18,7 @@ export function Login () {
       >
         <input
           className='login__input login__input-user'
-          name='DNI'
+          name='user_DNI'
           type='tel'
           placeholder='Numero de Identificacion'
           aria-label='Numero de identicacion'
@@ -27,7 +27,7 @@ export function Login () {
         {errors.DNI && <span className='login__error'>Campo requerido</span>}
         <input
           className='login__input login__input-psw'
-          name='Psw'
+          name='user_psw'
           type='password'
           placeholder='Contraseña'
           aria-label='Contraseña'
