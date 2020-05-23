@@ -18,22 +18,22 @@ export function Login () {
       >
         <input
           className='login__input login__input-user'
-          name='user_DNI'
+          name='username'
           type='tel'
           placeholder='Numero de Identificacion'
           aria-label='Numero de identicacion'
           ref={register({ required: true })}
         />
-        {errors.DNI && <span className='login__error'>Campo requerido</span>}
+        {errors.username && <span className='login__error'>Campo requerido</span>}
         <input
           className='login__input login__input-psw'
-          name='user_psw'
+          name='password'
           type='password'
           placeholder='Contraseña'
           aria-label='Contraseña'
           ref={register({ required: true })}
         />
-        {errors.Psw && <span className='login__error'>Campo requerido</span>}
+        {errors.password && <span className='login__error'>Campo requerido</span>}
 
         <button
           aria-label='button iniciar session'
