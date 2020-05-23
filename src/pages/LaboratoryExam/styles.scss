@@ -1,0 +1,57 @@
+@import '../../components/styles/Global.scss';
+
+.patient-info{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.patient-info__photo>img{
+    width: 100px;
+}
+
+.patient-info__data{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 10px;
+    color: $font-color;
+}
+
+.patient-info__data>span{
+    display: block;
+    width: 100%;
+}
+
+.patient-exams__item{
+    display: grid;
+    grid-template-columns: 25% 60% 15%;
+    padding: 15px 10px;
+    border: 1px solid $border-box-color;
+    margin-bottom: 10px;
+    border-radius: 0 $border-principal;
+}
+
+.patient-exams__img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $size_item_icon;
+    color: $primary-color-2;
+  }
+  
+  .patient-exams__txt{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: $font-size-principal;
+    font-weight: 700;
+    color: $font-color;
+  }
+  
+  .patient-exams__togo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $size_item_togo;
+    color: $primary-color-2;
+  }

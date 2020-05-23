@@ -14,12 +14,12 @@ import { User } from './pages/User'
 import { Exams } from './pages/SearchExams/index'
 import { Exam } from './pages/Exam/index'
 import { Laboratories } from './pages/SearchLaboratories/index'
-import { UserProfile } from './pages/UserProfile'
 import { SearchPatient } from './pages/SearchPatient/index'
 import { ClinicHistory } from './pages/ClinicHistory/index'
 import { MedicalConsultation } from './pages/MedicalConsultation/index'
 import { DetailPatientExam } from './pages/DetailPatientExam'
 import { Laboratory } from './pages/Laboratory'
+import { LaboratoryExam } from './pages/LaboratoryExam'
 
 export const App = () => {
   return (
@@ -33,7 +33,7 @@ export const App = () => {
           <Route exact path='/exams' component={Exams} />
           <Route exact path='/exam' component={Exam} />
           <Route exact path='/laboratories' component={Laboratories} />
-          <Route exact path='/userprofile' component={UserProfile} />
+          <Route exact path='/laboratoryexam' component={LaboratoryExam} />
           <Route exact path='/searchpatient' component={SearchPatient} />
           <Route exact path='/clinichistory' component={ClinicHistory} />
           <Route exact path='/medicalconsultation' component={MedicalConsultation} />
