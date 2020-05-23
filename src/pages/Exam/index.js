@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
 export function Exam () {
+  const { register, handleSubmit } = useForm()
+  const onSubmit = data => console.log(data)
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className='form-section'>
         <div className='form-section__title'>Crear Examen</div>
         <div className='form-group'>
@@ -12,8 +16,9 @@ export function Exam () {
             id='exam-name'
             className='form-input'
             aria-label='Nombre del examen'
-            autocomplete='off'
-            required
+            autoComplete='off'
+            name='exam_name'
+            ref={register}
           />
           <label className='form-placeholder' htmlFor='exam-name'>Examen</label>
         </div>
@@ -23,12 +28,13 @@ export function Exam () {
               id='exam-status'
               className='form-select'
               aria-label='Estado del examen'
-              autocomplete='off'
-              required
+              autoComplete='off'
+              name='exam_state'
+              ref={register}
             >
               <option />
-              <option value='1'>Activo</option>
-              <option value='2'>Inactivo</option>
+              <option value='active'>Activo</option>
+              <option value='inactive'>Inactivo</option>
             </select>
             <label className='form-placeholder' htmlFor='exam-status'>Estado</label>
           </div>
@@ -37,7 +43,7 @@ export function Exam () {
           <Link to='/dashboard'>
             <button className='form-button secondary'>Cancelar </button>
           </Link>
-          <button className='form-button primary'>Guardar</button>
+          <button submit='true' className='form-button primary'>Guardar</button>
         </div>
       </div>
     </form>
