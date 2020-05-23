@@ -1,48 +1,40 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import './styles.scss'
+import { useForm } from 'react-hook-form'
 
+import './styles.scss'
 import Logo from '../../assets/images/logotipoBlue.png'
 
 export function Login () {
-  const formLogin = useRef()
-
-  function send (formData) {
-    const data = Array.from(formData)
-    window.alert(`se ha enviado la siguiente información: ${JSON.stringify(data)}`)
-  }
-
-  function handleSubmit (event) {
-    event.preventDefault()
-    // eslint-disable-next-line no-undef
-    const formData = new FormData(formLogin.current)
-    send(formData)
-  }
+  const { register, handleSubmit, errors } = useForm()
+  const onSubmit = data => console.log(data)
 
   return (
     <section className='login'>
       <img src={Logo} alt='Plus Medical Logo' />
       <form
         className='login__form'
-        ref={formLogin}
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <input
           className='login__input login__input-user'
-          name='DNI'
+          name='user_DNI'
           type='tel'
           placeholder='Numero de Identificacion'
           aria-label='Numero de identicacion'
-          required
+          ref={register({ required: true })}
         />
+        {errors.DNI && <span className='login__error'>Campo requerido</span>}
         <input
           className='login__input login__input-psw'
-          name='Psw'
+          name='user_psw'
           type='password'
           placeholder='Contraseña'
           aria-label='Contraseña'
-          required
+          ref={register({ required: true })}
         />
+        {errors.Psw && <span className='login__error'>Campo requerido</span>}
+
         <button
           aria-label='button iniciar session'
           className='login__button'
@@ -50,6 +42,7 @@ export function Login () {
         >
           Iniciar sesión
         </button>
+
       </form>
       <Link className='login__link' to='/'>
         Olvidó su contraseña

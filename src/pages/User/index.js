@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom'
 import { Photo } from '../../components/photo'
 import './styles.scss'
 
+import { useForm } from 'react-hook-form'
+
 export function User () {
+  const { register, handleSubmit, errors } = useForm()
+  const onSubmit = data => console.log(data)
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className='form-section'>
         <div className='user-info'>
           <div className='user-info__photo'>
@@ -18,9 +22,11 @@ export function User () {
                 className='form-input'
                 type='text'
                 aria-label='Nombre completo'
-                autocomplete='off'
-                required
+                autoComplete='off'
+                name='user_firstName'
+                ref={register({ required: true })}
               />
+              {errors.firstName && <span className='form-input__error'>se requiere el nombre completo</span>}
               <label className='form-placeholder' htmlFor='firstname'>Nombre completo</label>
             </div>
             <div className='form-group'>
@@ -29,26 +35,30 @@ export function User () {
                 className='form-input'
                 type='text'
                 aria-label='Apellido'
-                autocomplete='off'
-                required
+                autoComplete='off'
+                name='user_lastName'
+                ref={register({ required: true })}
               />
+              {errors.firstName && <span className='form-input__error'>se requiere el apellido</span>}
               <label className='form-placeholder' htmlFor='lastname'>Apellidos</label>
             </div>
           </div>
-
         </div>
 
         <div className='user-info'>
           <div className='form-group'>
             <select
-              name='typeDNI' id='typeDNI'
-              className='form-select' required
+              name='user_typeDNI'
+              id='typeDNI'
+              className='form-select'
+              ref={register({ required: true })}
             >
               <option />
-              <option value='1'>TI</option>
-              <option value='2'>CC</option>
-              <option value='3'>NIT</option>
+              <option value='TI'>TI</option>
+              <option value='CC'>CC</option>
+              <option value='NIT'>NIT</option>
             </select>
+            {errors.typeDNI && <span className='form-input__error'>se requiere el tipo de documento</span>}
             <label className='form-placeholder' htmlFor='typeDNI'>Tipo</label>
           </div>
           <div className='user-info__dni'>
@@ -58,9 +68,11 @@ export function User () {
                 className='form-input'
                 type='text'
                 aria-label='Numero de documento'
-                autocomplete='off'
-                required
+                autoComplete='off'
+                ref={register({ required: true })}
+                name='user_DNInumber'
               />
+              {errors.DNI_number && <span className='form-input__error'>se requiere el apellido</span>}
               <label className='form-placeholder' htmlFor='dni'>Número de documento</label>
             </div>
           </div>
@@ -68,17 +80,18 @@ export function User () {
         <div className='form-group'>
 
           <select
-            name='rol'
+            name='user_rol'
             id='rol'
             className='form-select'
-            required
+            ref={register({ required: true })}
           >
             <option />
-            <option value='1'>Paciente</option>
-            <option value='2'>Administrador</option>
-            <option value='3'>Doctor</option>
-            <option value='4'>Laboratorio</option>
+            <option value='patient'>Paciente</option>
+            <option value='manager'>Administrador</option>
+            <option value='doctor'>Doctor</option>
+            <option value='laboratory'>Laboratorio</option>
           </select>
+          {errors.rol && <span className='form-input__error'>se requiere el rol</span>}
           <label className='form-placeholder' htmlFor='rol'>Rol</label>
         </div>
       </div>
@@ -90,9 +103,11 @@ export function User () {
             className='form-input'
             type='mail'
             aria-label='ingresar Correo electronico'
-            autocomplete='off'
-            required
+            autoComplete='off'
+            name='user_email'
+            ref={register({ required: true })}
           />
+          {errors.email && <span className='form-input__error'>se requiere el correo electronico</span>}
           <label className='form-placeholder' htmlFor='email-user'>Correo electrónico</label>
         </div>
         <div className='form-group'>
@@ -101,8 +116,10 @@ export function User () {
             className='form-input'
             type='password'
             aria-label='contraseña generado'
-            required
+            name='user_psw'
+            ref={register({ required: true })}
           />
+          {errors.psw && <span className='form-input__error'>se requiere el contraseña</span>}
           <label className='form-placeholder' htmlFor='password'>Contraseña</label>
         </div>
         <div className='form-section__buttons'>
@@ -118,21 +135,24 @@ export function User () {
             id='birthdate'
             className='form-input'
             type='date'
-            autocomplete='off'
+            autoComplete='off'
+            name='user_birthdate'
+            ref={register({ required: true })}
           />
+          {errors.birthdate && <span className='form-input__error'>se requiere el fecha de nacimiento</span>}
           <label className='form-placeholder' htmlFor='birthdate'>Fecha de nacimiento</label>
         </div>
         <div className='user-gender'>
           <div>
-            <input type='radio' id='male' name='gender' value='male' required />
+            <input type='radio' id='male' name='user_gender' value='male' ref={register()} />
             <label htmlFor='male'>Male</label>
           </div>
           <div>
-            <input type='radio' id='female' name='gender' value='female' required />
+            <input type='radio' id='female' name='user_gender' value='female' ref={register()} />
             <label htmlFor='female'>Female</label>
           </div>
           <div>
-            <input type='radio' id='other' name='gender' value='other' required />
+            <input type='radio' id='other' name='user_gender' value='other' ref={register()} />
             <label htmlFor='other'>Other</label>
           </div>
         </div>
@@ -142,9 +162,10 @@ export function User () {
             type='text'
             id='direccion'
             aria-label='Direccion'
-            required
+            ref={register}
+            name='user_address'
           />
-          <label className='form-placeholder' htmlFor='direccion'>Dirección</label>
+          <label className='form-placeholder' htmlFor='Dirección'>Dirección</label>
         </div>
         <div className='form-group'>
           <input
@@ -152,23 +173,30 @@ export function User () {
             type='tel'
             id='telefono'
             aria-label='telefono'
-            required
+            ref={register({ pattern: /\(?([0-9]{3})\)?([ .-]?)?([0-9]{3})\2([0-9]{4})/ })}
+            name='user_phone'
           />
+          {errors.number_phone && <span className='form-input__error'>se requiere digitar números</span>}
           <label className='form-placeholder' htmlFor='telefono'>Teléfono</label>
         </div>
         <div className='form-group'>
-          <select className='form-select' name='status' required>
+          <select
+            className='form-select'
+            name='user_status'
+            ref={register({ required: true })}
+          >
             <option />
-            <option value='1'>activo</option>
-            <option value='2'>Inactivo</option>
+            <option value='active'>activo</option>
+            <option value='inactive'>Inactivo</option>
           </select>
+          {errors.status && <span className='form-input__error'>se requiere seleccionar un estado</span>}
           <label className='form-placeholder' htmlFor='user-state'>Estado del usuario</label>
         </div>
         <div className='form-section__buttons'>
           <Link to='/dashboard'>
             <button className='form-button secondary'>Cancelar </button>
           </Link>
-          <button className='form-button primary'>Guardar</button>
+          <button type='submit' className='form-button primary'>Guardar</button>
         </div>
       </div>
     </form>

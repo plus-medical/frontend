@@ -7,7 +7,6 @@
   flex-direction: column;
   height: calc(100vh - 140px);
   min-height: 376px;
-  // background-color: $primary-color-1;
   padding:$padding-principal 0;
 }
 
@@ -41,7 +40,7 @@
   border-radius: 0 $border-principal;
   padding: $padding-principal $padding-secondary;
   border: $top-border solid $primary-color-3;
-  margin-bottom: $padding-secondary;
+  margin-bottom: 10px;
   font-size: $font-size-principal;
   outline: none;
 
@@ -49,6 +48,11 @@
   background-position: 4px center;
   background-size: 15px;
   background-position-x: 10px;
+}
+
+.login__error{
+  color:$background-color-form;
+  margin-bottom: 5px;
 }
 
 .login__input-user{
@@ -74,7 +78,8 @@
 
 .login__link{
     text-decoration: none;
-    color: $background-color;
+    color: $primary-color-1;
     font-size: $font-size-secondary;
     cursor: pointer;
+    font-weight: 500;
 }
