@@ -27,6 +27,12 @@
   position: absolute;
 }
 
+.login__container{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
 .login__user-icon{
   position: relative;
   top: -58px;
@@ -77,9 +83,17 @@
 }
 
 .login__link{
-    text-decoration: none;
-    color: $primary-color-1;
-    font-size: $font-size-secondary;
-    cursor: pointer;
-    font-weight: 500;
+  text-decoration: none;
+  color: $primary-color-1;
+  font-size: $font-size-secondary;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+@media (min-width:758px){
+  .login-container{
+    width:60%;
+    display: flex;
+    justify-content: center;
+  }
 }
