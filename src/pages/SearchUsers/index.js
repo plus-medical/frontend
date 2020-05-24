@@ -16,14 +16,22 @@ export function Users () {
     })
       .then((res) => res.json())
       .then((response) => {
-        console.log(response)
-      }).catch((err) => console.log(err.message))
-  }
-  )
+        if (response.statusCode === 401) {
+          window.localStorage.removeItem('tokens')
+        }
+
+        // console.log(response)
+      }).catch((err) => {
+        console.log('error' + JSON.stringify(err))
+
+        console.log(err.statusCode)
+      })
+  })
 
   const { register, handleSubmit } = useForm()
   const onSubmit = data => console.log(data)
   const link = '/user'
+
   return (
     <section className='users'>
       <form
@@ -57,5 +65,6 @@ export function Users () {
       </ul>
       <CircleButton data={link} />
     </section>
+
   )
 }

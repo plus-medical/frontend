@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { Route } from 'react-router-dom'
-import { AuthContext } from '../../context/authContext'
+import { Context } from '../../Auth/Context'
 
 export function PrivateRoute ({ component: Component, ...rest }) {
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(Context)
   const isAuthenticated = () => {
     console.log(user.role)
     return !!user.role
@@ -16,7 +16,7 @@ export function PrivateRoute ({ component: Component, ...rest }) {
         isAuthenticated() ? (
           <Component {...props} />
         ) : (
-          <h1>Unicornio</h1>
+          <h1>fuck</h1>
           // <Redirect to='/login' />
         )
       )}
