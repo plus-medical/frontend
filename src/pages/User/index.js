@@ -8,20 +8,20 @@ import { useForm } from 'react-hook-form'
 export function User () {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => {
-    console.log(JSON.stringify(data))
-    window.fetch('http://localhost:3000/api/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data),
-      credentials: 'include'
-    })
-      .then((res) => res.json())
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((err) => console.log(err))
+    // console.log(JSON.stringify(data))
+    // window.fetch('http://localhost:3000/api/users', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(data),
+    //   credentials: 'include'
+    // })
+    //   .then((res) => res.json())
+    //   .then((response) => {
+    //     console.log(response)
+    //   })
+    //   .catch((err) => console.log(err))
   }
 
   return (

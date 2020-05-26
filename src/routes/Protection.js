@@ -6,7 +6,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 const Protection = ({ component: Component, ...rest }) => {
   // const { authenticated } = useContext(AuthContext)
-  const authenticated = false
+  const authenticated = true
   return (
     <Route
       {...rest}
