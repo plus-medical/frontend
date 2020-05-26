@@ -11,15 +11,17 @@ export function PrivateRoute ({ component: Component, ...rest }) {
 
   return (
 
-    <Route
-      {...rest} render={(props) => (
-        isAuthenticated() ? (
-          <Component {...props} />
-        ) : (
-          <h1>Unicornio</h1>
-          // <Redirect to='/login' />
-        )
-      )}
-    />
+    <Route {...rest} render={(props) => <Component {...props} />} />
+
+  // <Route
+  //   {...rest} render={(props) => (
+  //     isAuthenticated() ? (
+  //       <Component {...props} />
+  //     ) : (
+  //       <h1>Unicornio</h1>
+  //       <Redirect to='/login' />
+  //     )
+  //   )}
+  // />
   )
 }

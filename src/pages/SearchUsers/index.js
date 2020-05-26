@@ -30,14 +30,17 @@ export function Users () {
         className='users__container'
         onSubmit={handleSubmit(onSubmit)}
       >
-        <input
-          type='search'
-          placeholder='buscar usuario'
-          aria-label='busqueda de usuarios'
-          className='users__input'
-          name='search'
-          ref={register}
-        />
+        <div className='sticky'>
+          <input
+            type='search'
+            placeholder='Buscar usuario'
+            aria-label='busqueda de usuarios'
+            className='users__input'
+            name='search'
+            ref={register}
+          />
+
+        </div>
       </form>
       <ul className='users__list'>
         <Item data={link} />

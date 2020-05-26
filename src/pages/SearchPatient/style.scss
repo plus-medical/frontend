@@ -8,11 +8,12 @@
   margin-top:$padding-secondary;
   margin-bottom:$height-principal;
   border-radius: $border-search;
-  width:90%;
+  width:100%;
   height: $font-size-nameSearch;
   padding-left: $border-principal;
   text-align: center;
   font-size:$font-size-principal;
+  outline: none;
 }
 
 .patient__list{
