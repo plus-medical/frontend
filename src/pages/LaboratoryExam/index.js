@@ -27,7 +27,7 @@ export const LaboratoryExam = ({ name = 'Nicola Tesla', docType = 'CC', doc = 12
           <ul>
             {[1, 2, 3, 4, 5].map((exam) => (
               <li key={exam}>
-                <Link>
+                <Link to='/laboratoryresult'>
                   <div className='patient-exams__item'>
                     <div className='patient-exams__img'>
                       <FaFileAlt className='patient-exams__icon' />

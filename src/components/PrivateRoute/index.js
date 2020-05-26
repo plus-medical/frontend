@@ -1,13 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react'
+
+// import React, { useContext } from 'react'
 import { Route } from 'react-router-dom'
-import { AuthContext } from '../../context/authContext'
+// import { AuthContext } from '../../context/authContext'
 
 export function PrivateRoute ({ component: Component, ...rest }) {
-  const { user } = useContext(AuthContext)
-  const isAuthenticated = () => {
-    console.log(user.role)
-    return !!user.role
-  }
+  // const { user } = useContext(AuthContext)
+  // const isAuthenticated = () => {
+  //   console.log(user.role)
+  //   return !!user.role
+  // }
 
   return (
 

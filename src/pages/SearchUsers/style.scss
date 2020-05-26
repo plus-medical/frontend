@@ -6,6 +6,7 @@
   top: 30px;
   width: 100%;
   background-color: $background-color-main;
+  z-index: 1;
 }
 
 .users__input{
@@ -21,13 +22,5 @@
 }
 
 .users__input:focus{
-  border: 1px solid blue;
-}
-
-.users__list{
-  // display: grid;
-  // grid-template-columns:repeat( auto-fit, minmax($size-card-width, 1fr) );
-  // grid-gap: $padding-principal;
-  // justify-items: center;
-  // align-items: center;
+  border: 1px solid $input-border-color_onfocus;;
 }
