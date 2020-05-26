@@ -6,7 +6,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 const Protection = ({ component: Component, ...rest }) => {
   // const { authenticated } = useContext(AuthContext)
-  const authenticated = true
+  const authenticated = false
   return (
     <Route
       {...rest}
@@ -17,7 +17,7 @@ const Protection = ({ component: Component, ...rest }) => {
           return (
             <Redirect
               to={{
-                pathname: '/unauthorized',
+                pathname: '/login',
                 state: {
                   from: props.location
                 }
