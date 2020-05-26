@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { PrivateRoute } from '../PrivateRoute'
+import { PrivateRoute } from '../PrivateRoute/index'
 import { LayoutMobile } from '../../components/layout'
 import { Home } from '../../pages/Home/index'
 import { Login } from '../../pages/Login'
