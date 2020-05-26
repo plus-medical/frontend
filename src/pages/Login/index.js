@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
-import { AuthContext } from '../../context/authContext'
+import { AuthContext } from '../../utils/context/authContext'
 
 import './styles.scss'
 import Logo from '../../assets/images/logotipoBlue.png'
