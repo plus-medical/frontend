@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import Logo from '../../assets/images/logotipoBlue.png'
 import { useForm } from 'react-hook-form'
 import './styles.scss'
 import { Link, useHistory, withRouter } from 'react-router-dom'
 
+// , { useContext, useState }
 function Login () {
   const { register, handleSubmit, errors } = useForm()
   const history = useHistory()
