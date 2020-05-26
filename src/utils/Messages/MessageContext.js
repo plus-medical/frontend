@@ -1,20 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, createContext } from 'react';
-const MessageContext = createContext();
+import React, { useState, createContext } from 'react'
+const MessageContext = createContext()
 
-function MessageProvider({ children }) {
-  const [message, setMessage] = useState('');
+function MessageProvider ({ children }) {
+  const [message, setMessage] = useState('')
 
   return (
     <MessageContext.Provider
       value={{
         message,
-        setMessage,
+        setMessage
       }}
     >
       {children}
     </MessageContext.Provider>
-  );
+  )
 }
 
-export { MessageContext, MessageProvider };
+export { MessageContext, MessageProvider }

@@ -1,43 +1,42 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, createContext, useEffect } from 'react';
-import { useAuth } from './useAuth';
+import React, { useState, createContext, useEffect } from 'react'
+import { useAuth } from './useAuth'
 
-const AuthContext = createContext();
+const AuthContext = createContext()
 
-const NAME_TOKEN = 'token';
+const NAME_TOKEN = 'token'
 
-function AuthProvider({ children }) {
-  const auth = useAuth();
+function AuthProvider ({ children }) {
+  const auth = useAuth()
 
-  const [authenticated, setAuthenticated] = useState(true);
+  const [authenticated, setAuthenticated] = useState(true)
 
-  const { data, error } = auth;
+  const { data, error } = auth
 
   const handleLogin = (data) => {
-    auth.signIn(data);
-  };
+    auth.signIn(data)
+  }
 
   const handleLogout = () => {
-    setAuthenticated(false);
-    localStorage.removeItem(NAME_TOKEN);
-  };
+    setAuthenticated(false)
+    window.localStorage.removeItem(NAME_TOKEN)
+  }
 
-  const handleSignUp = async(data) => {
-    return await auth.signUp(data);
-  };
+  const handleSignUp = async (data) => {
+    return await auth.signUp(data)
+  }
 
   useEffect(() => {
-    const token = localStorage.getItem(NAME_TOKEN);
+    const token = window.localStorage.getItem(NAME_TOKEN)
     if (token) {
-      setAuthenticated(true);
+      setAuthenticated(true)
     } else if (error === '' && data.accessToken) {
-      setAuthenticated(true);
-      !token && localStorage.setItem(NAME_TOKEN, data.accessToken);
+      setAuthenticated(true)
+      !token && window.localStorage.setItem(NAME_TOKEN, data.accessToken)
     } else {
-      setAuthenticated(false);
-      localStorage.removeItem(NAME_TOKEN);
+      setAuthenticated(false)
+      window.localStorage.removeItem(NAME_TOKEN)
     }
-  }, [data, error]);
+  }, [data, error])
 
   return (
     <AuthContext.Provider
@@ -47,12 +46,12 @@ function AuthProvider({ children }) {
         setAuthenticated,
         handleLogin,
         handleLogout,
-        handleSignUp,
+        handleSignUp
       }}
     >
       {children}
     </AuthContext.Provider>
-  );
+  )
 }
 
-export { AuthContext, AuthProvider };
+export { AuthContext, AuthProvider }

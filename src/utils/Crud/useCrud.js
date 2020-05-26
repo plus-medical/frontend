@@ -1,47 +1,48 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable no-undef */
+import { useState, useEffect } from 'react'
 const {
-  config: { apiUrl },
-} = require('../../config');
+  config: { apiUrl }
+} = require('../../config')
 
-export function useCrud(url, load = true) {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [saving, setSaving] = useState(false);
-  const [error, setError] = useState(false);
+export function useCrud (url, load = true) {
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData () {
       try {
-        setLoading(true);
-        setError(false);
+        setLoading(true)
+        setError(false)
         const res = await fetch(apiUrl + url, {
-          cache: 'default',
-        });
+          cache: 'default'
+        })
 
-        const data = await res.json();
-        setData(data);
-        setLoading(false);
+        const data = await res.json()
+        setData(data)
+        setLoading(false)
       } catch (error) {
-        setError(error.message);
-        setLoading(false);
+        setError(error.message)
+        setLoading(false)
       }
     }
-    load && fetchData();
-  }, [load, url]);
+    load && fetchData()
+  }, [load, url])
 
-  async function save(data, id) {
+  async function save (data, id) {
     try {
-      const headers = { 'Content-Type': 'application/json' };
-      const body = JSON.stringify(data);
+      const headers = { 'Content-Type': 'application/json' }
+      const body = JSON.stringify(data)
       const resp = await fetch(apiUrl + url + (id ? '/' + id : ''), {
         method: id ? 'PUT' : 'POST',
         headers,
-        body,
-      });
+        body
+      })
 
-      const newDocument = await resp.json();
+      const newDocument = await resp.json()
 
-      console.log(newDocument);
+      console.log(newDocument)
 
       // if (id) {
       //   //update
@@ -59,43 +60,43 @@ export function useCrud(url, load = true) {
 
       // setSaving(false);
     } catch (error) {
-      setError(error.message);
-      setLoading(false);
-      setSaving(false);
+      setError(error.message)
+      setLoading(false)
+      setSaving(false)
     }
   }
 
-  async function get(id) {
-    if (!id) return;
+  async function get (id) {
+    if (!id) return
     try {
-      setLoading(true);
-      setError(false);
-      const resp = await fetch(apiUrl + url + '/' + id);
-      const obj = await resp.json();
-      setLoading(false);
-      return obj;
+      setLoading(true)
+      setError(false)
+      const resp = await fetch(apiUrl + url + '/' + id)
+      const obj = await resp.json()
+      setLoading(false)
+      return obj
     } catch (error) {
-      setError(error.message);
-      setLoading(false);
+      setError(error.message)
+      setLoading(false)
     }
   }
 
-  async function remove(id) {
-    if (!id) return;
+  async function remove (id) {
+    if (!id) return
     try {
-      setLoading(true);
-      setError(false);
+      setLoading(true)
+      setError(false)
       const resp = await fetch(apiUrl + url + '/' + id, {
-        method: 'DELETE',
-      });
-      const obj = await resp.json();
-      setLoading(false);
-      setData(data.filter((o) => o.id !== id));
-      setLoading(false);
-      return obj;
+        method: 'DELETE'
+      })
+      const obj = await resp.json()
+      setLoading(false)
+      setData(data.filter((o) => o.id !== id))
+      setLoading(false)
+      return obj
     } catch (error) {
-      setError(error.message);
-      setLoading(false);
+      setError(error.message)
+      setLoading(false)
     }
   }
 
@@ -107,6 +108,6 @@ export function useCrud(url, load = true) {
     saving,
     remove,
     loading,
-    error,
-  };
+    error
+  }
 }
