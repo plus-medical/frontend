@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
 import { useState } from 'react'
-const {
-  config: { apiUrl }
-} = require('../../config')
+// const {
+//   config: { apiUrl }
+// } = require('../config/index')
+
+const apiUrl = 'http://localhost:8091'
 
 export function useAuth () {
   const [data, setData] = useState({})
@@ -14,8 +16,9 @@ export function useAuth () {
       setLoading(true)
       setError('')
       setData({})
-      const headers = { 'Content-Type': 'application/json' }
+      const headers = {"Content-Type": "application/json",'Access-Control-Allow-Origin': '*',}
       const body = JSON.stringify(data)
+      console.log(apiUrl)
       const response = await fetch(apiUrl + '/signin', {
         method: 'POST',
         headers,

@@ -23,7 +23,7 @@ export const ListRoutes = [
     component: Users
   },
   {
-    path: '/user',
+    path: '/user/:id',
     exact: true,
     component: User
   },
@@ -33,7 +33,7 @@ export const ListRoutes = [
     component: Exams
   },
   {
-    path: '/exam',
+    path: '/exam/:id',
     exact: true,
     component: Exam
   },
@@ -43,32 +43,32 @@ export const ListRoutes = [
     component: Laboratories
   },
   {
+    path: '/laboratory/:id',
+    exact: true,
+    component: Laboratory
+  },
+  {
     path: '/search',
     exact: true,
     component: SearchPatient
   },
   {
-    path: '/clinichistory',
+    path: '/clinichistory/:id',
     exact: true,
     component: ClinicHistory
   },
   {
-    path: '/medicalconsultation',
+    path: '/medicalconsultation/:id',
     exact: true,
     component: MedicalConsultation
   },
   {
-    path: '/detailexam',
+    path: '/detailexam/:id',
     exact: true,
     component: DetailPatientExam
   },
   {
-    path: '/laboratory',
-    exact: true,
-    component: Laboratory
-  },
-  {
-    path: '/laboratoryexam',
+    path: '/laboratoryexam/:id',
     exact: true,
     component: LaboratoryExam
   }

@@ -2,14 +2,11 @@ import React, { useState, createContext, useEffect } from 'react'
 import { useAuth } from './useAuth'
 
 const AuthContext = createContext()
-
 const NAME_TOKEN = 'token'
 
 function AuthProvider ({ children }) {
   const auth = useAuth()
-
   const [authenticated, setAuthenticated] = useState(true)
-
   const { data, error } = auth
 
   const handleLogin = (data) => {

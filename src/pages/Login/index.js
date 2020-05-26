@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import './styles.scss'
 import Logo from '../../assets/images/logotipoBlue.png'
 import { useForm } from 'react-hook-form'
-import './styles.scss'
+import { AuthContext } from '../../utils/Auth/AuthContext'
 import { Link, useHistory, withRouter } from 'react-router-dom'
+import { MessageContext } from '../../utils/Messages/MessageContext'
 
-// , { useContext, useState }
 function Login () {
+  const { authenticated, error, handleLogin } = useContext(AuthContext)
   const { register, handleSubmit, errors } = useForm()
+  const { setMessage } = useContext(MessageContext)
   const history = useHistory()
 
-  const onSubmit = values => {
-    console.log(values)
+  const onSubmit = (data) => {
+    handleLogin(data)
     history.push('/dashboard')
   }
+
+  useEffect(() => {
+    setMessage('')
+    if (authenticated) {
+      history.push('/dashboard')
+      setMessage('Login Success')
+    } else if (error !== '') {
+      setMessage('Login Denied', error)
+      console.log('error')
+    }
+  }, [authenticated, error])
 
   return (
     <section className='login'>
