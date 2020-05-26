@@ -4,9 +4,9 @@ import { Route, Redirect } from 'react-router-dom'
 //, { useContext }
 // import { AuthContext } from '../../utils/Auth/AuthContext'
 
-const Protected = ({ component: Component, ...rest }) => {
+const Protection = ({ component: Component, ...rest }) => {
   // const { authenticated } = useContext(AuthContext)
-  const authenticated = false
+  const authenticated = true
   return (
     <Route
       {...rest}
@@ -30,4 +30,4 @@ const Protected = ({ component: Component, ...rest }) => {
   )
 }
 
-export default Protected
+export default Protection

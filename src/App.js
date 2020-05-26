@@ -1,11 +1,11 @@
 import React from 'react'
 import { AuthProvider } from './utils/context/authContext'
-import { AppRoute } from './routes/AppRoute/index'
+import { SetRoutes } from './routes/SetRoutes'
 
 export const App = () => {
   return (
     <AuthProvider>
-      <AppRoute />
+      <SetRoutes />
     </AuthProvider>
   )
 }

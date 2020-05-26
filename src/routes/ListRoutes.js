@@ -11,7 +11,7 @@ import { DetailPatientExam } from '../pages/DetailPatientExam'
 import { Laboratory } from '../pages/Laboratory'
 import { LaboratoryExam } from '../pages/LaboratoryExam'
 
-export const routes = [
+export const ListRoutes = [
   {
     path: '/dashboard',
     exact: true,
