@@ -3,28 +3,33 @@ import './style.scss'
 import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
+import { useCrud } from '../../utils/Crud/useCrud'
+import { Link, useHistory, withRouter } from 'react-router-dom'
 
-// , { useEffect }
 export function Users () {
-  // useEffect(() => {
-  //   window.fetch('http://localhost:3000/api/users', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(),
-  //     credentials: 'include'
-  //   })
-  //     .then((res) => res.json())
-  //     .then((response) => {
-  //       console.log(response)
-  //     }).catch((err) => console.log(err.message))
-  // }
-  // )
-
   const { register, handleSubmit } = useForm()
+  const { data, remove } = useCrud('/users')
+  const history = useHistory()
+  console.log(data)
+
   const onSubmit = data => console.log(data)
   const link = '/user/1'
+
+  // function handleRegister () {
+  //   history.push('/register')
+  // }
+
+  // function handleDetail (id) {
+  //   history.push(`/user/${id}`)
+  // }
+
+  // function handleDelete (id) {
+  //   const resp = window.confirm('¿Está seguro?')
+  //   if (resp) {
+  //     remove(id)
+  //   }
+  // }
+
   return (
     <section className='users'>
       <form

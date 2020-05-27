@@ -13,7 +13,6 @@ export function User () {
   const { setMessage } = useContext(MessageContext)
 
   const onSubmit = async (data) => {
-    console.log('user:', data)
     const result = await handleSignUp(data)
     setMessage(result)
   }

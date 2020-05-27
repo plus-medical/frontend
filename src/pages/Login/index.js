@@ -24,7 +24,6 @@ function Login () {
       setMessage('Login Success')
     } else if (error !== '') {
       setMessage('Login Denied', error)
-      console.log('error')
     }
   }, [authenticated, error])
 

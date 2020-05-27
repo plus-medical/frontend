@@ -39,7 +39,6 @@ export function useAuth () {
   }
 
   async function signUp (data) {
-    console.log('signup:', data)
     try {
       setLoading(true)
       setError('')
@@ -53,7 +52,6 @@ export function useAuth () {
         credentials: 'include'
       })
       const result = await response.json()
-      console.log('response', result)
       if (response.ok) {
         setData(result)
         setError('')
