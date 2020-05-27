@@ -10,6 +10,7 @@ import { MedicalConsultation } from '../pages/MedicalConsultation/index'
 import { DetailPatientExam } from '../pages/DetailPatientExam'
 import { Laboratory } from '../pages/Laboratory'
 import { LaboratoryExam } from '../pages/LaboratoryExam'
+import { LaboratoryResult } from '../pages/LaboratoryResult'
 
 export const ListRoutes = [
   {
@@ -71,5 +72,10 @@ export const ListRoutes = [
     path: '/laboratoryexam',
     exact: true,
     component: LaboratoryExam
+  },
+  {
+    path: '/laboratoryresult',
+    exact: true,
+    component: LaboratoryResult
   }
 ]

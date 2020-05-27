@@ -24,8 +24,8 @@
 
 .patient-exams__item{
     display: grid;
-    grid-template-columns: 25% 60% 15%;
-    padding: 15px 10px;
+    grid-template-columns: 83px 1fr 40px;
+    padding: 15px 0;
     border: 1px solid $border-box-color;
     margin-bottom: 10px;
     border-radius: 0 $border-principal;
