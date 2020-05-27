@@ -1,54 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import './styles.scss'
-
-import { FaUsers, FaFileAlt, FaFlask, FaGreaterThan } from 'react-icons/fa'
+import { ItemDashboard } from '../../components/itemDashboard'
 
 export function Dashboard () {
-  return (
-    <>
-      <section className='dashboard'>
+  const role = 'administrator'
+  const [dashboard, setDashboard] = useState([])
 
-        <Link to='/users'>
-          <div className='dashboard-item'>
-            <div className='dashboard-item__img'>
-              <FaUsers />
-            </div>
-            <div className='dashboard-item__txt'>
-              Usuarios
-            </div>
-            <div className='dashboard-item__togo'>
-              <FaGreaterThan />
-            </div>
-          </div>
-        </Link>
-        <Link to='/exams'>
-          <div className='dashboard-item'>
-            <div className='dashboard-item__img'>
-              <FaFileAlt className='dasboard_item__icon' />
-            </div>
-            <div className='dashboard-item__txt'>
-              Exámenes
-            </div>
-            <div className='dashboard-item__togo'>
-              <FaGreaterThan />
-            </div>
-          </div>
-        </Link>
-        <Link to='/laboratories'>
-          <div className='dashboard-item'>
-            <div className='dashboard-item__img'>
-              <FaFlask className='dasboard_item__icon' />
-            </div>
-            <div className='dashboard-item__txt'>
-              Laboratorios
-            </div>
-            <div className='dashboard-item__togo'>
-              <FaGreaterThan />
-            </div>
-          </div>
-        </Link>
-      </section>
-    </>
+  useEffect(() => {
+    if (role === 'administrator') {
+      setDashboard([
+        { icon: 'user', path: '/users', itemText: 'Usuarios' },
+        { icon: 'exam', path: '/exams', itemText: 'Exámenes' },
+        { icon: 'laboratory', path: '/users', itemText: 'Laboratorios' }
+      ])
+    } else if (role === 'patient') {
+      setDashboard([
+        { icon: 'consultation', path: '/myconsultations', itemText: 'Mis consultas' },
+        { icon: 'exam', path: '/myexams', itemText: 'Mis Exámenes' }
+      ])
+    } else {
+      // Redirect
+    }
+  }, [])
+
+  return (
+    <section className='dashboard'>
+      {dashboard.map((item, index) => <ItemDashboard key={index} {...item} />)}
+    </section>
   )
 }
