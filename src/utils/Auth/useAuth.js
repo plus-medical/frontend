@@ -24,10 +24,12 @@ export function useAuth () {
         body,
         credentials: 'include'
       })
-      // console.log('respuesta', response)
+
       if (response.ok) {
+        console.log('entro.......')
         const result = await response.json()
-        setData(result)
+        console.log(result.data)
+        setData(result.data)
         setError('')
       } else {
         setError(response.statusText)
@@ -56,6 +58,7 @@ export function useAuth () {
         const result = await response.json()
         setData(result)
         setError('')
+        return ('success')
       } else {
         setError(response.statusText)
         return ('error:', error)
@@ -65,7 +68,6 @@ export function useAuth () {
       return ('error:', error)
     } finally {
       setLoading(false)
-      // return ('success')
     }
   }
 

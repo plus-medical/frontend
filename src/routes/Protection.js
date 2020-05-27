@@ -5,7 +5,6 @@ import { AuthContext } from '../utils/Auth/AuthContext'
 
 const Protection = ({ component: Component, ...rest }) => {
   const { authenticated } = useContext(AuthContext)
-  // console.log('authenticated?:', authenticated)
   return (
     <Route
       {...rest}
