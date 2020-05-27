@@ -1,6 +1,6 @@
-import { Dashboard } from '../pages/Dashboard'
+import { Dashboard } from '../pages/Dashboard/index'
 import { Users } from '../pages/SearchUsers/index'
-import { User } from '../pages/User'
+import { User } from '../pages/User/index'
 import { Exams } from '../pages/SearchExams/index'
 import { Exam } from '../pages/Exam/index'
 import { Laboratories } from '../pages/SearchLaboratories/index'
@@ -12,7 +12,7 @@ import { Laboratory } from '../pages/Laboratory'
 import { LaboratoryExam } from '../pages/LaboratoryExam'
 import { LaboratoryResult } from '../pages/LaboratoryResult'
 
-export const routes = [
+export const ListRoutes = [
   {
     path: '/dashboard',
     exact: true,
