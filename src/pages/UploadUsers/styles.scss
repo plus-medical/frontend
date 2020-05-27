@@ -1,0 +1,21 @@
+@import '../../components/styles/Global.scss';
+
+.upload-users{
+    @include form__section;
+}
+
+.upload-users__title{
+    @include form__title;
+}
+
+.upload-users__buttons{
+    @include form__buttons;
+}
+
+.upload-users__btn-primary{
+    @include form__btn-primary;
+}
+
+.upload-users__btn-secondary{
+    @include form__btn-secondary;
+}
