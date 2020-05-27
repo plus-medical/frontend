@@ -8,20 +8,19 @@ import { useForm } from 'react-hook-form'
 
 export function Users () {
   const { register, handleSubmit } = useForm()
-  // const { data } = useCrud('/users')
+  const { data } = useCrud('/users')
   // remove
   // const history = useHistory()
-  // console.log(data)
+  console.log(data)
 
   const onSubmit = data => console.log(data)
   const link = '/user/1'
 
-  // const users = 'data.data'
+
   // function handleRegister () {
   //   history.push('/register')
   // }
 
-  // console.log(data.data)
 
   // function handleDetail (id) {
   //   history.push(`/user/${id}`)

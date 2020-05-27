@@ -11,6 +11,7 @@ import { DetailPatientExam } from '../pages/DetailPatientExam'
 import { Laboratory } from '../pages/Laboratory'
 import { LaboratoryExam } from '../pages/LaboratoryExam'
 import { LaboratoryResult } from '../pages/LaboratoryResult'
+import { UploadUsers } from '../pages/UploadUsers'
 
 export const ListRoutes = [
   {
@@ -77,5 +78,10 @@ export const ListRoutes = [
     path: '/laboratoryresult',
     exact: true,
     component: LaboratoryResult
+  },
+  {
+    path: '/uploadusers',
+    exact: true,
+    component: UploadUsers
   }
 ]
