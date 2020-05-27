@@ -19,6 +19,7 @@ function AuthProvider ({ children }) {
   }
 
   const handleSignUp = async (data) => {
+    console.log('context:', data)
     return await auth.signUp(data)
   }
 

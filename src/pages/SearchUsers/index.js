@@ -24,7 +24,7 @@ export function Users () {
 
   const { register, handleSubmit } = useForm()
   const onSubmit = data => console.log(data)
-  const link = '/user'
+  const link = '/user/1'
   return (
     <section className='users'>
       <form
