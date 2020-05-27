@@ -24,11 +24,8 @@ export function useAuth () {
         body,
         credentials: 'include'
       })
-
       if (response.ok) {
-        console.log('entro.......')
         const result = await response.json()
-        console.log(result.data)
         setData(result.data)
         setError('')
       } else {
@@ -46,16 +43,16 @@ export function useAuth () {
       setLoading(true)
       setError('')
       setData({})
-      const headers = { 'Content-Type': 'application/json' }
+      const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
       const body = JSON.stringify(data)
-      const response = await fetch(apiUrl + '/signup', {
+      const response = await fetch(apiUrl + '/users', {
         method: 'POST',
         headers,
         body,
         credentials: 'include'
       })
+      const result = await response.json()
       if (response.ok) {
-        const result = await response.json()
         setData(result)
         setError('')
         return ('success')

@@ -4,7 +4,7 @@ import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 
 export const Laboratories = () => {
-  const link = '/laboratory'
+  const link = '/laboratory/1'
   return (
     <section className='laboratories'>
       <div className='laboratories__container'>

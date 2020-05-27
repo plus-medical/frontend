@@ -3,7 +3,7 @@ import './style.scss'
 import { Item } from '../../components/Item/index'
 
 export const SearchPatient = () => {
-  const link = '/clinichistory'
+  const link = '/clinichistory/1'
   return (
     <section className='patient'>
       <div className='patient__container'>

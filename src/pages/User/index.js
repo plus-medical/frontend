@@ -1,27 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Photo } from '../../components/photo'
+import React, { useContext } from 'react'
 import './styles.scss'
-
+import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { Photo } from '../../components/photo'
+
+import { AuthContext } from '../../utils/Auth/AuthContext'
+import { MessageContext } from '../../utils/Messages/MessageContext'
 
 export function User () {
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = data => {
-    // console.log(JSON.stringify(data))
-    // window.fetch('http://localhost:3000/api/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(data),
-    //   credentials: 'include'
-    // })
-    //   .then((res) => res.json())
-    //   .then((response) => {
-    //     console.log(response)
-    //   })
-    //   .catch((err) => console.log(err))
+  const { handleSignUp } = useContext(AuthContext)
+  const { setMessage } = useContext(MessageContext)
+
+  const onSubmit = async (data) => {
+    const result = await handleSignUp(data)
+    setMessage(result)
   }
 
   return (
@@ -38,7 +31,7 @@ export function User () {
                 className='form-input'
                 type='text'
                 aria-label='Nombre completo'
-                autoComplete='off'
+                autoComplete='true'
                 name='name.first'
                 ref={register({ required: true })}
               />
@@ -51,7 +44,7 @@ export function User () {
                 className='form-input'
                 type='text'
                 aria-label='Apellido'
-                autoComplete='off'
+                autoComplete='true'
                 name='name.last'
                 ref={register({ required: true })}
               />
@@ -84,7 +77,7 @@ export function User () {
                 className='form-input'
                 type='text'
                 aria-label='Numero de documento'
-                autoComplete='off'
+                autoComplete='true'
                 ref={register({ required: true })}
                 name='document'
               />
@@ -119,7 +112,7 @@ export function User () {
             className='form-input'
             type='mail'
             aria-label='ingresar Correo electronico'
-            autoComplete='off'
+            autoComplete='true'
             name='email'
             ref={register({ required: true })}
           />
@@ -151,7 +144,7 @@ export function User () {
             id='birthdate'
             className='form-input'
             type='date'
-            autoComplete='off'
+            autoComplete='true'
             name='birthdate'
             ref={register({ required: true })}
           />

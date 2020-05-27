@@ -4,7 +4,7 @@ import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 
 export function Exams () {
-  const link = '/exam'
+  const link = '/exam/1'
 
   return (
     <section className='exam'>
