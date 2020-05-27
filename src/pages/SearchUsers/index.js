@@ -3,22 +3,25 @@ import './style.scss'
 import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
-import { useCrud } from '../../utils/Crud/useCrud'
+// import { useCrud } from '../../utils/Crud/useCrud'
 // import { Link, useHistory, withRouter } from 'react-router-dom'
 
 export function Users () {
   const { register, handleSubmit } = useForm()
-  const { data } = useCrud('/users')
+  // const { data } = useCrud('/users')
   // remove
   // const history = useHistory()
-  console.log(data)
+  // console.log(data)
 
   const onSubmit = data => console.log(data)
   const link = '/user/1'
 
+  // const users = 'data.data'
   // function handleRegister () {
   //   history.push('/register')
   // }
+
+  // console.log(data.data)
 
   // function handleDetail (id) {
   //   history.push(`/user/${id}`)
@@ -50,20 +53,15 @@ export function Users () {
         </div>
       </form>
       <ul className='users__list'>
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
-        <Item data={link} />
+        {[1, 2, 3, 4, 5].map((user) => {
+          return (
+            <h1 key={user}>{user}</h1>
+          )
+        })}
+        // <Item data={link} />
+        // <Item data={link} />
+        // <Item data={link} />
+        // <Item data={link} />
       </ul>
       <CircleButton data={link} />
     </section>

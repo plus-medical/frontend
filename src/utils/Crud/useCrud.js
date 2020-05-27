@@ -16,8 +16,10 @@ export function useCrud (url, load = true) {
       try {
         setLoading(true)
         setError(false)
+        const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
         const res = await fetch(apiUrl + url, {
-          cache: 'default'
+          headers,
+          credentials: 'include'
         })
 
         const data = await res.json()
