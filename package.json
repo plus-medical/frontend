@@ -27,6 +27,7 @@
   "homepage": "https://github.com/plus-medical/frontend#readme",
   "dependencies": {
     "@babel/runtime": "^7.9.6",
+    "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.7.2",

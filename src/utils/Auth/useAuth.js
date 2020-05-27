@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
 import { useState } from 'react'
-const {
-  config: { apiUrl }
-} = require('../../config')
+// const {
+//   config: { apiUrl }
+// } = require('../config/index')
+
+const apiUrl = 'http://localhost:3000/api'
 
 export function useAuth () {
   const [data, setData] = useState({})
@@ -14,7 +16,7 @@ export function useAuth () {
       setLoading(true)
       setError('')
       setData({})
-      const headers = { 'Content-Type': 'application/json' }
+      const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
       const body = JSON.stringify(data)
       const response = await fetch(apiUrl + '/signin', {
         method: 'POST',
@@ -22,9 +24,12 @@ export function useAuth () {
         body,
         credentials: 'include'
       })
+
       if (response.ok) {
+        console.log('entro.......')
         const result = await response.json()
-        setData(result)
+        console.log(result.data)
+        setData(result.data)
         setError('')
       } else {
         setError(response.statusText)
@@ -53,6 +58,7 @@ export function useAuth () {
         const result = await response.json()
         setData(result)
         setError('')
+        return ('success')
       } else {
         setError(response.statusText)
         return ('error:', error)
@@ -62,7 +68,6 @@ export function useAuth () {
       return ('error:', error)
     } finally {
       setLoading(false)
-      // return ('success')
     }
   }
 
