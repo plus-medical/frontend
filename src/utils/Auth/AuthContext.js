@@ -24,11 +24,12 @@ function AuthProvider ({ children }) {
 
   useEffect(() => {
     const token = window.localStorage.getItem(NAME_TOKEN)
+    // console.log('data', data)
     if (token) {
       setAuthenticated(true)
-    } else if (error === '' && data.accessToken) {
+    } else if (error === '' && data.user) {
       setAuthenticated(true)
-      !token && window.localStorage.setItem(NAME_TOKEN, data.accessToken)
+      !token && window.localStorage.setItem(NAME_TOKEN, data.user)
     } else {
       setAuthenticated(false)
       window.localStorage.removeItem(NAME_TOKEN)

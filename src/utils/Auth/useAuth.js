@@ -4,7 +4,7 @@ import { useState } from 'react'
 //   config: { apiUrl }
 // } = require('../config/index')
 
-const apiUrl = 'http://localhost:8091'
+const apiUrl = 'http://localhost:3000/api'
 
 export function useAuth () {
   const [data, setData] = useState({})
@@ -16,15 +16,15 @@ export function useAuth () {
       setLoading(true)
       setError('')
       setData({})
-      const headers = {"Content-Type": "application/json",'Access-Control-Allow-Origin': '*',}
+      const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
       const body = JSON.stringify(data)
-      console.log(apiUrl)
       const response = await fetch(apiUrl + '/signin', {
         method: 'POST',
         headers,
         body,
         credentials: 'include'
       })
+      // console.log('respuesta', response)
       if (response.ok) {
         const result = await response.json()
         setData(result)
