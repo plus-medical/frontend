@@ -4,12 +4,13 @@ import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
 import { useCrud } from '../../utils/Crud/useCrud'
-import { Link, useHistory, withRouter } from 'react-router-dom'
+// import { Link, useHistory, withRouter } from 'react-router-dom'
 
 export function Users () {
   const { register, handleSubmit } = useForm()
-  const { data, remove } = useCrud('/users')
-  const history = useHistory()
+  const { data } = useCrud('/users')
+  // remove
+  // const history = useHistory()
   console.log(data)
 
   const onSubmit = data => console.log(data)
