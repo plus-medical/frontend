@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './styles.scss'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import { Photo } from '../../components/photo'
+import Photo from '../../components/photo/index'
 
 import { AuthContext } from '../../utils/Auth/AuthContext'
 import { MessageContext } from '../../utils/Messages/MessageContext'

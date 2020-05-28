@@ -1,7 +1,6 @@
-
 import React from 'react'
 
-export function DetailPatientExam () {
+export default function DetailPatientExam () {
   return (
     <section className='detailpatientexam'>
       <h4>examen</h4>
