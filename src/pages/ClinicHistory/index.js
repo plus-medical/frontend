@@ -6,7 +6,7 @@ import CircleButton from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
 import { Photo } from '../../components/photo'
 
-export function ClinicHistory () {
+export default function ClinicHistory () {
   const { handleSubmit, register } = useForm()
   const onSubmit = values => console.log(values)
   const link = '/medicalconsultation'

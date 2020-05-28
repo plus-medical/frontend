@@ -9,7 +9,7 @@ import {
   FaUser
 } from 'react-icons/fa'
 
-export function FooterMobile () {
+export default function FooterMobile () {
   const MENUITEM = [
     {
       name: 'Inicio',

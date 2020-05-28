@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.scss'
-import { FooterMobile } from '../footer'
+import FooterMobile from '../footer/index'
 import { HeaderMobile } from '../header'
 
-export function LayoutMobile ({ children }) {
+export default function LayoutMobile ({ children }) {
   return (
     <div className='App'>
       <HeaderMobile />
