@@ -1,7 +1,8 @@
 import React from 'react'
 import './style.scss'
 import { Item } from '../../components/Item/index'
-import { CircleButton } from '../../components/buttons/index'
+import CircleButton from '../../components/buttons/index'
+import { Link } from 'react-router-dom'
 
 export const Laboratories = () => {
   const link = '/laboratory/1'
@@ -22,7 +23,9 @@ export const Laboratories = () => {
         <Item data={link} />
         <Item data={link} />
       </ul>
-      <CircleButton data={link} />
+      <Link to={link}>
+        <CircleButton />
+      </Link>
     </section>
   )
 }
