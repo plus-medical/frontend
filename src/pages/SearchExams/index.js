@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.scss'
-import { Item } from '../../components/Item/index'
+import Item from '../../components/Item/index'
 import CircleButton from '../../components/buttons/index'
 import { Link } from 'react-router-dom'
 

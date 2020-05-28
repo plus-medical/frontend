@@ -4,7 +4,7 @@ import './styles.scss'
 
 import { FaRegCheckSquare } from 'react-icons/fa'
 
-export function Item ({ data }) {
+export default function Item ({ data }) {
   return (
     <Link to={data}>
       <li className='item'>

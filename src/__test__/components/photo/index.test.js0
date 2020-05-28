@@ -1,0 +1,39 @@
+/* eslint-disable no-undef */
+import React from 'react'
+import { mount } from 'enzyme'
+import { create } from 'react-test-renderer'
+import RouterMock from '../../../__mocks__/RoutesMocks'
+import Photo from '../../../components/photo/index'
+
+describe('<Photo />', () => {
+  test('Render component footer', () => {
+    const photo = shallow(
+      <RouterMock>
+        <Photo />
+      </RouterMock>
+    )
+    expect(photo.length).toEqual(1)
+  })
+})
+
+describe('<Photo />', () => {
+  const photo = mount(
+    <RouterMock>
+      <Photo />
+    </RouterMock>
+  )
+  test('Render component photo', () => {
+    expect(photo.length).toEqual(1)
+  })
+})
+
+describe('Photo Snapshot', () => {
+  test('Comprobar la UI del componente Photo', () => {
+    const photo = create(
+      <RouterMock>
+        <Photo />
+      </RouterMock>
+    )
+    expect(photo.toJSON()).toMatchSnapshot()
+  })
+})
