@@ -4,7 +4,7 @@ import './styles.scss'
 
 import { FaArrowLeft } from 'react-icons/fa'
 
-export function HeaderMobile () {
+export default function HeaderMobile () {
   const location = useLocation()
   const history = useHistory()
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaUsers, FaFileMedicalAlt, FaFlask, FaGreaterThan, FaBookMedical } from 'react-icons/fa'
 
-export const ItemDashboard = ({ icon, path, itemText }) => {
+export default function ItemDashboard ({ icon, path, itemText }) {
   const selectIcon = () => {
     switch (icon) {
       case 'user':

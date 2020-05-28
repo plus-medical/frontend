@@ -5,13 +5,13 @@ import { Exams } from '../pages/SearchExams/index'
 import { Exam } from '../pages/Exam/index'
 import { Laboratories } from '../pages/SearchLaboratories/index'
 import { SearchPatient } from '../pages/SearchPatient/index'
-import { ClinicHistory } from '../pages/ClinicHistory/index'
+import ClinicHistory from '../pages/ClinicHistory/index'
 import { MedicalConsultation } from '../pages/MedicalConsultation/index'
-import { DetailPatientExam } from '../pages/DetailPatientExam'
+import DetailPatientExam from '../pages/DetailPatientExam'
 import { Laboratory } from '../pages/Laboratory'
 import { LaboratoryExam } from '../pages/LaboratoryExam'
 import { LaboratoryResult } from '../pages/LaboratoryResult'
-import { UploadUsers } from '../pages/UploadUsers'
+import UploadUsers from '../pages/UploadUsers/index'
 
 export const ListRoutes = [
   {

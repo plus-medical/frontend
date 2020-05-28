@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaCloudUploadAlt } from 'react-icons/fa'
 import './styles.scss'
 
-export const UploadFile = ({ accept }) => {
+export default function UploadFile ({ accept }) {
   const [fileName, setFileName] = useState('Cargar Archivo')
 
   const handleFileUpload = () => {

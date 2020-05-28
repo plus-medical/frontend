@@ -1,26 +1,24 @@
 import React from 'react'
 import './style.scss'
-import { Item } from '../../components/Item/index'
-import { CircleButton } from '../../components/buttons/index'
+import Item from '../../components/Item/index'
+import CircleButton from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
 // import { useCrud } from '../../utils/Crud/useCrud'
-// import { Link, useHistory, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function Users () {
   const { register, handleSubmit } = useForm()
-  const { data } = useCrud('/users')
+  // const { data } = useCrud('/users')
   // remove
   // const history = useHistory()
-  console.log(data)
+  // console.log(data)
 
   const onSubmit = data => console.log(data)
   const link = '/user/1'
 
-
   // function handleRegister () {
   //   history.push('/register')
   // }
-
 
   // function handleDetail (id) {
   //   history.push(`/user/${id}`)
@@ -62,7 +60,9 @@ export function Users () {
         // <Item data={link} />
         // <Item data={link} />
       </ul>
-      <CircleButton data={link} />
+      <Link to={link}>
+        <CircleButton />
+      </Link>
     </section>
   )
 }
