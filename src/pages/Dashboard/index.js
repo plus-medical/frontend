@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './styles.scss'
-import { ItemDashboard } from '../../components/itemDashboard'
+import ItemDashboard from '../../components/itemDashboard/index'
 
 export function Dashboard () {
   const role = 'administrator'

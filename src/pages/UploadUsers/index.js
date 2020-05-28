@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { UploadFile } from '../../components/uploadFile'
+import UploadFile from '../../components/uploadFile/index'
 import './styles.scss'
 
-export const UploadUsers = () => {
+export default function UploadUsers () {
   return (
     <section className='upload-users'>
       <div className='upload-users__title'>Crear Usuarios</div>

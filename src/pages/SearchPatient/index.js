@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.scss'
-import { Item } from '../../components/Item/index'
+import Item from '../../components/Item/index'
 
 export const SearchPatient = () => {
   const link = '/clinichistory/1'

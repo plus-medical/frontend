@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './style.scss'
-import { Item } from '../../components/Item/index'
-import { CircleButton } from '../../components/buttons/index'
+import Item from '../../components/Item/index'
+import CircleButton from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
 import { useCrud } from '../../utils/Crud/useCrud'
 import Loader from '../../components/Loading'
 
+
 export function Users (props) {
   const { register, handleSubmit } = useForm()
+
   const [users, setUsers] = useState([])
   const { data, loading, get } = useCrud('/users', true)
 
@@ -66,9 +68,8 @@ export function Users (props) {
         </div>
       </form>
       {
-        loading
-          ? <Loader />
-          : <ul className='users__list'>
+        loading ? <Loader /> : (
+          <ul className='users__list'>
             {users.map((user, index) => (
               <Item
                 key={index}
@@ -79,6 +80,7 @@ export function Users (props) {
               />
             ))}
           </ul>
+        )
       }
       <CircleButton data='/user' />
     </section>

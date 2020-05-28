@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './styles.scss'
 
 import { FaPlus } from 'react-icons/fa'
 
-export function CircleButton ({ data }) {
+export default function CircleButton () {
   return (
-    <Link to={data} className='CircleButton'>
+    <button className='CircleButton'>
       <FaPlus />
-    </Link>
+    </button>
   )
 }

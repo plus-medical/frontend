@@ -5,6 +5,7 @@ import './styles.scss'
 import { FaRegCheckSquare } from 'react-icons/fa'
 
 export function Item ({ name, dniType, dni, role }) {
+
   return (
     <Link to={`user/${dni}`}>
       <li className='item'>

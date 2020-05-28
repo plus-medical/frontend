@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './style.scss'
 
-import { CircleButton } from '../../components/buttons/index'
+import CircleButton from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
-import { Photo } from '../../components/photo'
+import Photo from '../../components/photo/index'
 
-export function ClinicHistory () {
+export default function ClinicHistory () {
   const { handleSubmit, register } = useForm()
   const onSubmit = values => console.log(values)
   const link = '/medicalconsultation'
@@ -163,7 +163,9 @@ export function ClinicHistory () {
         </div>
 
       </form>
-      <CircleButton data={link} />
+      <link to={link}>
+        <CircleButton />
+      </link>
     </>
   )
 }
