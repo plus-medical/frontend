@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { UploadFile } from '../../components/uploadFile'
+import UploadFile from '../../components/uploadFile/index'
 import './styles.scss'
 
 export const UploadUsers = () => {
