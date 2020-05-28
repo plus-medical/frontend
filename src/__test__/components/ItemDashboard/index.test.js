@@ -2,13 +2,13 @@
 import React from 'react'
 import { create } from 'react-test-renderer'
 import RouterMock from '../../../__mocks__/RoutesMocks'
-import Photo from '../../../components/photo/index'
+import ItemDashboard from '../../../components/itemDashboard/index'
 
-describe('Photo Snapshot', () => {
-  test('Comprobar la UI del componente Photo', () => {
+describe('ItemDashboard Snapshot', () => {
+  test('Comprobar la UI del componente ItemDashboard', () => {
     const photo = create(
       <RouterMock>
-        <Photo />
+        <ItemDashboard />
       </RouterMock>
     )
     expect(photo.toJSON()).toMatchSnapshot()
