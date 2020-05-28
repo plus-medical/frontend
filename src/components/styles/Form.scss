@@ -14,13 +14,13 @@
 
 @mixin form__group{
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 @mixin form__label{
   font-size: 0.75rem;
   color: $primary-color-2;
-  margin: 10px 0;
+  margin-bottom: 3px;
 }
 
 @mixin form__control{
@@ -31,11 +31,14 @@
   border-bottom-style: solid;
   border-bottom-color: $input-border-color;
   border-bottom-width: 1px;
-  margin-bottom: 20px;
   outline: 0;
   font-size: $font-size-principal;
   cursor: text;
   color: $font-color;
+}
+
+@mixin form__input{
+  @include  form__control;
 }
 
 @mixin form__control-focus{
@@ -61,9 +64,12 @@
 
 @mixin form__buttons{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 15px;
+  padding: 15px 10px !important;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
 @mixin form__btn{
@@ -73,10 +79,8 @@
   font-size: $font-size-principal;
   color: $font-color;
   font-weight: 700;
-  margin: 3px;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
   min-width: 120px;
-  margin-bottom: 15px;
 }
 
 @mixin form__btn-primary{
@@ -89,6 +93,34 @@
   @include form__btn;
   background-color: $secondary;
   color: $button-font-color;
+}
+
+.form-group{
+  @include form__group;
+}
+
+.form-input, .form-select{
+  @include form__control;
+}
+
+.form-label{
+  @include form__label;
+}
+
+.form-input{
+  padding: 5px 5px 3px 2px;
+}
+
+.form-select{
+  padding: 5px 5px 3px 0px;
+}
+
+.form-input__error{
+  font-size: 10px;
+}
+
+.form-text{
+  padding: 5px 5px 3px 0px;
 }
 
 //Temp CSS
@@ -105,57 +137,8 @@
   margin-bottom: 15px;
 }
 
-.form-group{
-  position: relative;
-  margin-bottom: 1.5rem;
-}
-
-.form-input, .form-select{
-  display: block;
-  width: 100%;
-  background-color: $background-color-form;
-  border-style: none;
-  border-bottom-style: solid;
-  border-bottom-color: $input-border-color;
-  border-bottom-width: 1px;
-  margin-bottom: 20px;
-  outline: 0;
-  font-size: $font-size-principal;
-  cursor: text;
-  color: $font-color;
-}
-
-.form-input{
-  padding: 10px 5px 5px 5px;
-  margin-bottom: 5px;
-}
-
-.form-select{
-  padding: 10px 5px 5px 2px;
-}
-
 .form-input:focus, .form-select:focus{
   border-bottom-color: $input-border-color_onfocus;
-}
-
-.form-placeholder{
-  position: absolute;
-  top: 0;
-  padding: 10px 0 0 5px;
-  transition: all 200ms;
-  opacity: 1;
-  color: $font-placeholder;
-}
-
-.form-select[readonly="true"] + .form-placeholder,
-.form-select:valid + .form-placeholder, 
-.form-select:focus + .form-placeholder,  
-.form-input[readonly="true"] + .form-placeholder,
-.form-input:valid + .form-placeholder, 
-.form-input:focus + .form-placeholder {
-  font-size: 75%;
-  transform: translate3d(0, -82%, 0);
-  color: $primary-color-2;
 }
 
 .form-section__buttons{

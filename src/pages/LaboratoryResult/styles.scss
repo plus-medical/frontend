@@ -4,7 +4,8 @@
     @include form__section;
 }
 
-.exam-patient__title{
+.exam-patient__title,
+.exam-result__title{
     @include form__title;
 }
 
