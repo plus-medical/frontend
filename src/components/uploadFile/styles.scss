@@ -5,11 +5,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ccc;
+    border: 1px solid $input-border-color;
     padding: 15px 25px;
     cursor: pointer;  
     font-weight: 700;
     border-radius: 0 $border-principal;
+    width: 300px;
+    margin: 0px auto;
 }
 
 .upload-file__input{

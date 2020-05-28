@@ -1,6 +1,28 @@
 @import '../../components/styles/Global.scss';
 
-.patient-info__data{
+.patient,
+.responsable,
+.medical-history{
+    @include form__section;
+}
+
+.patient__title,
+.responsable__title,
+.medical-history__title{
+    @include form__title;
+}
+
+.patient__grid-id{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+}
+
+.patient__grid-data{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+}
+
+.patient__data{
     padding-left: 5px;
 }
 
@@ -16,4 +38,32 @@
     display:grid;
     grid-template-columns:repeat(2,1fr);
     align-items:center;
+}
+.medical-history__info{
+    @include form__textarea;
+}
+
+.medical-history__buttons{
+    @include  form__section;
+    @include form__buttons;
+}
+
+.medical-history__btn-primary{
+    @include form__btn-primary;
+}
+
+.medical-history__btn-secondary{
+    @include form__btn-secondary;
+}
+
+@media (min-width: 600px) {
+    .patient__data{
+        padding-left: 20px;
+    }
+    .patient__grid-id{
+        grid-template-columns:  120px 1fr;
+    }
+    .patient__grid-data{
+        grid-template-columns:  1fr 1fr;
+    }
 }

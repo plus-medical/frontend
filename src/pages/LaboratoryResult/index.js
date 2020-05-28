@@ -23,16 +23,20 @@ export const LaboratoryResult = ({ name = 'Nicola Tesla', docType = 'CC', doc = 
       </div>
       <div className='exam-result'>
         <div className='exam-result__title'>Resultado del Examen</div>
-        <div className='exam-result__label'>Examen</div>
-        <input
-          className='exam-result__name'
-          type='text'
-          id='direccion'
-          aria-label='Direccion'
-          name='address.street'
-        />
-        <div className='exam-result__label'>Descripción</div>
-        <textarea className='exam-result__result' />
+        <div className='form-group'>
+          <div className='exam-result__label'>Examen</div>
+          <input
+            className='exam-result__name'
+            type='text'
+            id='direccion'
+            aria-label='Direccion'
+            name='address.street'
+          />
+        </div>
+        <div className='form-group'>
+          <div className='exam-result__label'>Descripción</div>
+          <textarea className='exam-result__result' />
+        </div>
 
         <div className='exam-result__label'>Adjunto</div>
         <div className='patient-exams'>
