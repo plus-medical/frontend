@@ -1,26 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.scss'
 import { Item } from '../../components/Item/index'
 import { CircleButton } from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
-// import { useCrud } from '../../utils/Crud/useCrud'
-// import { Link, useHistory, withRouter } from 'react-router-dom'
+import { useCrud } from '../../utils/Crud/useCrud'
+import Loader from '../../components/Loading'
 
-export function Users () {
+export function Users (props) {
   const { register, handleSubmit } = useForm()
-  const { data } = useCrud('/users')
-  // remove
-  // const history = useHistory()
-  console.log(data)
+  const [users, setUsers] = useState([])
+  const { data, loading, get } = useCrud('/users', true)
 
-  const onSubmit = data => console.log(data)
-  const link = '/user/1'
+  const onSubmit = (res, e) => {
+    e.preventDefault()
+    if (res.search) {
+      get(res.search)
+        .then(res => {
+          if (res.data.length > 0) {
+            setUsers(res.data)
+          } else {
+            // Warning Message
+          }
+        })
+    } else {
+      setUsers(data.data)
+    }
+  }
 
+  useEffect(() => {
+    if (data.data) {
+      setUsers(data.data)
+    }
+  }, [data])
 
   // function handleRegister () {
   //   history.push('/register')
   // }
-
 
   // function handleDetail (id) {
   //   history.push(`/user/${id}`)
@@ -48,21 +63,24 @@ export function Users () {
             name='search'
             ref={register}
           />
-
         </div>
       </form>
-      <ul className='users__list'>
-        {[1, 2, 3, 4, 5].map((user) => {
-          return (
-            <h1 key={user}>{user}</h1>
-          )
-        })}
-        // <Item data={link} />
-        // <Item data={link} />
-        // <Item data={link} />
-        // <Item data={link} />
-      </ul>
-      <CircleButton data={link} />
+      {
+        loading
+          ? <Loader />
+          : <ul className='users__list'>
+            {users.map((user, index) => (
+              <Item
+                key={index}
+                name={`${user.name.first} ${user.name.last}`}
+                dniType={user.documentType}
+                dni={user.document}
+                role={user.role}
+              />
+            ))}
+          </ul>
+      }
+      <CircleButton data='/user' />
     </section>
   )
 }

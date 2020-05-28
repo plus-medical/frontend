@@ -25,6 +25,11 @@ export const ListRoutes = [
     component: Users
   },
   {
+    path: '/users/:search',
+    exact: true,
+    component: Users
+  },
+  {
     path: '/user/:id',
     exact: true,
     component: User

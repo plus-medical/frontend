@@ -4,9 +4,9 @@ import './styles.scss'
 
 import { FaRegCheckSquare } from 'react-icons/fa'
 
-export function Item ({ data }) {
+export function Item ({ name, dniType, dni, role }) {
   return (
-    <Link to={data}>
+    <Link to={`user/${dni}`}>
       <li className='item'>
         <div className='item__figure'>
           <img
@@ -17,9 +17,9 @@ export function Item ({ data }) {
           <FaRegCheckSquare className='item__icon' />
         </div>
         <article className='item__content'>
-          <p className='item__name'>name</p>
-          <p className='item__dni'>1234322</p>
-          <p className='item__profile'>Profile</p>
+          <p className='item__name'>{name}</p>
+          <p className='item__dni'>{`${dniType} ${dni}`}</p>
+          <p className='item__profile'>{role}</p>
         </article>
         <section className='item__indicator' />
 

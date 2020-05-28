@@ -7,7 +7,7 @@ export function LayoutMobile ({ children }) {
   return (
     <div className='App'>
       <HeaderMobile />
-      <main>
+      <main className='layout__main'>
         {children}
       </main>
       <FooterMobile />

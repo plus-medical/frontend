@@ -4,7 +4,7 @@
 .item{
   display:grid;
   box-sizing: border-box;
-  grid-template-columns: 83px 1fr 20px;
+  grid-template-columns: 83px 1fr 15px;
   width: $size-card-width;
   justify-content: center;
   border-radius:0 20px 0 20px;
@@ -24,10 +24,10 @@
 
 .item__content{
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: space-between;
-  padding: 6px 10px;
+  padding: 5px 10px;
   color: $font-color
 }
 
@@ -52,7 +52,7 @@
 
 .item__profile{
   font-weight: 500;
-  font-size:$font-size-principal;
+  font-size:$font-size-profile;
   margin:5px 0px;
 }
 
