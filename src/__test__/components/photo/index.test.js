@@ -4,8 +4,8 @@ import { create } from 'react-test-renderer'
 import RouterMock from '../../../__mocks__/RoutesMocks'
 import Photo from '../../../components/photo/index'
 
-describe('Photo Snapshot', () => {
-  test('Comprobar la UI del componente Photo', () => {
+describe('<Photo />', () => {
+  test('Review create in Photo component', () => {
     const photo = create(
       <RouterMock>
         <Photo />

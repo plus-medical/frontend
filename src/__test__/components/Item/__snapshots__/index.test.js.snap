@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Photo Snapshot Comprobar la UI del componente Photo 1`] = `
+exports[`<Item /> Review Snapshot in Item component 1`] = `
 <a
-  href=""
+  href="/user/undefined"
   onClick={[Function]}
 >
   <li
@@ -41,19 +41,15 @@ exports[`Photo Snapshot Comprobar la UI del componente Photo 1`] = `
     >
       <p
         className="item__name"
-      >
-        name
-      </p>
+      />
       <p
         className="item__dni"
       >
-        1234322
+        undefined undefined
       </p>
       <p
         className="item__profile"
-      >
-        Profile
-      </p>
+      />
     </article>
     <section
       className="item__indicator"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`uploadFile Snapshot Comprobar la UI del componente uploadFile 1`] = `
+exports[`<UploadFile /> Review snapshot in UploadFile component 1`] = `
 <div>
   <label
     className="upload-file__label"

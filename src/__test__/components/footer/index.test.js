@@ -5,7 +5,7 @@ import RouterMock from '../../../__mocks__/RoutesMocks'
 import FooterMobile from '../../../components/footer/index'
 
 describe('<FooterMobile />', () => {
-  test('Render component footer', () => {
+  test('Render shallow in FooterMobile component', () => {
     const footerMobile = shallow(
       <RouterMock>
         <FooterMobile />
@@ -13,16 +13,13 @@ describe('<FooterMobile />', () => {
     )
     expect(footerMobile.length).toEqual(1)
   })
-})
 
-describe('<FooterMobile />', () => {
-  const footerMobile = mount(
-    <RouterMock>
-      <FooterMobile />
-    </RouterMock>
-  )
-
-  test('Render component FooterMobile', () => {
+  test('Render mount component FooterMobile', () => {
+    const footerMobile = mount(
+      <RouterMock>
+        <FooterMobile />
+      </RouterMock>
+    )
     expect(footerMobile.length).toEqual(1)
   })
 })
