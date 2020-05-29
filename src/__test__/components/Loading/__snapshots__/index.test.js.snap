@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading /> Review create in Loading component 1`] = `
+<div
+  className="loading"
+>
+  <img
+    alt="Cargando"
+    src="file-stub"
+  />
+</div>
+`;
