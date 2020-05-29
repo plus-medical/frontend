@@ -5,6 +5,10 @@ import CircleButton from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
 import { useCrud } from '../../utils/Crud/useCrud'
 import Loader from '../../components/Loading'
+import Message from '../../components/messages'
+import { Link } from 'react-router-dom'
+
+const link = '/user'
 
 export default function Users () {
   const { register, handleSubmit } = useForm()
@@ -14,17 +18,22 @@ export default function Users () {
 
   const onSubmit = (res, e) => {
     e.preventDefault()
+    if (res.search === '') {
+      setUsers(data.data)
+      return true
+    }
+
     if (res.search) {
       get(res.search)
         .then(res => {
           if (res.data.length > 0) {
             setUsers(res.data)
+            return true
           } else {
-            // Warning Message
+            setUsers([])
+            return true
           }
         })
-    } else {
-      setUsers(data.data)
     }
   }
 
@@ -33,21 +42,6 @@ export default function Users () {
       setUsers(data.data)
     }
   }, [data])
-
-  // function handleRegister () {
-  //   history.push('/register')
-  // }
-
-  // function handleDetail (id) {
-  //   history.push(`/user/${id}`)
-  // }
-
-  // function handleDelete (id) {
-  //   const resp = window.confirm('¿Está seguro?')
-  //   if (resp) {
-  //     remove(id)
-  //   }
-  // }
 
   return (
     <section className='users'>
@@ -68,20 +62,23 @@ export default function Users () {
       </form>
       {
         loading ? <Loader /> : (
-          <ul className='users__list'>
-            {users.map((user, index) => (
-              <Item
-                key={index}
-                name={`${user.name.first} ${user.name.last}`}
-                dniType={user.documentType}
-                dni={user.document}
-                role={user.role}
-              />
-            ))}
-          </ul>
-        )
+          !users.length ? <Message text='No se encontraron resultados' type='message-warning' /> : (
+            <ul className='users__list'>
+              {users.map((user, index) => (
+                <Item
+                  key={index}
+                  name={`${user.name.first} ${user.name.last}`}
+                  dniType={user.documentType}
+                  dni={user.document}
+                  role={user.role}
+                />
+              ))}
+            </ul>
+          ))
       }
-      <CircleButton data='/user' />
+      <Link to={link}>
+        <CircleButton />
+      </Link>
     </section>
   )
 }
