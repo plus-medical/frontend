@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import { useCrud } from '../../utils/Crud/useCrud'
 import Loader from '../../components/Loading'
 
-export function Users () {
+export default function Users () {
   const { register, handleSubmit } = useForm()
 
   const [users, setUsers] = useState([])

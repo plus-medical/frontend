@@ -7,7 +7,7 @@ import Photo from '../../components/photo/index'
 import { AuthContext } from '../../utils/Auth/AuthContext'
 import { MessageContext } from '../../utils/Messages/MessageContext'
 
-export function User () {
+export default function User () {
   const { register, handleSubmit, errors } = useForm()
   const { handleSignUp } = useContext(AuthContext)
   const { setMessage } = useContext(MessageContext)
