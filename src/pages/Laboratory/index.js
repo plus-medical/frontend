@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
-export function Laboratory () {
+export default function Laboratory () {
   const { register, handleSubmit } = useForm()
   const onSubmit = data => console.log(data)
   return (

@@ -5,7 +5,7 @@ import UploadFile from '../../components/uploadFile/index'
 
 import DEFAULT_IMAGE from '../../assets/images/default.png'
 
-export const LaboratoryResult = ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) => {
+export default function LaboratoryResult ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) {
   return (
     <div>
       <div className='exam-patient'>

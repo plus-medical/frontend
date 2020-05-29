@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import DEFAULT_IMAGE from '../../assets/images/default.png'
 
-export const LaboratoryExam = ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) => {
+export default function LaboratoryExam ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) {
   return (
     <div>
       <div className='form-section'>
