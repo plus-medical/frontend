@@ -5,7 +5,7 @@ exports[`<Photo /> Review create in Photo component 1`] = `
   className="image-upload"
 >
   <label
-    for="file-input"
+    htmlFor="file-input"
   >
     <img
       src="file-stub"
