@@ -24,7 +24,7 @@ export default function Users () {
     }
 
     if (res.search) {
-      get(res.search)
+      get('/' + res.search)
         .then(res => {
           if (res.data.length > 0) {
             setUsers(res.data)
