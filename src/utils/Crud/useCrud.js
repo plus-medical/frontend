@@ -74,7 +74,12 @@ export function useCrud (url, load = true) {
     try {
       setLoading(true)
       setError(false)
-      const resp = await fetch(apiUrl + url + '/' + id)
+      const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+      const resp = await fetch(apiUrl + url + id, {
+        headers,
+        credentials: 'include'
+
+      })
       const obj = await resp.json()
       setLoading(false)
       return obj
