@@ -3,7 +3,7 @@ import './style.scss'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 
-export function MedicalConsultation () {
+export default function MedicalConsultation () {
   const { handleSubmit, register, errors } = useForm()
   const onSubmit = values => console.log(values)
 

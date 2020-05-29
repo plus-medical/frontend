@@ -4,7 +4,7 @@ import Item from '../../components/Item/index'
 import CircleButton from '../../components/buttons/index'
 import { Link } from 'react-router-dom'
 
-export function Exams () {
+export default function Exams () {
   const link = '/exam/1'
 
   return (
