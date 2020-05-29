@@ -1,2 +1,13 @@
 @import '../../components/styles/Global.scss';
 
+.MedicalConsultation{
+    @include form__section;
+}
+
+.MedicalConsultation__title{
+    @include form__title;
+}
+
+.MedicalConsultation_textarea{
+    @include form__textarea;
+}

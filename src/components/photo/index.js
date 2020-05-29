@@ -5,7 +5,7 @@ import './styles.scss'
 export default function Photo ({ photo = DEFAULT_IMAGE }) {
   return (
     <div className='image-upload'>
-      <label for='file-input'>
+      <label htmlFor='file-input'>
         <img src={photo} />
       </label>
       <input id='file-input' type='file' accept='image/*' />
