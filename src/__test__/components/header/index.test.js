@@ -5,7 +5,7 @@ import RouterMock from '../../../__mocks__/RoutesMocks'
 import HeaderMobile from '../../../components/header/index'
 
 describe('<HeaderMobile />', () => {
-  test('Render component footer', () => {
+  test('Review shallow in HeaderMobile component', () => {
     const headerMobile = shallow(
       <RouterMock>
         <HeaderMobile />
@@ -13,16 +13,12 @@ describe('<HeaderMobile />', () => {
     )
     expect(headerMobile.length).toEqual(1)
   })
-})
-
-describe('<HeaderMobile />', () => {
-  const headerMobile = mount(
-    <RouterMock>
-      <HeaderMobile />
-    </RouterMock>
-  )
-
-  test('Render component headerMobile', () => {
+  test('Render mount in HeaderMobile component', () => {
+    const headerMobile = mount(
+      <RouterMock>
+        <HeaderMobile />
+      </RouterMock>
+    )
     expect(headerMobile.length).toEqual(1)
   })
 })
