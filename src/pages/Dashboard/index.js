@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './styles.scss'
 import ItemDashboard from '../../components/itemDashboard/index'
 
-export function Dashboard () {
+export default function Dashboard () {
   const role = 'administrator'
   const [dashboard, setDashboard] = useState([])
 

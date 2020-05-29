@@ -6,7 +6,7 @@ import Talk from '../../assets/images/talk.gif'
 import Doctor from '../../assets/images/doctor.jpg'
 import Hospital from '../../assets/images/hospital.gif'
 
-export function Home () {
+export default function Home () {
   return (
     <div className='home'>
       <header className='home_general'>

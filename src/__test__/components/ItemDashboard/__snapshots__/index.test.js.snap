@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemDashboard Snapshot Comprobar la UI del componente ItemDashboard 1`] = `
+exports[`<ItemDashboard /> Review Snapshot in ItemDashboard component 1`] = `
 <a
   href=""
   onClick={[Function]}
