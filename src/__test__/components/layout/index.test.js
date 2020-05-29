@@ -5,7 +5,7 @@ import RouterMock from '../../../__mocks__/RoutesMocks'
 import Layout from '../../../components/layout/index'
 
 describe('<Layout />', () => {
-  test('Render component footer', () => {
+  test('Render shallow in Layout component', () => {
     const layout = shallow(
       <RouterMock>
         <Layout />
@@ -13,16 +13,13 @@ describe('<Layout />', () => {
     )
     expect(layout.length).toEqual(1)
   })
-})
 
-describe('<Layout />', () => {
-  const layout = mount(
-    <RouterMock>
-      <Layout />
-    </RouterMock>
-  )
-
-  test('Render component layout', () => {
+  test('Render mount in layout component', () => {
+    const layout = mount(
+      <RouterMock>
+        <Layout />
+      </RouterMock>
+    )
     expect(layout.length).toEqual(1)
   })
 })

@@ -4,8 +4,8 @@ import { create } from 'react-test-renderer'
 import RouterMock from '../../../__mocks__/RoutesMocks'
 import ItemDashboard from '../../../components/itemDashboard/index'
 
-describe('ItemDashboard Snapshot', () => {
-  test('Comprobar la UI del componente ItemDashboard', () => {
+describe('<ItemDashboard />', () => {
+  test('Review Snapshot in ItemDashboard component', () => {
     const photo = create(
       <RouterMock>
         <ItemDashboard />

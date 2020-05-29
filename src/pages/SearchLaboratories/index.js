@@ -4,7 +4,7 @@ import Item from '../../components/Item/index'
 import CircleButton from '../../components/buttons/index'
 import { Link } from 'react-router-dom'
 
-export const Laboratories = () => {
+export default function Laboratories () {
   const link = '/laboratory/1'
   return (
     <section className='laboratories'>

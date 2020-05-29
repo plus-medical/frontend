@@ -2,7 +2,7 @@ import React from 'react'
 import './style.scss'
 import Item from '../../components/Item/index'
 
-export const SearchPatient = () => {
+export default function SearchPatient () {
   const link = '/clinichistory/1'
   return (
     <section className='patient'>

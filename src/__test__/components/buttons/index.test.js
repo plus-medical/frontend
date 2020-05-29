@@ -6,7 +6,7 @@ import CircleButton from '../../../components/buttons/index'
 describe('<CircleButton />', () => {
   const circleButton = mount(<CircleButton />)
 
-  test('Render component CircleButton', () => {
+  test('Render mount in CircleButton component', () => {
     expect(circleButton.length).toEqual(1)
   })
 })

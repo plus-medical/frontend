@@ -9,7 +9,7 @@ import Photo from '../../components/photo/index'
 export default function ClinicHistory () {
   const { handleSubmit, register } = useForm()
   const onSubmit = values => console.log(values)
-  const link = '/medicalconsultation'
+  const link = '/medicalconsultation/1'
 
   return (
     <>
@@ -33,17 +33,17 @@ export default function ClinicHistory () {
           </div>
           <div className='patient__grid-data'>
             <div className='form-group'>
-              <label className='form-label' htmlFor='lastname'>Edad</label>
+              <label className='form-label' htmlFor='age'>Edad</label>
               <p className='form-text'>36 Años</p>
             </div>
             <div className='form-group'>
-              <label className='form-label' htmlFor='lastname'>Genero</label>
+              <label className='form-label' htmlFor='gender'>Genero</label>
               <p className='form-text'>Masculino</p>
             </div>
           </div>
           <div className='patient__grid-data'>
             <div className='form-group'>
-              <label className='form-label' htmlFor='lastname'>Tipo de Sangre</label>
+              <label className='form-label' htmlFor='bloodtype'>Tipo de Sangre</label>
               <select
                 name='patient_bloodgroup'
                 className='form-input'
@@ -57,7 +57,7 @@ export default function ClinicHistory () {
               </select>
             </div>
             <div className='form-group'>
-              <label className='form-label' htmlFor='lastname'>RH</label>
+              <label className='form-label' htmlFor='rh'>RH</label>
               <select
                 name='patient_RH'
                 className='form-input'
@@ -70,7 +70,7 @@ export default function ClinicHistory () {
             </div>
           </div>
           <div className='form-group'>
-            <label className='form-label' htmlFor='lastname'>Ocupación</label>
+            <label className='form-label' htmlFor='occupation'>Ocupación</label>
             <input
               className='form-input'
               type='text'
@@ -80,7 +80,7 @@ export default function ClinicHistory () {
             />
           </div>
           <div className='form-group'>
-            <label className='form-label' htmlFor='lastname'>Población Vulnerable</label>
+            <label className='form-label' htmlFor='poblation'>Población Vulnerable</label>
             <select
               name='poblation'
               className='form-select'
@@ -163,9 +163,9 @@ export default function ClinicHistory () {
         </div>
 
       </form>
-      <link to={link}>
+      <Link to={link}>
         <CircleButton />
-      </link>
+      </Link>
     </>
   )
 }

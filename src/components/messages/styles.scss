@@ -1,0 +1,69 @@
+@import '../styles/Global.scss';
+
+@mixin message($background, $border){
+    border: 1px solid $border;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    padding: 15px 10px;
+    background-color: $background;
+    align-items: center;
+    justify-content: flex-start;
+    animation: 210ms ease-in entry;
+}
+
+@mixin message__icon($border){
+    font-size: 1.4em;
+    width: 70px;
+    color: $border
+}
+
+@mixin message__text{
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.message-warning{
+    @include message($background-warning, $border-warning)
+}
+
+.message-warning__icon{
+    @include message__icon($border-warning)
+}
+
+.message-warning__text{
+    @include message__text
+}
+
+.message-success{
+    @include message($background-success, $border-success)
+}
+
+.message-success__icon{
+    @include message__icon($border-success)
+}
+
+.message-success__text{
+    @include message__text
+}
+
+.message-alert{
+    @include message($background-alert, $border-alert)
+}
+
+.message-alert__icon{
+    @include message__icon($border-alert)
+}
+
+.message-alert__text{
+    @include message__text
+}
+
+@keyframes entry{
+    from {
+        transform: scale(0.1);
+    }
+    to{
+        transform: scale(1);
+    }
+}
