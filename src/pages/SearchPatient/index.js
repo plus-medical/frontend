@@ -44,9 +44,9 @@ export default function SearchPatient () {
   }, [data])
 
   return (
-    <section className='users'>
+    <section className='patients'>
       <form
-        className='users__container'
+        className='patients__container'
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className='sticky'>
@@ -54,7 +54,7 @@ export default function SearchPatient () {
             type='search'
             placeholder='Buscar Paciente'
             aria-label='busqueda de pacientes'
-            className='users__input'
+            className='patients__input'
             name='search'
             ref={register}
           />
@@ -63,7 +63,7 @@ export default function SearchPatient () {
       {
         loading ? <Loader /> : (
           !users.length ? <Message text='No se encontraron resultados' type='message-warning' /> : (
-            <ul className='users__list'>
+            <ul className='patients__list'>
               {users.map((user, index) => (
                 <Item
                   key={index}

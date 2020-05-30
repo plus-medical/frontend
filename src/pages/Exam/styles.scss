@@ -1,0 +1,9 @@
+@import '../../components/styles/Global.scss';
+
+.exam{
+    @include form__section;
+}
+
+.exam__title{
+    @include form__title;
+}

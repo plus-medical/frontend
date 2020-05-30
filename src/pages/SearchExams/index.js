@@ -1,45 +1,68 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './style.scss'
-// import Item from '../../components/Item/index'
+import Item from '../../components/itemDashboard'
 import CircleButton from '../../components/buttons/index'
+import { useForm } from 'react-hook-form'
+import { useCrud } from '../../utils/Crud/useCrud'
+// import Loader from '../../components/Loading'
+// import Message from '../../components/messages'
 import { Link } from 'react-router-dom'
 
-export default function Exams () {
-  const link = '/exam/1'
+const exams = [
+  {
+    _id: 1,
+    exam_name: 'HELICOBACTER EN HECES'
+  },
+  {
+    _id: 2,
+    exam_name: 'HEMOGLOBINA GLICOSILADA'
+  },
+  {
+    _id: 3,
+    exam_name: 'INSULINA'
+  }
+]
+
+export default function SearchPatient () {
+  const { register, handleSubmit } = useForm()
+  // const { data, loading, get } = useCrud('exam', true)
+  const { data } = useCrud('exam', true)
+
+  const onSubmit = (res, e) => { console.log(res) }
+
+  useEffect(() => {
+
+  }, [data])
 
   return (
-    <section className='users'>
-      {/* <form
-        className='users__container'
+    <section className='exams'>
+      <form
+        className='exams__container'
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className='sticky'>
           <input
             type='search'
-            placeholder='Buscar usuario'
-            aria-label='busqueda de usuarios'
-            className='users__input'
+            placeholder='Buscar Examen'
+            aria-label='busqueda de examenes'
+            className='exams__input'
             name='search'
             ref={register}
           />
         </div>
       </form>
-      {
-        loading ? <Loader /> : (
-          <ul className='users__list'>
-            {users.map((user, index) => (
-              <Item
-                key={index}
-                name={`${user.name.first} ${user.name.last}`}
-                dniType={user.documentType}
-                dni={user.document}
-                role={user.role}
-              />
-            ))}
-          </ul>
-        )
-      } */}
-      <Link to={link}>
+      <ul className='exams__list'>
+        {exams.map((exam, index) => (
+          <Item
+            key={exam._id}
+            id={exam._id}
+            icon='exam'
+            itemText={exam.exam_name}
+            path='exam'
+          />
+        ))}
+      </ul>
+      <Link to='exam'>
         <CircleButton />
       </Link>
     </section>

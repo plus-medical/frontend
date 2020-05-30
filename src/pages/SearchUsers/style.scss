@@ -1,27 +1,13 @@
 @import '../../components/styles/Global.scss';
 
 .users__container{
-  position: -webkit-sticky;
-  position: sticky;
-  top: 30px;
-  width: 100%;
-  background-color: $background-color-main;
-  z-index: 1;
+  @include form-search__container
 }
 
 .users__input{
-  width:100%;
-  outline: none;
-  font-size:$font-size-principal;
-  margin-top:$padding-secondary;
-  margin-bottom: 17px;
-  border-radius: $border-search;
-  height: $font-size-nameSearch;
-  padding-left: $border-principal;
-  text-align: center;
+  @include form-search__input
 }
 
 .users__input:focus{
-  border: 1px solid $input-border-color_onfocus;
+  @include form-search__input-focus
 }
-

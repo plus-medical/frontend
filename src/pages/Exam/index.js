@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import './styles.scss'
 
 export default function Exam () {
   const { register, handleSubmit, errors } = useForm()
@@ -8,9 +9,10 @@ export default function Exam () {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className='form-section'>
-        <div className='form-section__title'>Crear Examen</div>
+      <div className='exam'>
+        <div className='exam__title'>Crear Examen</div>
         <div className='form-group'>
+          <div className='form-label'>Examen</div>
           <input
             type='text'
             id='exam-name'
@@ -21,28 +23,25 @@ export default function Exam () {
             ref={register({ required: true })}
           />
           {errors.status && <span className='form-input__error'>se requiere el nombre del examen</span>}
-          <label className='form-placeholder' htmlFor='exam-name'>Examen</label>
         </div>
-        <div className='item-state'>
-          <div className='form-group'>
-            <select
-              id='exam-status'
-              className='form-select'
-              aria-label='Estado del examen'
-              autoComplete='off'
-              name='exam_state'
-              ref={register({ required: true })}
-            >
-              {errors.status && <span className='form-input__error'>se requiere seleccionar un estado</span>}
-              <option />
-              <option value='active'>Activo</option>
-              <option value='inactive'>Inactivo</option>
-            </select>
-            <label className='form-placeholder' htmlFor='exam-status'>Estado</label>
-          </div>
+        <div className='form-group'>
+          <div className='form-label'>Estado</div>
+          <select
+            id='exam-status'
+            className='form-select'
+            aria-label='Estado del examen'
+            autoComplete='off'
+            name='exam_state'
+            ref={register({ required: true })}
+          >
+            {errors.status && <span className='form-input__error'>se requiere seleccionar un estado</span>}
+            <option />
+            <option value='active'>Activo</option>
+            <option value='inactive'>Inactivo</option>
+          </select>
         </div>
         <div className='form-section__buttons'>
-          <Link to='/dashboard'>
+          <Link to='/exams'>
             <button className='form-button secondary'>Cancelar </button>
           </Link>
           <button submit='true' className='form-button primary'>Guardar</button>
