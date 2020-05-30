@@ -170,3 +170,30 @@
   background-color: $secondary;
   color: $button-font-color;
 }
+
+//Search Form
+@mixin form-search__container{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+  width: 100%;
+  background-color: $background-color-main;
+  z-index: 1;
+}
+
+@mixin form-search__input{
+  width:100%;
+  outline: none;
+  font-size:$font-size-principal;
+  margin-top:$padding-secondary;
+  margin-bottom: 17px;
+  border-radius: $border-search;
+  height: $font-size-nameSearch;
+  padding-left: $border-principal;
+  text-align: center;
+}
+
+@mixin form-search__input-focus{
+  border: 1px solid $input-border-color_onfocus;
+}
+

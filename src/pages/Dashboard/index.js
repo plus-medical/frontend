@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './styles.scss'
 import ItemDashboard from '../../components/itemDashboard/index'
 
 export default function Dashboard () {
@@ -11,7 +10,7 @@ export default function Dashboard () {
       setDashboard([
         { icon: 'user', path: '/users', itemText: 'Usuarios' },
         { icon: 'exam', path: '/exams', itemText: 'Exámenes' },
-        { icon: 'laboratory', path: '/users', itemText: 'Laboratorios' }
+        { icon: 'laboratory', path: '/laboratories', itemText: 'Laboratorios' }
       ])
     } else if (role === 'patient') {
       setDashboard([

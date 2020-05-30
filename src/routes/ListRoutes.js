@@ -50,12 +50,22 @@ export const ListRoutes = [
     component: Exam
   },
   {
+    path: '/exam',
+    exact: true,
+    component: Exam
+  },
+  {
     path: '/laboratories',
     exact: true,
     component: Laboratories
   },
   {
     path: '/laboratory/:id',
+    exact: true,
+    component: Laboratory
+  },
+  {
+    path: '/laboratory',
     exact: true,
     component: Laboratory
   },
