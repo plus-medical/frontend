@@ -47,3 +47,16 @@
   font-size:$font-size-menuMobile;
 }
 
+@media (min-width: 600px) {
+  .footerMobile__description {
+    font-size: 0.8rem;
+    }
+  .footerMobile__icons{
+    top: 8px;
+  }
+  .footerMobile__img{
+    font-size: 1.3rem;
+  }  
+}
+
+
