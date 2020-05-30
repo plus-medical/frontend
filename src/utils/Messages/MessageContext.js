@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react'
 const MessageContext = createContext()
 
-function MessageProvider ({ children }) {
+export default function MessageProvider ({ children }) {
   const [message, setMessage] = useState('')
 
   return (
