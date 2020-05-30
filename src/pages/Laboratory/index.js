@@ -85,7 +85,7 @@ export default function Laboratory () {
           <label className='form-placeholder' htmlFor='laboratory-status'>Estado</label>
         </div>
         <div className='form-section__buttons'>
-          <Link to='/dashboard'>
+          <Link to='/laboratories'>
             <button className='form-button secondary'>Cancelar </button>
           </Link>
           <button submit='true' className='form-button primary'>Guardar</button>

@@ -1,31 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaUsers, FaFileMedicalAlt, FaFlask, FaGreaterThan, FaBookMedical } from 'react-icons/fa'
+import Icon from '../icons'
+import './styles.scss'
 
-export default function ItemDashboard ({ icon, path, itemText }) {
-  const selectIcon = () => {
-    switch (icon) {
-      case 'user':
-        return <FaUsers />
-      case 'exam':
-        return <FaFileMedicalAlt />
-      case 'laboratory':
-        return <FaFlask />
-      case 'consultation':
-        return <FaBookMedical />
-    }
-  }
+export default function ItemDashboard ({ id, icon, path, itemText }) {
   return (
-    <Link to={path}>
+    <Link to={id ? `${path}/${id}` : path}>
       <div className='dashboard-item'>
         <div className='dashboard-item__img'>
-          {selectIcon()}
+          <Icon icon={icon} />
         </div>
         <div className='dashboard-item__txt'>
           {itemText}
         </div>
         <div className='dashboard-item__togo'>
-          <FaGreaterThan />
+          <Icon icon='next' />
         </div>
       </div>
     </Link>
