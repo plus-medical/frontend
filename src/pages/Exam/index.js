@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import './styles.scss'
 
-export default function Exam () {
+export default function Exam (props) {
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = data => console.log(data)
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className='exam'>
-        <div className='exam__title'>Crear Examen</div>
+        <div className='exam__title'>Información del Examen</div>
         <div className='form-group'>
           <div className='form-label'>Examen</div>
           <input

@@ -14,22 +14,22 @@ export default function FooterMobile () {
     {
       name: 'Inicio',
       icon: <FaHome />,
-      link: './'
+      link: '/'
     },
     {
       name: 'Tablero',
       icon: <FaRegListAlt />,
-      link: './dashboard'
+      link: '/dashboard'
     },
     {
       name: 'Notificaciones',
       icon: <FaBell />,
-      link: './login'
+      link: '/notifications'
     },
     {
       name: 'Perfil',
       icon: <FaUser />,
-      link: './userprofile'
+      link: '/profile'
     }
   ]
 
