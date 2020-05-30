@@ -35,6 +35,11 @@ export const ListRoutes = [
     component: User
   },
   {
+    path: '/user',
+    exact: true,
+    component: User
+  },
+  {
     path: '/exams',
     exact: true,
     component: Exams

@@ -14,7 +14,7 @@ export default function SearchPatient () {
   const { register, handleSubmit } = useForm()
 
   const [users, setUsers] = useState([])
-  const { data, loading, get } = useCrud('/users/?role=patient', true)
+  const { data, loading, get } = useCrud('users/?role=patient', true)
 
   const onSubmit = (res, e) => {
     e.preventDefault()
@@ -70,6 +70,7 @@ export default function SearchPatient () {
                   name={`${user.name.first} ${user.name.last}`}
                   dniType={user.documentType}
                   dni={user.document}
+                  id={user._id}
                 />
               ))}
             </ul>

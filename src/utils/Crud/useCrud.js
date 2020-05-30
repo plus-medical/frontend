@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 // const {
 //   config: { apiUrl }
 // } = require('../../config')
-const apiUrl = 'http://localhost:3000/api'
+const apiUrl = process.env.BASE_URL
 
 export function useCrud (url, load = true) {
   const [data, setData] = useState([])

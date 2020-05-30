@@ -9,7 +9,7 @@ import { ListRoutes } from './ListRoutes'
 
 export const SetRoutes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
