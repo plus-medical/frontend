@@ -1,4 +1,5 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
@@ -12,7 +13,6 @@ module.exports = {
     filename: 'js/[name].js',
     publicPath: 'http://localhost:9001/',
     chunkFilename: 'js/[id].[chunkhash].js'
-
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
@@ -51,6 +51,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html')
-    })
+    }),
+    new Dotenv()
   ]
 }

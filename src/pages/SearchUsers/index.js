@@ -14,7 +14,7 @@ export default function Users () {
   const { register, handleSubmit } = useForm()
 
   const [users, setUsers] = useState([])
-  const { data, loading, get } = useCrud('/users', true)
+  const { data, loading, get } = useCrud('users', true)
 
   const onSubmit = (res, e) => {
     e.preventDefault()
@@ -71,6 +71,8 @@ export default function Users () {
                   dniType={user.documentType}
                   dni={user.document}
                   role={user.role}
+                  id={user._id}
+                  link='user'
                 />
               ))}
             </ul>

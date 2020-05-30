@@ -1,14 +1,35 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './styles.scss'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import Photo from '../../components/photo/index'
-
 import { AuthContext } from '../../utils/Auth/AuthContext'
 import { MessageContext } from '../../utils/Messages/MessageContext'
+import { useCrud } from '../../utils/Crud/useCrud'
+import Loader from '../../components/Loading'
+import { format } from 'date-fns'
 
-export default function User () {
-  const { register, handleSubmit, errors } = useForm()
+export default function User (props) {
+  const { loading, get } = useCrud('users', false)
+  const { register, handleSubmit, errors, setValue } = useForm({
+    defaultValues: {
+      name: {
+        fist: '',
+        last: ''
+      },
+      documentType: '',
+      document: '',
+      birthdate: '',
+      gender: '',
+      role: '',
+      email: '',
+      address: {
+        city: '',
+        street: ''
+      },
+      phone: ''
+    }
+  })
   const { handleSignUp } = useContext(AuthContext)
   const { setMessage } = useContext(MessageContext)
 
@@ -17,8 +38,32 @@ export default function User () {
     setMessage(result)
   }
 
+  useEffect(() => {
+    const id = props.match.params.id
+    if (id) {
+      get(`/?_id=${id}`).then((res) => {
+        const user = res.data[0]
+        const birthdate = format(new Date(user.birthdate), 'yyyy-MM-dd')
+        console.log(birthdate)
+        console.log(user)
+        setValue('name.first', user.name.first)
+        setValue('name.last', user.name.last)
+        setValue('documentType', user.documentType)
+        setValue('document', user.document)
+        setValue('birthdate', birthdate)
+        setValue('gender', user.gender)
+        setValue('role', user.role)
+        setValue('email', user.email)
+        setValue('address.city', user.address.city)
+        setValue('address.street', user.address.street)
+        setValue('phone', user.phone)
+      })
+    }
+  }, [])
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      {loading && (<Loader />)}
       <div className='user-info'>
         <div className='user-info__title'>Información del usuario</div>
         <div className='user-info__grid'>
@@ -127,9 +172,9 @@ export default function User () {
           >
             <option />
             <option value='patient'>Paciente</option>
-            <option value='manager'>Administrador</option>
+            <option value='administrator'>Administrador</option>
             <option value='doctor'>Doctor</option>
-            <option value='laboratory'>Laboratorio</option>
+            <option value='lab-worker'>Laboratorio</option>
           </select>
           {errors.role && <span className='form-input__error'>se requiere el rol</span>}
         </div>
@@ -145,23 +190,6 @@ export default function User () {
             ref={register({ required: true })}
           />
           {errors.email && <span className='form-input__error'>se requiere el correo electronico</span>}
-        </div>
-        {/* <div className='form-group'>
-          <input
-            id='password'
-            className='form-input'
-            type='password'
-            aria-label='contraseña generado'
-            name='password'
-            ref={register({ required: true })}
-          />
-          {errors.password && <span className='form-input__error'>se requiere el contraseña</span>}
-          <label className='form-placeholder' htmlFor='password'>Contraseña</label>
-        </div> */}
-        <div className='user-auth__buttons'>
-          <button className='user-auth__btn-primary'>
-            Generar contraseña
-          </button>
         </div>
       </div>
       <div className='user-auth'>
@@ -197,6 +225,7 @@ export default function User () {
             aria-label='telefono'
             ref={register({ pattern: /\(?([0-9]{3})\)?([ .-]?)?([0-9]{3})\2([0-9]{4})/ })}
             name='phone'
+            maxLength='10'
           />
           {errors.phone && <span className='form-input__error'>se requiere digitar números</span>}
         </div>
@@ -213,14 +242,14 @@ export default function User () {
           {errors.active && <span className='form-input__error'>se requiere seleccionar un estado</span>}
           <label className='form-placeholder' htmlFor='user-state'>Estado del usuario</label>
         </div> */}
+        <div className='user-form__buttons'>
+          <Link to='/dashboard'>
+            <button className='user-form__btn-secondary'>Cancelar </button>
+          </Link>
+          <button type='submit' className='user-form__btn-primary'>Guardar</button>
+        </div>
       </div>
 
-      <div className='user-form__buttons'>
-        <Link to='/dashboard'>
-          <button className='user-form__btn-secondary'>Cancelar </button>
-        </Link>
-        <button type='submit' className='user-form__btn-primary'>Guardar</button>
-      </div>
     </form>
   )
 }

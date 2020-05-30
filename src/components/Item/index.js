@@ -6,9 +6,9 @@ import DEFAULT_PHOTO from '../../assets/images/default.png'
 
 import { FaRegCheckSquare } from 'react-icons/fa'
 
-function Item ({ name, dniType, dni, role }) {
+function Item ({ id, name, dniType, dni, role, link }) {
   return (
-    <Link to={`user/${dni}`}>
+    <Link to={`${link}/${id}`}>
       <li className='item'>
         <div className='item__figure'>
           <img
