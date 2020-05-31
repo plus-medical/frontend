@@ -1,10 +1,6 @@
-/* eslint-disable no-undef */
 import { useState } from 'react'
-// const {
-//   config: { apiUrl }
-// } = require('../config/index')
 
-const apiUrl = 'http://localhost:3000/api'
+const apiUrl = process.env.BASE_URL
 
 export function useAuth () {
   const [data, setData] = useState({})
@@ -18,7 +14,7 @@ export function useAuth () {
       setData({})
       const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
       const body = JSON.stringify(data)
-      const response = await fetch(apiUrl + '/signin', {
+      const response = await window.fetch(apiUrl + 'signin', {
         method: 'POST',
         headers,
         body,
@@ -45,7 +41,7 @@ export function useAuth () {
       setData({})
       const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
       const body = JSON.stringify(data)
-      const response = await fetch(apiUrl + '/users', {
+      const response = await window.fetch(apiUrl + 'users', {
         method: 'POST',
         headers,
         body,
@@ -68,6 +64,31 @@ export function useAuth () {
     }
   }
 
+  async function logout () {
+    try {
+      setLoading(true)
+      setError('')
+      setData({})
+      const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+
+      const response = await window.fetch(apiUrl + 'logout', {
+        method: 'POST',
+        headers,
+        credentials: 'include'
+      })
+      if (response.ok) {
+        setData({})
+        setError('')
+      } else {
+        setError(response.statusText)
+      }
+    } catch (error) {
+      setError(error.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return {
     data,
     setData,
@@ -76,6 +97,7 @@ export function useAuth () {
     error,
     setError,
     signIn,
-    signUp
+    signUp,
+    logout
   }
 }

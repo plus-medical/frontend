@@ -1,39 +1,42 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import './styles.scss'
+import SelectExams from '../../components/selectExams'
 
 export default function Laboratory () {
   const { register, handleSubmit } = useForm()
   const onSubmit = data => console.log(data)
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className='form-section'>
-        <div className='form-section__title'>Crear laboratorio</div>
+      <div className='laboratory'>
+        <div className='laboratory__title'>Información del laboratorio</div>
         <div className='form-group'>
+          <label className='form-label' htmlFor='laboratory-name'>Laboratorio</label>
           <input
             id='laboratory-name'
             className='form-input'
             type='text'
-            aria-label='Nombre del laborotario'
+            aria-label='Nombre del laboratorio'
             autoComplete='off'
             name='laboratory_name'
             ref={register}
           />
-          <label className='form-placeholder' htmlFor='laboratory-name'>Laboratorio</label>
         </div>
         <div className='form-group'>
+          <label className='form-label' htmlFor='laboratory-tin'>NIT</label>
           <input
-            id='laboratory-NIT'
+            id='laboratory-tin'
             className='form-input'
             type='text'
             aria-label='NIT'
             autoComplete='off'
-            name='laboratory_NIT'
+            name='laboratory_tin'
             ref={register}
           />
-          <label className='form-placeholder' htmlFor='laboratory-tin'>NIT</label>
         </div>
         <div className='form-group'>
+          <label className='form-label' htmlFor='laboratory-address'>Dirección</label>
           <input
             id='laboratory-address'
             className='form-input'
@@ -43,9 +46,9 @@ export default function Laboratory () {
             name='laboratory_address'
             ref={register}
           />
-          <label className='form-placeholder' htmlFor='laboratory-address'>Dirección</label>
         </div>
         <div className='form-group'>
+          <label className='form-label' htmlFor='laboratory-email'>Correo electrónico</label>
           <input
             id='laboratory-email'
             className='form-input'
@@ -55,9 +58,9 @@ export default function Laboratory () {
             name='laboratory_email'
             ref={register}
           />
-          <label className='form-placeholder' htmlFor='laboratory-email'>Correo electrónico</label>
         </div>
         <div className='form-group'>
+          <label className='form-label' htmlFor='laboratory-phone'>Teléfono</label>
           <input
             id='laboratory-phone'
             className='form-input'
@@ -67,9 +70,13 @@ export default function Laboratory () {
             name='laboratory_phone'
             ref={register}
           />
-          <label className='form-placeholder' htmlFor='laboratory-phone'>Teléfono</label>
         </div>
         <div className='form-group'>
+          <label className='form-label'>Exámenes</label>
+          <SelectExams />
+        </div>
+        <div className='form-group'>
+          <label className='form-label' htmlFor='laboratory-status'>Estado</label>
           <select
             id='laboratory-status'
             className='form-select'
@@ -82,13 +89,12 @@ export default function Laboratory () {
             <option value='active'>Activo</option>
             <option value='inactive'>Inactivo</option>
           </select>
-          <label className='form-placeholder' htmlFor='laboratory-status'>Estado</label>
         </div>
         <div className='form-section__buttons'>
           <Link to='/laboratories'>
-            <button className='form-button secondary'>Cancelar </button>
+            <button className='form-button__secondary'>Cancelar </button>
           </Link>
-          <button submit='true' className='form-button primary'>Guardar</button>
+          <button submit='true' className='form-button__primary'>Guardar</button>
         </div>
       </div>
     </form>
