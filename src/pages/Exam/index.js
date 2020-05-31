@@ -42,9 +42,9 @@ export default function Exam (props) {
         </div>
         <div className='form-section__buttons'>
           <Link to='/exams'>
-            <button className='form-button secondary'>Cancelar </button>
+            <button className='form-button__secondary'>Cancelar </button>
           </Link>
-          <button submit='true' className='form-button primary'>Guardar</button>
+          <button submit='true' className='form-button__primary'>Guardar</button>
         </div>
       </div>
     </form>

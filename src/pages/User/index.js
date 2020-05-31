@@ -44,8 +44,6 @@ export default function User (props) {
       get(`/?_id=${id}`).then((res) => {
         const user = res.data[0]
         const birthdate = format(new Date(user.birthdate), 'yyyy-MM-dd')
-        console.log(birthdate)
-        console.log(user)
         setValue('name.first', user.name.first)
         setValue('name.last', user.name.last)
         setValue('documentType', user.documentType)
@@ -153,10 +151,6 @@ export default function User (props) {
             <input type='radio' id='female' name='gender' value='F' ref={register()} />
             <label htmlFor='female' className='form-label'>Female</label>
           </div>
-          {/* <div>
-            <input type='radio' id='other' name='gender' value='other' ref={register()} />
-            <label htmlFor='other'>Other</label>
-          </div> */}
         </div>
       </div>
 
@@ -229,27 +223,13 @@ export default function User (props) {
           />
           {errors.phone && <span className='form-input__error'>se requiere digitar números</span>}
         </div>
-        {/* <div className='form-group'>
-          <select
-            className='form-select'
-            name='active'
-            ref={register({ required: true })}
-          >
-            <option />
-            <option value='true'>activo</option>
-            <option value='false'>Inactivo</option>
-          </select>
-          {errors.active && <span className='form-input__error'>se requiere seleccionar un estado</span>}
-          <label className='form-placeholder' htmlFor='user-state'>Estado del usuario</label>
-        </div> */}
-        <div className='user-form__buttons'>
-          <Link to='/dashboard'>
-            <button className='user-form__btn-secondary'>Cancelar </button>
+        <div className='form-section__buttons'>
+          <Link to='/users'>
+            <button className='form-button__secondary'>Cancelar </button>
           </Link>
-          <button type='submit' className='user-form__btn-primary'>Guardar</button>
+          <button submit='true' className='form-button__primary'>Guardar</button>
         </div>
       </div>
-
     </form>
   )
 }

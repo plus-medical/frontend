@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ItemDashboard from '../../components/itemDashboard/index'
 
 export default function Dashboard () {
-  const role = 'administrator'
+  const role = window.localStorage.getItem('role')
   const [dashboard, setDashboard] = useState([])
 
   useEffect(() => {

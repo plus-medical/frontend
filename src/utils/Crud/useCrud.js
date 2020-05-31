@@ -45,8 +45,6 @@ export function useCrud (url, load = true) {
 
       const newDocument = await resp.json()
 
-      console.log(newDocument)
-
       // if (id) {
       //   //update
       //   const updateData = data.map((o) => {

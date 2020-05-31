@@ -1,0 +1,9 @@
+@import '../../components/styles/Global.scss';
+
+.laboratory{
+    @include form__section;
+}
+
+.laboratory__title{
+    @include form__title;
+}
