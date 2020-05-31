@@ -25,10 +25,10 @@ export function useAuth () {
         setData(result.data)
         setError('')
       } else {
-        setError(response.statusText)
+        setError(response.statusText ? response.statusText : `Error status:  ${response.status}`)
       }
-    } catch (error) {
-      setError(error.message)
+    } catch (err) {
+      setError(err.message)
     } finally {
       setLoading(false)
     }
