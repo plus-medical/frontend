@@ -17,7 +17,6 @@ import Consultation from '../pages/Consultations/index'
 import Notifications from '../pages/Notifications/index'
 import Profile from '../pages/Profile/index'
 
-
 export const ListRoutes = [
   {
     path: '/dashboard',
