@@ -5,17 +5,19 @@ import { useForm } from 'react-hook-form'
 import { AuthContext } from '../../utils/Auth/AuthContext'
 import { Link, useHistory, withRouter } from 'react-router-dom'
 import { MessageContext } from '../../utils/Messages/MessageContext'
+import Message from '../../components/messages'
 
 function Login () {
   const { authenticated, error, handleLogin } = useContext(AuthContext)
   const { register, handleSubmit, errors } = useForm()
-  const { setMessage } = useContext(MessageContext)
+  const { setMessage, message } = useContext(MessageContext)
   const history = useHistory()
   const onSubmit = (res) => {
     handleLogin(res)
   }
 
   useEffect(() => {
+    console.log(message)
     setMessage('')
     const role = window.localStorage.getItem('role')
     if (authenticated) {
@@ -35,8 +37,10 @@ function Login () {
 
   return (
     <section className='login'>
-      <img src={Logo} alt='Plus Medical Logo' />
       <div className='login-container'>
+        <div>
+          <img src={Logo} alt='Plus Medical Logo' className='login-container__logo' />
+        </div>
         <form className='login__form' onSubmit={handleSubmit(onSubmit)}>
           <input
             className='login__input login__input-user'
@@ -69,10 +73,14 @@ function Login () {
             Iniciar sesión
           </button>
         </form>
+        <div>
+          <Link className='login__link' to='/'>
+            Olvidó su contraseña
+          </Link>
+        </div>
+
+        {message && <Message text={message} type='message-alert' />}
       </div>
-      <Link className='login__link' to='/'>
-        Olvidó su contraseña
-      </Link>
     </section>
   )
 }

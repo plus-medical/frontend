@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react'
 import './style.scss'
 import Item from '../../components/Item/index'
 import CircleButton from '../../components/buttons/index'
+import ImportButton from '../../components/importButton/index'
 import { useForm } from 'react-hook-form'
 import { useCrud } from '../../utils/Crud/useCrud'
 import Loader from '../../components/Loading'
 import Message from '../../components/messages'
 import { Link } from 'react-router-dom'
-
-const link = '/user'
 
 export default function Users () {
   const { register, handleSubmit } = useForm()
@@ -78,8 +77,11 @@ export default function Users () {
             </ul>
           ))
       }
-      <Link to={link}>
+      <Link to='user'>
         <CircleButton />
+      </Link>
+      <Link to='uploadusers'>
+        <ImportButton />
       </Link>
     </section>
   )

@@ -1,0 +1,7 @@
+@import '../styles/Global.scss';
+
+.ImportButton{
+ @include CircleButton;
+ bottom: 130px;
+  right: 3px;
+}
