@@ -21,6 +21,7 @@
   font-size: 0.75rem;
   color: $primary-color-2;
   margin-bottom: 3px;
+  display: inline-block;
 }
 
 @mixin form__control{
@@ -95,6 +96,11 @@
   color: $button-font-color;
 }
 
+@mixin form__btn-active{
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
 .form-group{
   @include form__group;
 }
@@ -142,10 +148,22 @@
 }
 
 .form-section__buttons{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 15px;
+  @include form__buttons;
+}
+
+.form-button__primary{
+  @include form__btn;
+  @include form__btn-primary;
+}
+
+.form-button__secondary{
+  @include form__btn;
+  @include form__btn-secondary;
+}
+
+.form-button__primary:active,
+.form-button__secondary:active{
+  @include form__btn-active;
 }
 
 .form-button{

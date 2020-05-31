@@ -1,0 +1,21 @@
+@import '../../components/styles/Global.scss';
+
+.select-exams{
+    border: 1px solid #ccc;
+}
+
+.select-exams__list{
+    max-height: 150px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.select-exams__item{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    margin: 10px 0px 15px 0px;
+}
+
+.select-exams__checkbox{
+    margin: auto;
+}

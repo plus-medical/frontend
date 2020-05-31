@@ -37,31 +37,11 @@ export function useCrud (url, load = true) {
     try {
       const headers = { 'Content-Type': 'application/json' }
       const body = JSON.stringify(data)
-      const resp = await fetch(apiUrl + url + (id ? '/' + id : ''), {
+      await fetch(apiUrl + url + (id ? '/' + id : ''), {
         method: id ? 'PUT' : 'POST',
         headers,
         body
       })
-
-      const newDocument = await resp.json()
-
-      console.log(newDocument)
-
-      // if (id) {
-      //   //update
-      //   const updateData = data.map((o) => {
-      //     if (o.id === id) {
-      //       return newDocument;
-      //     }
-      //     return o;
-      //   });
-      //   setData(updateData);
-      // } else {
-      //   //Insert
-      //   setData((data) => [...data, newDocument]);
-      // }
-
-      // setSaving(false);
     } catch (error) {
       setError(error.message)
       setLoading(false)

@@ -7,20 +7,27 @@ import { Link, useHistory, withRouter } from 'react-router-dom'
 import { MessageContext } from '../../utils/Messages/MessageContext'
 
 function Login () {
-  const { authenticated, error, handleLogin } = useContext(AuthContext)
+  const { authenticated, error, handleLogin, data } = useContext(AuthContext)
   const { register, handleSubmit, errors } = useForm()
   const { setMessage } = useContext(MessageContext)
   const history = useHistory()
-
-  const onSubmit = (data) => {
-    handleLogin(data)
-    history.push('/dashboard')
+  const onSubmit = (res) => {
+    handleLogin(res)
   }
 
   useEffect(() => {
     setMessage('')
+    const role = window.localStorage.getItem('role')
+
     if (authenticated) {
-      history.push('/dashboard')
+      switch (role) {
+        case 'administrator': case 'patient' :
+          history.push('/dashboard')
+          break
+        case 'doctor': case 'lab-worker':
+          history.push('/search')
+          break
+      }
       setMessage('Login Success')
     } else if (error !== '') {
       setMessage('Login Denied', error)

@@ -4,18 +4,19 @@ import { useAuth } from './useAuth'
 const AuthContext = createContext()
 const NAME_TOKEN = 'token'
 
-function AuthProvider ({ children }) {
+export default function AuthProvider ({ children }) {
   const auth = useAuth()
   const [authenticated, setAuthenticated] = useState(true)
-  const { data, error } = auth
+  const { data, error, logout } = auth
 
-  const handleLogin = (data) => {
-    auth.signIn(data)
+  const handleLogin = (params) => {
+    auth.signIn(params)
   }
 
   const handleLogout = () => {
-    setAuthenticated(false)
+    logout()
     window.localStorage.removeItem(NAME_TOKEN)
+    window.localStorage.removeItem('role')
   }
 
   const handleSignUp = async (data) => {
@@ -28,7 +29,8 @@ function AuthProvider ({ children }) {
       setAuthenticated(true)
     } else if (error === '' && data.user) {
       setAuthenticated(true)
-      !token && window.localStorage.setItem(NAME_TOKEN, data.user)
+      !token && window.localStorage.setItem(NAME_TOKEN, true)
+      window.localStorage.setItem('role', data.user.role)
     } else {
       setAuthenticated(false)
       window.localStorage.removeItem(NAME_TOKEN)
@@ -40,6 +42,7 @@ function AuthProvider ({ children }) {
       value={{
         authenticated,
         error,
+        data,
         setAuthenticated,
         handleLogin,
         handleLogout,
