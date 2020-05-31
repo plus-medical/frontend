@@ -1,16 +1,14 @@
 import React from 'react'
 import './styles.scss'
 
-import CALENDAR from '../../assets/images/calendar.png'
-
-function Item ({ id, name, dniType, dni, role, link }) {
+function Item ({ img }) {
   return (
     <>
       <li className='item'>
-        <div className='item__figure'>
+        <div className='item__figure item__figure-icon'>
           <img
-            className='item__image'
-            src={CALENDAR}
+            className='item__image item__img-icon'
+            src={img}
             alt='photo'
           />
         </div>

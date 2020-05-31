@@ -15,6 +15,13 @@
 }
 .item__figure{
   max-height: 83px;
+  
+}
+
+.item__figure-icon{
+  display:flex;
+  justify-content:center;
+  align-items:center
 }
 
 .item__icon{
@@ -36,8 +43,12 @@
 
 .item__image{
   border-radius: 0px 15% 0px 15%;
-  // object-fit: contain;
-  width: 83px;
+  // object-fit: contain
+}
+
+.item__img-icon{
+  width: 35px;
+  height:35px;
 }
 
 .item__name{

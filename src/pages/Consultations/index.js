@@ -2,6 +2,8 @@ import React from 'react'
 import ItemDate from '../../components/ItemDate/index'
 import DEFAULT_IMAGE from '../../assets/images/default.png'
 
+import IMG_CALENDAR from '../../assets/images/calendar.png'
+
 export default function index ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) {
   return (
     <div>
@@ -18,11 +20,12 @@ export default function index ({ name = 'Nicola Tesla', docType = 'CC', doc = 12
           </div>
         </div>
       </div>
-      <ItemDate />
-      <ItemDate />
-      <ItemDate />
-      <ItemDate />
-      <ItemDate />
+      {[1, 2, 3, 4, 5].map((index) => {
+        return (
+          <ItemDate key={index} img={IMG_CALENDAR} />
+        )
+      })}
+
     </div>
   )
 }

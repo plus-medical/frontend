@@ -1,8 +1,5 @@
 /* eslint-disable no-undef */
 import { useState, useEffect } from 'react'
-// const {
-//   config: { apiUrl }
-// } = require('../../config')
 const apiUrl = process.env.BASE_URL
 
 export function useCrud (url, load = true) {
