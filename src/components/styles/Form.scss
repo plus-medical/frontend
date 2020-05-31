@@ -211,6 +211,7 @@
   height: $font-size-nameSearch;
   padding-left: $border-principal;
   text-align: center;
+  padding-right:10px;
 }
 
 @mixin form-search__input-focus{
