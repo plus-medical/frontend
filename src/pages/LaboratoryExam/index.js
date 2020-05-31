@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './styles.scss'
-import { FaGreaterThan, FaFileAlt } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import ItemExam from '../../components/itemExam/index'
 
 import DEFAULT_IMAGE from '../../assets/images/default.png'
 
 export default function LaboratoryExam ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) {
+  const role = window.localStorage.getItem('role')
+  const [link, setLink] = useState('')
+
+  useEffect(() => {
+    if (role === 'lab-worker') {
+      setLink('/laboratoryresult')
+    } else if (role === 'patient') {
+      setLink('/myexam')
+    }
+  }, [])
+
   return (
     <div>
       <div className='form-section'>
@@ -25,25 +35,11 @@ export default function LaboratoryExam ({ name = 'Nicola Tesla', docType = 'CC',
         <div className='form-section__title'>Exámenes</div>
         <div className='patient-exams'>
           <ul>
-            {[1, 2, 3, 4, 5].map((exam) => (
-              <li key={exam}>
-                <Link to='/laboratoryresult'>
-                  <div className='patient-exams__item'>
-                    <div className='patient-exams__img'>
-                      <FaFileAlt className='patient-exams__icon' />
-                    </div>
-                    <div className='patient-exams__txt'>
-                      {`Examen ${exam}`}
-                    </div>
-                    <div className='patient-exams__togo'>
-                      <FaGreaterThan />
-                    </div>
-
-                  </div>
-                </Link>
-              </li>
-
-            )
+            {[1, 2, 3, 4, 5].map((exam) => {
+              return (
+                <ItemExam key={exam} link={link} exam={exam} />
+              )
+            }
             )}
           </ul>
         </div>

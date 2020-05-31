@@ -88,12 +88,14 @@
   @include form__btn;
   background-color: $primary-color-2;
   color:$button-font-color;
+  cursor:pointer;
 }
 
 @mixin form__btn-secondary{
   @include form__btn;
   background-color: $secondary;
   color: $button-font-color;
+  cursor:pointer;
 }
 
 @mixin form__btn-active{
@@ -215,3 +217,17 @@
   border: 1px solid $input-border-color_onfocus;
 }
 
+@mixin CircleButton{
+  background-color: #0094A7;
+  border-radius:50%;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 24px;
+  margin:30px;
+  position: fixed;
+  box-shadow: 0px 0px 2px 13px rgba(0,0,0,0.10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -5,22 +5,25 @@
     display: flex;
     flex-direction: row;
     border-radius: 15px;
-    padding: 15px 10px;
+    padding: 12px 10px;
     background-color: $background;
     align-items: center;
     justify-content: flex-start;
     animation: 210ms ease-in entry;
+    margin-top: 10px;   
+    width: 100%;
 }
 
 @mixin message__icon($border){
     font-size: 1.4em;
-    width: 70px;
+    width: 30px;
     color: $border
 }
 
 @mixin message__text{
     font-size: 0.8rem;
     font-weight: 700;
+    padding-left: 10px;
 }
 
 .message-warning{
