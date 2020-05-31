@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './style.scss'
 import Item from '../../components/Item/index'
-import CircleButton from '../../components/buttons/index'
 import { useForm } from 'react-hook-form'
 import { useCrud } from '../../utils/Crud/useCrud'
 import Loader from '../../components/Loading'
 import Message from '../../components/messages'
-import { Link } from 'react-router-dom'
 
 export default function SearchPatient () {
   const { register, handleSubmit } = useForm()
@@ -85,9 +83,7 @@ export default function SearchPatient () {
             </ul>
           ))
       }
-      <Link to={link}>
-        <CircleButton />
-      </Link>
+
     </section>
   )
 }
