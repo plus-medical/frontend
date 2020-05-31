@@ -88,12 +88,14 @@
   @include form__btn;
   background-color: $primary-color-2;
   color:$button-font-color;
+  cursor:pointer;
 }
 
 @mixin form__btn-secondary{
   @include form__btn;
   background-color: $secondary;
   color: $button-font-color;
+  cursor:pointer;
 }
 
 @mixin form__btn-active{
