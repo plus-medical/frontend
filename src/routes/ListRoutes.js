@@ -12,6 +12,7 @@ import Laboratory from '../pages/Laboratory/index'
 import LaboratoryExam from '../pages/LaboratoryExam/index'
 import LaboratoryResult from '../pages/LaboratoryResult/index'
 import UploadUsers from '../pages/UploadUsers/index'
+import DownloadFiles from '../pages/DownloadFiles/index'
 
 export const ListRoutes = [
   {
@@ -90,12 +91,12 @@ export const ListRoutes = [
     component: DetailPatientExam
   },
   {
-    path: '/laboratoryexam/:id',
+    path: '/laboratoryexam',
     exact: true,
     component: LaboratoryExam
   },
   {
-    path: '/laboratoryresult',
+    path: '/laboratoryresult/:id',
     exact: true,
     component: LaboratoryResult
   },
@@ -103,5 +104,15 @@ export const ListRoutes = [
     path: '/uploadusers',
     exact: true,
     component: UploadUsers
+  },
+  {
+    path: '/myexams',
+    exact: true,
+    component: LaboratoryExam
+  },
+  {
+    path: '/myexam/:id',
+    exact: true,
+    component: DownloadFiles
   }
 ]

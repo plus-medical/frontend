@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import './styles.scss'
 import UploadFile from '../../components/uploadFile/index'
 
 import DEFAULT_IMAGE from '../../assets/images/default.png'
 
 export default function LaboratoryResult ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) {
+  const history = useHistory()
   return (
     <div>
       <div className='exam-patient'>
@@ -43,9 +44,12 @@ export default function LaboratoryResult ({ name = 'Nicola Tesla', docType = 'CC
           <UploadFile />
         </div>
         <div className='upload-result__buttons'>
-          <Link to='/search'>
-            <button className='upload-result__btn-secondary'>Cancelar </button>
-          </Link>
+          <button
+            onClick={() => history.goBack()}
+            className='upload-result__btn-secondary'
+          >
+            Cancelar
+          </button>
           <button type='submit' className='upload-users__btn-primary'>Guardar</button>
         </div>
       </div>

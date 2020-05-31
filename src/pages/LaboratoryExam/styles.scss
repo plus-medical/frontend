@@ -21,37 +21,3 @@
     display: block;
     width: 100%;
 }
-
-.patient-exams__item{
-    display: grid;
-    grid-template-columns: 83px 1fr 40px;
-    padding: 15px 0;
-    border: 1px solid $border-box-color;
-    margin-bottom: 10px;
-    border-radius: 0 $border-principal;
-}
-
-.patient-exams__img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: $size_item_icon;
-    color: $primary-color-2;
-  }
-  
-  .patient-exams__txt{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: $font-size-principal;
-    font-weight: 700;
-    color: $font-color;
-  }
-  
-  .patient-exams__togo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: $size_item_togo;
-    color: $primary-color-2;
-  }
