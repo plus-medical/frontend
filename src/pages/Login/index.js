@@ -7,13 +7,12 @@ import { Link, useHistory, withRouter } from 'react-router-dom'
 import { MessageContext } from '../../utils/Messages/MessageContext'
 
 function Login () {
-  const { authenticated, error, handleLogin, data } = useContext(AuthContext)
+  const { authenticated, error, handleLogin } = useContext(AuthContext)
   const { register, handleSubmit, errors } = useForm()
   const { setMessage } = useContext(MessageContext)
   const history = useHistory()
   const onSubmit = (res) => {
     handleLogin(res)
-    // history.push('/dashboard')
   }
 
   useEffect(() => {

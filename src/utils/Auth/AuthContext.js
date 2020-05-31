@@ -7,7 +7,7 @@ const NAME_TOKEN = 'token'
 function AuthProvider ({ children }) {
   const auth = useAuth()
   const [authenticated, setAuthenticated] = useState(true)
-  const { data, setData, error, logout } = auth
+  const { data, error, logout } = auth
 
   const handleLogin = (params) => {
     auth.signIn(params)
