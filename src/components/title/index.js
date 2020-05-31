@@ -38,6 +38,12 @@ export default function Title ({ pathname }) {
       case 'consultations':
         setTitle('Consultas Médicas')
         break
+      case 'laboratoryexam':
+        setTitle('Exámenes del paciente')
+        break
+      case 'search':
+        setTitle('Pacientes')
+        break
       default:
         setTitle('')
         break

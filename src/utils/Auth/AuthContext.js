@@ -6,7 +6,8 @@ const NAME_TOKEN = 'token'
 
 export default function AuthProvider ({ children }) {
   const auth = useAuth()
-  const [authenticated, setAuthenticated] = useState(true)
+  const [authenticated, setAuthenticated] = useState(false)
+  const [role, setRole] = useState('')
   const { data, error, logout } = auth
 
   const handleLogin = (params) => {
@@ -17,6 +18,7 @@ export default function AuthProvider ({ children }) {
     logout()
     window.localStorage.removeItem(NAME_TOKEN)
     window.localStorage.removeItem('role')
+    console.log(authenticated)
   }
 
   const handleSignUp = async (data) => {
@@ -25,21 +27,26 @@ export default function AuthProvider ({ children }) {
 
   useEffect(() => {
     const token = window.localStorage.getItem(NAME_TOKEN)
+    const localrole = window.localStorage.getItem('role')
     if (token) {
       setAuthenticated(true)
+      setRole('role', localrole)
     } else if (error === '' && data.user) {
       setAuthenticated(true)
+      setRole('role', data.user.role)
       !token && window.localStorage.setItem(NAME_TOKEN, true)
       window.localStorage.setItem('role', data.user.role)
     } else {
       setAuthenticated(false)
       window.localStorage.removeItem(NAME_TOKEN)
+      window.localStorage.removeItem('role')
     }
-  }, [JSON.stringify(data), error])
+  }, [JSON.stringify(data), error], authenticated)
 
   return (
     <AuthContext.Provider
       value={{
+        role,
         authenticated,
         error,
         data,

@@ -19,7 +19,7 @@ export default function FooterMobile () {
     {
       name: 'Tablero',
       icon: <FaRegListAlt />,
-      link: '/dashboard'
+      link: '/login'
     },
     {
       name: 'Notificaciones',

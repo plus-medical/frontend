@@ -43,7 +43,7 @@ export default function LaboratoryResult ({ name = 'Nicola Tesla', docType = 'CC
           <UploadFile />
         </div>
         <div className='upload-result__buttons'>
-          <Link to='/dashboard'>
+          <Link to='/search'>
             <button className='upload-result__btn-secondary'>Cancelar </button>
           </Link>
           <button type='submit' className='upload-users__btn-primary'>Guardar</button>

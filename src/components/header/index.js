@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useLocation, useHistory } from 'react-router-dom'
 import './styles.scss'
 import Title from '../title'
@@ -7,9 +7,12 @@ import { FaArrowLeft } from 'react-icons/fa'
 import { AuthContext } from '../../utils/Auth/AuthContext'
 
 export default function HeaderMobile () {
-  const { handleLogout } = useContext(AuthContext)
+  const { handleLogout, authenticated } = useContext(AuthContext)
   const location = useLocation()
   const history = useHistory()
+  useEffect(() => {
+    console.log(authenticated)
+  }, [authenticated])
   return (
     <header className='headerMobile'>
       <div className='headerMobile__container' />
@@ -17,7 +20,7 @@ export default function HeaderMobile () {
         <li>
           <button onClick={() => history.goBack()}>
             <a>
-              <FaArrowLeft />
+              <FaArrowLeft className='headerMobile__icon' />
             </a>
           </button>
         </li>
@@ -27,7 +30,7 @@ export default function HeaderMobile () {
         <li>
           <button onClick={() => handleLogout()}>
             <a>
-              <FiLogOut />
+              <FiLogOut className='headerMobile__icon' />
             </a>
           </button>
         </li>
