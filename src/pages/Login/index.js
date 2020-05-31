@@ -18,7 +18,6 @@ function Login () {
   useEffect(() => {
     setMessage('')
     const role = window.localStorage.getItem('role')
-
     if (authenticated) {
       switch (role) {
         case 'administrator': case 'patient' :
