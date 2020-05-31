@@ -2,7 +2,10 @@ import React, { useState, createContext } from 'react'
 const MessageContext = createContext()
 
 export default function MessageProvider ({ children }) {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState({
+    message: '',
+    type: ''
+  })
 
   return (
     <MessageContext.Provider
