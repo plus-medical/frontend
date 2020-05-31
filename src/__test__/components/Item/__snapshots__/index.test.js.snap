@@ -2,7 +2,7 @@
 
 exports[`<Item /> Review Snapshot in Item component 1`] = `
 <a
-  href="/user/undefined"
+  href="/undefined/undefined"
   onClick={[Function]}
 >
   <li
@@ -14,7 +14,7 @@ exports[`<Item /> Review Snapshot in Item component 1`] = `
       <img
         alt="photo"
         className="item__image"
-        src="https://pbs.twimg.com/profile_images/1055299470148227072/xeEopDm__400x400.jpg"
+        src="file-stub"
       />
       <svg
         className="item__icon"
