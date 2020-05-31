@@ -13,7 +13,6 @@ function Login () {
   const history = useHistory()
   const onSubmit = (res) => {
     handleLogin(res)
-    // history.push('/dashboard')
   }
 
   useEffect(() => {

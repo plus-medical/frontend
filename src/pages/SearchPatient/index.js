@@ -71,6 +71,7 @@ export default function SearchPatient () {
                   dniType={user.documentType}
                   dni={user.document}
                   id={user._id}
+                  link='clinichistory'
                 />
               ))}
             </ul>
