@@ -17,8 +17,10 @@ function Login () {
   }
 
   useEffect(() => {
-    console.log(message)
-    setMessage('')
+    setMessage({
+      message: '',
+      type: ''
+    })
     const role = window.localStorage.getItem('role')
     if (authenticated) {
       switch (role) {
@@ -29,9 +31,16 @@ function Login () {
           history.push('/search')
           break
       }
-      setMessage('Login Success')
+      setMessage({
+        message: 'Login Success',
+        type: 'success'
+      })
     } else if (error !== '') {
-      setMessage('Login Denied', error)
+      setMessage(
+        {
+          message: error,
+          type: 'error'
+        })
     }
   }, [authenticated, error])
 
@@ -79,7 +88,7 @@ function Login () {
           </Link>
         </div>
 
-        {message && <Message text={message} type='message-alert' />}
+        {message.type === 'error' && <Message text={message.message} type='message-alert' />}
       </div>
     </section>
   )

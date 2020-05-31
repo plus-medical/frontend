@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemDate from '../../components/ItemDate/index'
 import DEFAULT_IMAGE from '../../assets/images/default.png'
+
 import IMG_CALENDAR from '../../assets/images/calendar.png'
 
 export default function index ({ name = 'Nicola Tesla', docType = 'CC', doc = 12345678, age = 36 }) {
@@ -24,6 +25,7 @@ export default function index ({ name = 'Nicola Tesla', docType = 'CC', doc = 12
           <ItemDate key={index} img={IMG_CALENDAR} />
         )
       })}
+
     </div>
   )
 }
