@@ -8,12 +8,10 @@ import Loader from '../../components/Loading'
 import Message from '../../components/messages'
 import { Link } from 'react-router-dom'
 
-const link = '/user'
-
 export default function SearchPatient () {
   const { register, handleSubmit } = useForm()
-
   const [users, setUsers] = useState([])
+  const [link, setLink] = useState('')
   const { data, loading, get } = useCrud('users/?role=patient', true)
 
   const onSubmit = (res, e) => {
@@ -38,8 +36,18 @@ export default function SearchPatient () {
   }
 
   useEffect(() => {
+    const role = window.localStorage.getItem('role')
+
     if (data.data) {
       setUsers(data.data)
+      switch (role) {
+        case 'lab-worker':
+          setLink('laboratoryexam')
+          break
+        case 'doctor':
+          setLink('clinichistory')
+          break
+      }
     }
   }, [data])
 
@@ -71,7 +79,7 @@ export default function SearchPatient () {
                   dniType={user.documentType}
                   dni={user.document}
                   id={user._id}
-                  link='clinichistory'
+                  link={link}
                 />
               ))}
             </ul>

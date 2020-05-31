@@ -40,3 +40,11 @@
   font-size: 3rem;
   font-weight: 700;
 }
+
+.headerMobile__icon{
+  cursor: pointer;
+}
+
+.headerMobile__icon:active{
+  transform: scale(0.9);
+}
