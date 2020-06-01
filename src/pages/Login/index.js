@@ -83,7 +83,7 @@ function Login () {
           </button>
         </form>
         <div>
-          <Link className='login__link' to='/'>
+          <Link className='login__link' to='dashboard'>
             Olvidó su contraseña
           </Link>
         </div>
