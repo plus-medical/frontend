@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[hash].js',
-    publicPath: 'https://frontend-eight-pink.now.sh/',
+    publicPath: 'frontend.plus-medical.now.sh',
     chunkFilename: 'js/[id].[chunkhash].js'
   },
   optimization: {
@@ -66,7 +66,7 @@ module.exports = {
     new AddAssetHtmlPlugin({
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
-      publicPath: 'https://frontend-eight-pink.now.sh/js'
+      publicPath: 'frontend.plus-medical.now.sh/js'
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/app.*']
