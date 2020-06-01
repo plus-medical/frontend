@@ -67,7 +67,6 @@ module.exports = {
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
       publicPath: 'https://frontend-cosmosoftroot.plus-medical.now.sh/js'
-
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/app.*']
