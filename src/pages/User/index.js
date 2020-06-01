@@ -1,16 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import './styles.scss'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import Photo from '../../components/photo/index'
-import { AuthContext } from '../../utils/Auth/AuthContext'
 import { MessageContext } from '../../utils/Messages/MessageContext'
 import { useCrud } from '../../utils/Crud/useCrud'
 import Loader from '../../components/Loading'
 import { format } from 'date-fns'
 
 export default function User (props) {
-  const { loading, get } = useCrud('users', false)
+  const { loading, get, save, saving } = useCrud('users', false)
   const { register, handleSubmit, errors, setValue } = useForm({
     defaultValues: {
       name: {
@@ -30,14 +29,23 @@ export default function User (props) {
       phone: ''
     }
   })
-  const { handleSignUp } = useContext(AuthContext)
+
+  const history = useHistory()
+
   const { setMessage } = useContext(MessageContext)
 
   const onSubmit = async (data) => {
-    const result = await handleSignUp(data)
+    const result = await save(data)
+    console.log(result)
     setMessage(result)
   }
 
+  useEffect(() => {
+    if (saving) {
+      history.push('users')
+    }
+  }, [saving]
+  )
   useEffect(() => {
     const id = props.match.params.id
     if (id) {

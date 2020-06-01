@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { useState, useEffect } from 'react'
 const apiUrl = process.env.BASE_URL
 
@@ -14,7 +13,7 @@ export function useCrud (url, load = true) {
         setLoading(true)
         setError(false)
         const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-        const res = await fetch(apiUrl + url, {
+        const res = await window.fetch(apiUrl + url, {
           headers,
           credentials: 'include'
         })
@@ -32,13 +31,20 @@ export function useCrud (url, load = true) {
 
   async function save (data, id) {
     try {
+      setLoading(true)
+      setSaving(false)
       const headers = { 'Content-Type': 'application/json' }
       const body = JSON.stringify(data)
-      await fetch(apiUrl + url + (id ? '/' + id : ''), {
+      const resp = await window.fetch(apiUrl + url + (id ? '/' + id : ''), {
         method: id ? 'PUT' : 'POST',
         headers,
         body
       })
+      const newDocument = await resp.json()
+      setLoading(false)
+      setSaving(true)
+
+      console.log(newDocument)
     } catch (error) {
       setError(error.message)
       setLoading(false)
@@ -52,7 +58,7 @@ export function useCrud (url, load = true) {
       setLoading(true)
       setError(false)
       const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-      const resp = await fetch(apiUrl + url + id, {
+      const resp = await window.fetch(apiUrl + url + id, {
         headers,
         credentials: 'include'
 
@@ -71,7 +77,7 @@ export function useCrud (url, load = true) {
     try {
       setLoading(true)
       setError(false)
-      const resp = await fetch(apiUrl + url + '/' + id, {
+      const resp = await window.fetch(apiUrl + url + '/' + id, {
         method: 'DELETE'
       })
       const obj = await resp.json()
