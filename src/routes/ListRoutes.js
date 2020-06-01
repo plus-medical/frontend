@@ -13,6 +13,9 @@ import LaboratoryExam from '../pages/LaboratoryExam/index'
 import LaboratoryResult from '../pages/LaboratoryResult/index'
 import UploadUsers from '../pages/UploadUsers/index'
 import DownloadFiles from '../pages/DownloadFiles/index'
+import Consultation from '../pages/Consultations/index'
+import Notifications from '../pages/Notifications/index'
+import Profile from '../pages/Profile/index'
 
 export const ListRoutes = [
   {
@@ -114,5 +117,21 @@ export const ListRoutes = [
     path: '/myexam/:id',
     exact: true,
     component: DownloadFiles
+  },
+  {
+    path: '/myconsultations',
+    exact: true,
+    component: Consultation
+  },
+  {
+    path: '/profile',
+    exact: true,
+    component: Profile
+  },
+  {
+    path: '/notifications',
+    exact: true,
+    component: Notifications
   }
+
 ]
