@@ -67,6 +67,7 @@ module.exports = {
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
       publicPath: 'https://frontend.plus-medical.now.sh/js'
+
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/app.*']
