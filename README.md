@@ -3,9 +3,8 @@
 Project of platzimaster in the first cohort in 2020.
 
 ### 🚀 Enlaces
- * **First Version:** _____
- * **Documentation:** _____
- * **Mockup:** _____
+ * **First Version:** [page](app.plus-medical-co)
+ * **Documentation:** [documentation](https://www.notion.so/plusmedical/Plus-Medical-50fc2342d106470d93d02abeb20a6668)
 
 #### 🛠 Installation of project
 ```
