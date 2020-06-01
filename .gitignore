@@ -1,4 +1,4 @@
-dist
+# dist
 
 # Node template
 
@@ -76,3 +76,5 @@ yarn-error.log
 
 .now
 src/pages/Logged/index.js
+
+.vercel

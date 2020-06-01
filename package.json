@@ -88,11 +88,15 @@
       }
     }
   },
+  
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint:fix",
       "pre-push": "npm run lint:fix"
     }
+  },
+  "standard": {
+    "ignore": [ "**/dist/*" ]
   },
   "jest": {
     "setupFilesAfterEnv": [
