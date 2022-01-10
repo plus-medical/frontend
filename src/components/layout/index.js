@@ -1,7 +1,7 @@
 import React from 'react'
-import './styles.scss'
 import FooterMobile from '../footer/index'
 import HeaderMobile from '../header/index'
+import './styles.scss'
 
 export default function LayoutMobile ({ children }) {
   return (

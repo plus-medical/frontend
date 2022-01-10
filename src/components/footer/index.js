@@ -2,14 +2,16 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './styles.scss'
 
-import {
+import
+{
   FaHome,
   FaRegListAlt,
   FaBell,
   FaUser
 } from 'react-icons/fa'
 
-export default function FooterMobile () {
+export default function FooterMobile ()
+{
   const MENUITEM = [
     {
       name: 'Inicio',
@@ -38,25 +40,26 @@ export default function FooterMobile () {
       <div className='footerMobile__container' />
       <nav>
         <ul className='footerMobile__icons'>
-          {MENUITEM.map((item) => {
+          { MENUITEM.map( ( item ) =>
+          {
             return (
-              <li key={item.name}>
+              <li key={ item.name }>
                 <NavLink
-                  to={item.link}
+                  to={ item.link }
                   exact
                   activeClassName='active'
                   className='footerMobile__item'
                 >
                   <div className='footerMobile__img'>
-                    {item.icon}
+                    { item.icon }
                   </div>
                   <label className='footerMobile__description'>
-                    {item.name}
+                    { item.name }
                   </label>
                 </NavLink>
               </li>
             )
-          })}
+          } ) }
         </ul>
       </nav>
     </footer>

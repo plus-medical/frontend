@@ -1,14 +1,12 @@
 import React from 'react'
+import { SetRoutes } from './routes/SetRoutes'
 import { AuthProvider } from './utils/Auth/AuthContext'
 import { MessageProvider } from './utils/Messages/MessageContext'
-import { SetRoutes } from './routes/SetRoutes'
 
-export const App = () => {
-  return (
-    <AuthProvider>
-      <MessageProvider>
-        <SetRoutes />
-      </MessageProvider>
-    </AuthProvider>
-  )
-}
+export const App = () => (
+  <AuthProvider>
+    <MessageProvider>
+      <SetRoutes />
+    </MessageProvider>
+  </AuthProvider>
+)

@@ -1,12 +1,13 @@
-import React, { useState, createContext, useEffect } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
+import { NAME_TOKEN } from 'src/utils/constants'
 import { useAuth } from './useAuth'
 
 const AuthContext = createContext()
-const NAME_TOKEN = 'token'
 
 export default function AuthProvider ({ children }) {
   const auth = useAuth()
-  const [authenticated, setAuthenticated] = useState(false)
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [role, setRole] = useState('')
   const { data, error, logout } = auth
 
@@ -18,7 +19,6 @@ export default function AuthProvider ({ children }) {
     logout()
     window.localStorage.removeItem(NAME_TOKEN)
     window.localStorage.removeItem('role')
-    console.log(authenticated)
   }
 
   const handleSignUp = async (data) => {
@@ -29,25 +29,25 @@ export default function AuthProvider ({ children }) {
     const token = window.localStorage.getItem(NAME_TOKEN)
     const localrole = window.localStorage.getItem('role')
     if (token) {
-      setAuthenticated(true)
+      setIsAuthenticated(true)
       setRole('role', localrole)
     } else if (error === '' && data.user) {
-      setAuthenticated(true)
+      setIsAuthenticated(true)
       setRole('role', data.user.role)
       !token && window.localStorage.setItem(NAME_TOKEN, true)
       window.localStorage.setItem('role', data.user.role)
     } else {
-      setAuthenticated(false)
+      setIsAuthenticated(false)
       window.localStorage.removeItem(NAME_TOKEN)
       window.localStorage.removeItem('role')
     }
-  }, [JSON.stringify(data), error], authenticated)
+  }, [JSON.stringify(data), error], isAuthenticated)
 
   return (
     <AuthContext.Provider
       value={{
         role,
-        authenticated,
+        isAuthenticated,
         error,
         data,
         setAuthenticated,
