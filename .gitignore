@@ -78,3 +78,5 @@ yarn-error.log
 src/pages/Logged/index.js
 
 .vercel
+
+.github/
